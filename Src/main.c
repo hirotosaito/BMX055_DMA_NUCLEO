@@ -54,19 +54,49 @@
 
 /* USER CODE BEGIN PV */
 char k[I2C_BUF_SIZE];
+uint8_t isxready = false;
+uint8_t isyready = false;
+uint8_t iszready = false;
+
+float xAccl = 0.00;
+float yAccl = 0.00;
+float zAccl = 0.00;
+float f = 3.14;
+
+float xGyro;
+float yGyro;
+float zGyro;
+
+int isI2CRunning;
+
+typedef struct {
+  /* data */
+  uint8_t xLSB;
+  uint8_t xMSB;
+  uint8_t yLSB;
+  uint8_t yMSB;
+  uint8_t zLSB;
+  uint8_t zMSB;  
+
+} bmxAccl;
+
+bmxAccl Accl_temp = {0,0,0,0,0,0};
+bmxAccl Accl = {0,0,0,0,0,0};
+
 
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 /* USER CODE BEGIN PFP */
+void Show_float(char*, float);
+void BMX_Init(void);
 
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
-int isI2CRunning;
 
 /* USER CODE END 0 */
 
@@ -102,25 +132,63 @@ int main(void) {
   MX_USART2_UART_Init();
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
-
-  isI2CRunning = 1;
+  BMX_Init();
+  // first time to read sensor value
+  HAL_I2C_Mem_Read_DMA(&hi2c1, Addr_Accl << 1, 0x00, 1,(&Accl_temp), 6);
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  int i = 0;
+  uint8_t i = 0;
   while (1) {
     /* USER CODE END WHILE */
-    sprintf(k, "kaisuu : %d \n", i++);
+    sprintf(k, "kaisuu : %d\n", i++);
     HAL_UART_Transmit(&huart2, (uint8_t *)(&k[0]), strlen(&k[0]), 100);
 
-    uint8_t LxAccl;
-    HAL_I2C_Mem_Read_DMA(&hi2c1, Addr_Accl << 1, 0x02, 1, &LxAccl, 1);
+    //move the value from temp to buffer
+    if(isxready == true){
+      Accl.xLSB = Accl_temp.xLSB;
+      Accl.xMSB = Accl_temp.xMSB;     
+      
+      xAccl = ((Accl.xMSB*256) + (Accl.xLSB & 0xF0))/16;
+      if(xAccl>2047) xAccl -= 4096;
+      xAccl = xAccl*0.0098;
 
-    if (isI2CRunning == 0) {
-      sprintf(k, "dma run : %d \n", i);
+      isxready = false;
+    }
+
+    if(isyready == true){
+      Accl.yLSB = Accl_temp.yLSB;
+      Accl.yMSB = Accl_temp.yMSB;
+      
+      yAccl = ((Accl.yMSB*256) + (Accl.yLSB & 0xF0))/16;
+      if(yAccl>2047) yAccl -= 4096; 
+      yAccl = yAccl*0.0098;
+
+      
+      isyready = false;
+    }
+
+    if(iszready == true){
+      Accl.zLSB = Accl_temp.zLSB;
+      Accl.zMSB = Accl_temp.zMSB;
+
+      zAccl = ((Accl.zMSB*256) + (Accl.zLSB & 0xF0))/16;
+      if(zAccl>2047) zAccl -= 4096; 
+      zAccl = zAccl*0.0098;
+      
+      iszready = false;
+    }
+
+//     HAL_I2C_Mem_Read_DMA(&hi2c1, Addr_Accl << 1, 0x02, 1, &Accl_temp, 6);
+/*
+    if (isxready == true) {
+      sprintf(k, "xready\n");
       HAL_UART_Transmit(&huart2, (uint8_t *)(&k[0]), strlen(&k[0]), 100);
     }
+*/  Show_float("xAccl = ",xAccl);
+    Show_float("yAccl = ",yAccl);
+    Show_float("zAccl = ",zAccl);
 
     HAL_Delay(1000);
 
@@ -129,7 +197,7 @@ int main(void) {
   /* USER CODE END 3 */
 }
 
-void HAL_I2C_MemRxCpltCallback(I2C_HandleTypeDef *hi2c1) { isI2CRunning = 0; }
+
 
 /**
  * @brief System Clock Configuration
@@ -182,6 +250,49 @@ void SystemClock_Config(void) {
 }
 
 /* USER CODE BEGIN 4 */
+
+/** BMX Init*/
+void BMX_Init(void){
+// init x axis 
+
+//select PMU band width resisiter and set to 7.81 Hz
+uint16_t Mem_PMU_BW = 0x10;
+uint8_t p_BW = 0x08;
+HAL_I2C_Mem_Write(&hi2c1,Addr_Accl<<1,Mem_PMU_BW,1,&p_BW,1,100);
+HAL_Delay(100);
+
+//select PMU range resisiter and set to -2
+uint16_t Mem_PMU_Range = 0x0F;
+uint8_t p_Range = 0x03;
+HAL_I2C_Mem_Write(&hi2c1,Addr_Accl<<1,Mem_PMU_Range,1,&p_Range,1,100);
+HAL_Delay(100);
+
+//select PMU LPW resisiter and Normal mode
+uint16_t Mem_PMU_LPW = 0x11;
+uint8_t p_LPW = 0x00;
+HAL_I2C_Mem_Write(&hi2c1,Addr_Accl<<1,Mem_PMU_LPW,1,&p_LPW,1,100);
+HAL_Delay(100);
+
+}
+
+void HAL_I2C_MemRxCpltCallback(I2C_HandleTypeDef *hi2c1) {
+  if((Accl_temp.xLSB && 0b00000001 == 0b00000001)) isxready = true;
+  if((Accl_temp.yLSB && 0b00000001 == 0b00000001)) isyready = true;
+  if((Accl_temp.zLSB && 0b00000001 == 0b00000001)) iszready = true;
+  HAL_I2C_Mem_Read_DMA(hi2c1, Addr_Accl << 1, 0x02, 1, &Accl_temp, 6); //関数定義でhi2cのポインタを引数として渡しているため、HAL_I2C_Mem_Read_DMAの引数は&hi2c1ではなくhi2c1
+}
+
+void Show_float(char *str, float value){
+  char temp[20];
+  char *tempsign = (value < 0) ? "-":"";
+  double tempval = (value<0) ? -1*value:value;
+  int tempInt1 = (int)tempval;
+  float tempfrac = tempval - tempInt1;
+  int tempInt2 = trunc(tempfrac*100000);  
+
+  sprintf(temp,"%s%s%d.%04d\n",str,tempsign,tempInt1,tempInt2);
+  HAL_UART_Transmit (&huart2,(uint8_t*)(&temp[0]),strlen(&temp[0]),100);
+}
 
 /* USER CODE END 4 */
 

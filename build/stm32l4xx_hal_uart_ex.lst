@@ -1,4 +1,4 @@
-ARM GAS  /tmp/cc1EZBap.s 			page 1
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\ccZKutpq.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -19,15 +19,13 @@ ARM GAS  /tmp/cc1EZBap.s 			page 1
   16              		.cfi_sections	.debug_frame
   17              		.section	.text.UARTEx_Wakeup_AddressConfig,"ax",%progbits
   18              		.align	1
-  19              		.arch armv7e-m
-  20              		.syntax unified
-  21              		.thumb
-  22              		.thumb_func
-  23              		.fpu fpv4-sp-d16
-  25              	UARTEx_Wakeup_AddressConfig:
-  26              	.LVL0:
-  27              	.LFB138:
-  28              		.file 1 "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c"
+  19              		.syntax unified
+  20              		.thumb
+  21              		.thumb_func
+  22              		.fpu fpv4-sp-d16
+  24              	UARTEx_Wakeup_AddressConfig:
+  25              	.LFB138:
+  26              		.file 1 "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c"
    1:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** /**
    2:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   ******************************************************************************
    3:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   * @file    stm32l4xx_hal_uart_ex.c
@@ -58,11 +56,11 @@ ARM GAS  /tmp/cc1EZBap.s 			page 1
   28:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   @endverbatim
   29:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   ******************************************************************************
   30:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   * @attention
-ARM GAS  /tmp/cc1EZBap.s 			page 2
-
-
   31:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   *
   32:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   * <h2><center>&copy; Copyright (c) 2017 STMicroelectronics.
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\ccZKutpq.s 			page 2
+
+
   33:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   * All rights reserved.</center></h2>
   34:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   *
   35:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   * This software component is licensed by ST under BSD 3-Clause license,
@@ -118,11 +116,11 @@ ARM GAS  /tmp/cc1EZBap.s 			page 1
   85:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   */
   86:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
   87:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** /* Exported functions --------------------------------------------------------*/
-ARM GAS  /tmp/cc1EZBap.s 			page 3
-
-
   88:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
   89:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** /** @defgroup UARTEx_Exported_Functions  UARTEx Exported Functions
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\ccZKutpq.s 			page 3
+
+
   90:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   * @{
   91:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   */
   92:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
@@ -178,11 +176,11 @@ ARM GAS  /tmp/cc1EZBap.s 			page 1
  142:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****     |---------|---------|-----------|---------------------------------------|
  143:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****     |    1    |    0    |    0      |    | SB |    7 bit data   | STB |     |
  144:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****     |---------|---------|-----------|---------------------------------------|
-ARM GAS  /tmp/cc1EZBap.s 			page 4
-
-
  145:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****     |    1    |    0    |    1      |    | SB | 6 bit data | PB | STB |     |
  146:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****     +-----------------------------------------------------------------------+
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\ccZKutpq.s 			page 4
+
+
  147:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
  148:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   * @{
  149:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   */
@@ -238,11 +236,11 @@ ARM GAS  /tmp/cc1EZBap.s 			page 1
  199:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
  200:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****     if (huart->MspInitCallback == NULL)
  201:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****     {
-ARM GAS  /tmp/cc1EZBap.s 			page 5
-
-
  202:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****       huart->MspInitCallback = HAL_UART_MspInit;
  203:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****     }
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\ccZKutpq.s 			page 5
+
+
  204:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
  205:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****     /* Init the low level hardware */
  206:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****     huart->MspInitCallback(huart);
@@ -298,11 +296,11 @@ ARM GAS  /tmp/cc1EZBap.s 			page 1
  256:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****                       ##### IO operation functions #####
  257:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****  ===============================================================================
  258:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****     This subsection provides a set of Wakeup and FIFO mode related callback functions.
-ARM GAS  /tmp/cc1EZBap.s 			page 6
-
-
  259:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
  260:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****     (#) Wakeup from Stop mode Callback:
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\ccZKutpq.s 			page 6
+
+
  261:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****         (+) HAL_UARTEx_WakeupCallback()
  262:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
  263:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****     (#) TX/RX Fifos Callbacks:
@@ -358,11 +356,11 @@ ARM GAS  /tmp/cc1EZBap.s 			page 1
  313:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****             the HAL_UARTEx_TxFifoEmptyCallback can be implemented in the user file.
  314:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****    */
  315:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** }
-ARM GAS  /tmp/cc1EZBap.s 			page 7
-
-
  316:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** #endif /* USART_CR1_FIFOEN */
  317:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\ccZKutpq.s 			page 7
+
+
  318:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** /**
  319:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   * @}
  320:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   */
@@ -418,11 +416,11 @@ ARM GAS  /tmp/cc1EZBap.s 			page 1
  370:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   return HAL_OK;
  371:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** }
  372:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
-ARM GAS  /tmp/cc1EZBap.s 			page 8
-
-
  373:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** /**
  374:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   * @brief  Disable UART Clock when in Stop Mode.
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\ccZKutpq.s 			page 8
+
+
  375:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   * @param  huart UART handle.
  376:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   * @retval HAL status
  377:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   */
@@ -478,11 +476,11 @@ ARM GAS  /tmp/cc1EZBap.s 			page 1
  427:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
  428:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   /* TEACK and/or REACK to check before moving huart->gState to Ready */
  429:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   return (UART_CheckIdleState(huart));
-ARM GAS  /tmp/cc1EZBap.s 			page 9
-
-
  430:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** }
  431:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\ccZKutpq.s 			page 9
+
+
  432:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** /**
  433:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   * @brief Set Wakeup from Stop mode interrupt flag selection.
  434:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   * @note It is the application responsibility to enable the interrupt used as
@@ -538,11 +536,11 @@ ARM GAS  /tmp/cc1EZBap.s 			page 1
  484:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****     huart->gState = HAL_UART_STATE_READY;
  485:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   }
  486:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
-ARM GAS  /tmp/cc1EZBap.s 			page 10
-
-
  487:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   /* Process Unlocked */
  488:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   __HAL_UNLOCK(huart);
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\ccZKutpq.s 			page 10
+
+
  489:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
  490:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   return status;
  491:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** }
@@ -598,11 +596,11 @@ ARM GAS  /tmp/cc1EZBap.s 			page 1
  541:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
  542:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   /* Check parameters */
  543:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   assert_param(IS_UART_FIFO_INSTANCE(huart->Instance));
-ARM GAS  /tmp/cc1EZBap.s 			page 11
-
-
  544:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
  545:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   /* Process Locked */
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\ccZKutpq.s 			page 11
+
+
  546:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   __HAL_LOCK(huart);
  547:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
  548:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   huart->gState = HAL_UART_STATE_BUSY;
@@ -658,11 +656,11 @@ ARM GAS  /tmp/cc1EZBap.s 			page 1
  598:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   CLEAR_BIT(tmpcr1, USART_CR1_FIFOEN);
  599:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   huart->FifoMode = UART_FIFOMODE_DISABLE;
  600:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
-ARM GAS  /tmp/cc1EZBap.s 			page 12
-
-
  601:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   /* Restore UART configuration */
  602:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   WRITE_REG(huart->Instance->CR1, tmpcr1);
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\ccZKutpq.s 			page 12
+
+
  603:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
  604:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   huart->gState = HAL_UART_STATE_READY;
  605:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
@@ -718,11 +716,11 @@ ARM GAS  /tmp/cc1EZBap.s 			page 1
  655:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   /* Process Unlocked */
  656:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   __HAL_UNLOCK(huart);
  657:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
-ARM GAS  /tmp/cc1EZBap.s 			page 13
-
-
  658:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   return HAL_OK;
  659:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** }
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\ccZKutpq.s 			page 13
+
+
  660:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
  661:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** /**
  662:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   * @brief  Set the RXFIFO threshold.
@@ -778,11 +776,11 @@ ARM GAS  /tmp/cc1EZBap.s 			page 1
  712:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   * @}
  713:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   */
  714:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
-ARM GAS  /tmp/cc1EZBap.s 			page 14
-
-
  715:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** /**
  716:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   * @}
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\ccZKutpq.s 			page 14
+
+
  717:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   */
  718:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
  719:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** /** @addtogroup UARTEx_Private_Functions
@@ -797,805 +795,686 @@ ARM GAS  /tmp/cc1EZBap.s 			page 1
  728:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   */
  729:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** static void UARTEx_Wakeup_AddressConfig(UART_HandleTypeDef *huart, UART_WakeUpTypeDef WakeUpSelecti
  730:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** {
-  29              		.loc 1 730 1 view -0
-  30              		.cfi_startproc
-  31              		@ args = 0, pretend = 0, frame = 8
-  32              		@ frame_needed = 0, uses_anonymous_args = 0
-  33              		@ link register save eliminated.
-  34              		.loc 1 730 1 is_stmt 0 view .LVU1
-  35 0000 82B0     		sub	sp, sp, #8
-  36              	.LCFI0:
-  37              		.cfi_def_cfa_offset 8
-  38 0002 02AB     		add	r3, sp, #8
-  39 0004 03E90600 		stmdb	r3, {r1, r2}
+  27              		.loc 1 730 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 8
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31              		@ link register save eliminated.
+  32              	.LVL0:
+  33 0000 82B0     		sub	sp, sp, #8
+  34              	.LCFI0:
+  35              		.cfi_def_cfa_offset 8
+  36 0002 02AB     		add	r3, sp, #8
+  37 0004 03E90600 		stmdb	r3, {r1, r2}
  731:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   assert_param(IS_UART_ADDRESSLENGTH_DETECT(WakeUpSelection.AddressLength));
-  40              		.loc 1 731 3 is_stmt 1 view .LVU2
  732:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
  733:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   /* Set the USART address length */
  734:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   MODIFY_REG(huart->Instance->CR2, USART_CR2_ADDM7, WakeUpSelection.AddressLength);
-  41              		.loc 1 734 3 view .LVU3
-  42 0008 0268     		ldr	r2, [r0]
-  43 000a 5368     		ldr	r3, [r2, #4]
-  44 000c 23F01003 		bic	r3, r3, #16
-  45 0010 BDF80410 		ldrh	r1, [sp, #4]
-  46 0014 0B43     		orrs	r3, r3, r1
-  47 0016 5360     		str	r3, [r2, #4]
+  38              		.loc 1 734 0
+  39 0008 0268     		ldr	r2, [r0]
+  40 000a 5368     		ldr	r3, [r2, #4]
+  41 000c 23F01003 		bic	r3, r3, #16
+  42 0010 BDF80410 		ldrh	r1, [sp, #4]
+  43 0014 0B43     		orrs	r3, r3, r1
+  44 0016 5360     		str	r3, [r2, #4]
  735:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
  736:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   /* Set the USART address node */
  737:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   MODIFY_REG(huart->Instance->CR2, USART_CR2_ADD, ((uint32_t)WakeUpSelection.Address << UART_CR2_AD
-  48              		.loc 1 737 3 view .LVU4
-  49 0018 0268     		ldr	r2, [r0]
-  50 001a 5368     		ldr	r3, [r2, #4]
-  51 001c 23F07F43 		bic	r3, r3, #-16777216
-  52 0020 9DF80610 		ldrb	r1, [sp, #6]	@ zero_extendqisi2
-  53 0024 43EA0163 		orr	r3, r3, r1, lsl #24
-  54 0028 5360     		str	r3, [r2, #4]
+  45              		.loc 1 737 0
+  46 0018 0268     		ldr	r2, [r0]
+  47 001a 5368     		ldr	r3, [r2, #4]
+  48 001c 23F07F43 		bic	r3, r3, #-16777216
+  49 0020 9DF80610 		ldrb	r1, [sp, #6]	@ zero_extendqisi2
+  50 0024 43EA0163 		orr	r3, r3, r1, lsl #24
+  51 0028 5360     		str	r3, [r2, #4]
  738:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** }
-  55              		.loc 1 738 1 is_stmt 0 view .LVU5
-  56 002a 02B0     		add	sp, sp, #8
-  57              	.LCFI1:
-  58              		.cfi_def_cfa_offset 0
-  59              		@ sp needed
-  60 002c 7047     		bx	lr
-  61              		.cfi_endproc
-ARM GAS  /tmp/cc1EZBap.s 			page 15
+  52              		.loc 1 738 0
+  53 002a 02B0     		add	sp, sp, #8
+  54              	.LCFI1:
+  55              		.cfi_def_cfa_offset 0
+  56              		@ sp needed
+  57 002c 7047     		bx	lr
+  58              		.cfi_endproc
+  59              	.LFE138:
+  61              		.section	.text.HAL_RS485Ex_Init,"ax",%progbits
+  62              		.align	1
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\ccZKutpq.s 			page 15
 
 
-  62              	.LFE138:
-  64              		.section	.text.HAL_RS485Ex_Init,"ax",%progbits
-  65              		.align	1
-  66              		.global	HAL_RS485Ex_Init
-  67              		.syntax unified
-  68              		.thumb
-  69              		.thumb_func
-  70              		.fpu fpv4-sp-d16
-  72              	HAL_RS485Ex_Init:
-  73              	.LVL1:
-  74              	.LFB130:
+  63              		.global	HAL_RS485Ex_Init
+  64              		.syntax unified
+  65              		.thumb
+  66              		.thumb_func
+  67              		.fpu fpv4-sp-d16
+  69              	HAL_RS485Ex_Init:
+  70              	.LFB130:
  172:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   uint32_t temp;
-  75              		.loc 1 172 1 is_stmt 1 view -0
-  76              		.cfi_startproc
-  77              		@ args = 0, pretend = 0, frame = 0
-  78              		@ frame_needed = 0, uses_anonymous_args = 0
- 173:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
-  79              		.loc 1 173 3 view .LVU7
+  71              		.loc 1 172 0
+  72              		.cfi_startproc
+  73              		@ args = 0, pretend = 0, frame = 0
+  74              		@ frame_needed = 0, uses_anonymous_args = 0
+  75              	.LVL1:
  176:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   {
-  80              		.loc 1 176 3 view .LVU8
- 176:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   {
-  81              		.loc 1 176 6 is_stmt 0 view .LVU9
-  82 0000 0028     		cmp	r0, #0
-  83 0002 3CD0     		beq	.L7
+  76              		.loc 1 176 0
+  77 0000 0028     		cmp	r0, #0
+  78 0002 3CD0     		beq	.L7
  172:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   uint32_t temp;
-  84              		.loc 1 172 1 view .LVU10
-  85 0004 F8B5     		push	{r3, r4, r5, r6, r7, lr}
-  86              	.LCFI2:
-  87              		.cfi_def_cfa_offset 24
-  88              		.cfi_offset 3, -24
-  89              		.cfi_offset 4, -20
-  90              		.cfi_offset 5, -16
-  91              		.cfi_offset 6, -12
-  92              		.cfi_offset 7, -8
-  93              		.cfi_offset 14, -4
-  94 0006 0446     		mov	r4, r0
-  95 0008 1D46     		mov	r5, r3
-  96 000a 1646     		mov	r6, r2
-  97 000c 0F46     		mov	r7, r1
- 181:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
-  98              		.loc 1 181 3 is_stmt 1 view .LVU11
- 184:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
-  99              		.loc 1 184 3 view .LVU12
- 187:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 100              		.loc 1 187 3 view .LVU13
- 190:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 101              		.loc 1 190 3 view .LVU14
+  79              		.loc 1 172 0
+  80 0004 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+  81              	.LCFI2:
+  82              		.cfi_def_cfa_offset 24
+  83              		.cfi_offset 3, -24
+  84              		.cfi_offset 4, -20
+  85              		.cfi_offset 5, -16
+  86              		.cfi_offset 6, -12
+  87              		.cfi_offset 7, -8
+  88              		.cfi_offset 14, -4
+  89 0006 0446     		mov	r4, r0
+  90 0008 1D46     		mov	r5, r3
+  91 000a 1646     		mov	r6, r2
+  92 000c 0F46     		mov	r7, r1
  192:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   {
- 102              		.loc 1 192 3 view .LVU15
- 192:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   {
- 103              		.loc 1 192 12 is_stmt 0 view .LVU16
- 104 000e 436F     		ldr	r3, [r0, #116]
- 105              	.LVL2:
- 192:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   {
- 106              		.loc 1 192 6 view .LVU17
- 107 0010 63B3     		cbz	r3, .L12
- 108              	.LVL3:
-ARM GAS  /tmp/cc1EZBap.s 			page 16
-
-
- 109              	.L5:
+  93              		.loc 1 192 0
+  94 000e 436F     		ldr	r3, [r0, #116]
+  95              	.LVL2:
+  96 0010 63B3     		cbz	r3, .L12
+  97              	.LVL3:
+  98              	.L5:
  213:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 110              		.loc 1 213 3 is_stmt 1 view .LVU18
- 213:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 111              		.loc 1 213 17 is_stmt 0 view .LVU19
- 112 0012 2423     		movs	r3, #36
- 113 0014 6367     		str	r3, [r4, #116]
+  99              		.loc 1 213 0
+ 100 0012 2423     		movs	r3, #36
+ 101 0014 6367     		str	r3, [r4, #116]
  216:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 114              		.loc 1 216 3 is_stmt 1 view .LVU20
- 115 0016 2268     		ldr	r2, [r4]
- 116 0018 1368     		ldr	r3, [r2]
- 117 001a 23F00103 		bic	r3, r3, #1
- 118 001e 1360     		str	r3, [r2]
+ 102              		.loc 1 216 0
+ 103 0016 2268     		ldr	r2, [r4]
+ 104 0018 1368     		ldr	r3, [r2]
+ 105 001a 23F00103 		bic	r3, r3, #1
+ 106 001e 1360     		str	r3, [r2]
  219:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   {
- 119              		.loc 1 219 3 view .LVU21
- 219:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   {
- 120              		.loc 1 219 7 is_stmt 0 view .LVU22
- 121 0020 2046     		mov	r0, r4
- 122 0022 FFF7FEFF 		bl	UART_SetConfig
- 123              	.LVL4:
- 219:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   {
- 124              		.loc 1 219 6 view .LVU23
- 125 0026 0128     		cmp	r0, #1
- 126 0028 1FD0     		beq	.L4
+ 107              		.loc 1 219 0
+ 108 0020 2046     		mov	r0, r4
+ 109 0022 FFF7FEFF 		bl	UART_SetConfig
+ 110              	.LVL4:
+ 111 0026 0128     		cmp	r0, #1
+ 112 0028 2BD0     		beq	.L4
  224:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   {
- 127              		.loc 1 224 3 is_stmt 1 view .LVU24
- 224:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   {
- 128              		.loc 1 224 26 is_stmt 0 view .LVU25
- 129 002a 636A     		ldr	r3, [r4, #36]
- 224:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   {
- 130              		.loc 1 224 6 view .LVU26
- 131 002c 1BBB     		cbnz	r3, .L13
- 132              	.L6:
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\ccZKutpq.s 			page 16
+
+
+ 113              		.loc 1 224 0
+ 114 002a 636A     		ldr	r3, [r4, #36]
+ 115 002c 1BBB     		cbnz	r3, .L13
+ 116              	.L6:
  230:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 133              		.loc 1 230 3 is_stmt 1 view .LVU27
- 134 002e 2268     		ldr	r2, [r4]
- 135 0030 9368     		ldr	r3, [r2, #8]
- 136 0032 43F48043 		orr	r3, r3, #16384
- 137 0036 9360     		str	r3, [r2, #8]
+ 117              		.loc 1 230 0
+ 118 002e 2268     		ldr	r2, [r4]
+ 119 0030 9368     		ldr	r3, [r2, #8]
+ 120 0032 43F48043 		orr	r3, r3, #16384
+ 121 0036 9360     		str	r3, [r2, #8]
  233:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 138              		.loc 1 233 3 view .LVU28
- 139 0038 2268     		ldr	r2, [r4]
- 140 003a 9368     		ldr	r3, [r2, #8]
- 141 003c 23F40043 		bic	r3, r3, #32768
- 142 0040 3B43     		orrs	r3, r3, r7
- 143 0042 9360     		str	r3, [r2, #8]
- 236:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   temp |= (DeassertionTime << UART_CR1_DEDT_ADDRESS_LSB_POS);
- 144              		.loc 1 236 3 view .LVU29
- 145              	.LVL5:
+ 122              		.loc 1 233 0
+ 123 0038 2268     		ldr	r2, [r4]
+ 124 003a 9368     		ldr	r3, [r2, #8]
+ 125 003c 23F40043 		bic	r3, r3, #32768
+ 126 0040 3B43     		orrs	r3, r3, r7
+ 127 0042 9360     		str	r3, [r2, #8]
+ 128              	.LVL5:
  237:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   MODIFY_REG(huart->Instance->CR1, (USART_CR1_DEDT | USART_CR1_DEAT), temp);
- 146              		.loc 1 237 3 view .LVU30
- 237:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   MODIFY_REG(huart->Instance->CR1, (USART_CR1_DEDT | USART_CR1_DEAT), temp);
- 147              		.loc 1 237 28 is_stmt 0 view .LVU31
- 148 0044 2904     		lsls	r1, r5, #16
- 237:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   MODIFY_REG(huart->Instance->CR1, (USART_CR1_DEDT | USART_CR1_DEAT), temp);
- 149              		.loc 1 237 8 view .LVU32
- 150 0046 41EA4652 		orr	r2, r1, r6, lsl #21
-ARM GAS  /tmp/cc1EZBap.s 			page 17
-
-
- 151              	.LVL6:
+ 129              		.loc 1 237 0
+ 130 0044 2D04     		lsls	r5, r5, #16
+ 131              	.LVL6:
+ 132 0046 45EA4655 		orr	r5, r5, r6, lsl #21
+ 133              	.LVL7:
  238:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 152              		.loc 1 238 3 is_stmt 1 view .LVU33
- 153 004a 2368     		ldr	r3, [r4]
- 154 004c 1968     		ldr	r1, [r3]
- 155 004e 21F07F71 		bic	r1, r1, #66846720
- 156 0052 21F44031 		bic	r1, r1, #196608
- 157 0056 1143     		orrs	r1, r1, r2
- 158 0058 1960     		str	r1, [r3]
+ 134              		.loc 1 238 0
+ 135 004a 2368     		ldr	r3, [r4]
+ 136 004c 1A68     		ldr	r2, [r3]
+ 137 004e 22F07F72 		bic	r2, r2, #66846720
+ 138 0052 22F44032 		bic	r2, r2, #196608
+ 139 0056 1543     		orrs	r5, r5, r2
+ 140              	.LVL8:
+ 141 0058 1D60     		str	r5, [r3]
  241:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 159              		.loc 1 241 3 view .LVU34
- 160 005a 2268     		ldr	r2, [r4]
- 161              	.LVL7:
- 241:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 162              		.loc 1 241 3 is_stmt 0 view .LVU35
- 163 005c 1368     		ldr	r3, [r2]
- 164 005e 43F00103 		orr	r3, r3, #1
- 165 0062 1360     		str	r3, [r2]
+ 142              		.loc 1 241 0
+ 143 005a 2268     		ldr	r2, [r4]
+ 144 005c 1368     		ldr	r3, [r2]
+ 145 005e 43F00103 		orr	r3, r3, #1
+ 146 0062 1360     		str	r3, [r2]
  244:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** }
- 166              		.loc 1 244 3 is_stmt 1 view .LVU36
- 244:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** }
- 167              		.loc 1 244 11 is_stmt 0 view .LVU37
- 168 0064 2046     		mov	r0, r4
- 169 0066 FFF7FEFF 		bl	UART_CheckIdleState
- 170              	.LVL8:
- 171              	.L4:
- 245:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 172              		.loc 1 245 1 view .LVU38
- 173 006a F8BD     		pop	{r3, r4, r5, r6, r7, pc}
- 174              	.LVL9:
- 175              	.L12:
+ 147              		.loc 1 244 0
+ 148 0064 2046     		mov	r0, r4
+ 149 0066 FFF7FEFF 		bl	UART_CheckIdleState
+ 150              	.LVL9:
+ 151 006a F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 152              	.LVL10:
+ 153              	.L12:
  195:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 176              		.loc 1 195 5 is_stmt 1 view .LVU39
- 195:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 177              		.loc 1 195 17 is_stmt 0 view .LVU40
- 178 006c 80F87030 		strb	r3, [r0, #112]
+ 154              		.loc 1 195 0
+ 155 006c 80F87030 		strb	r3, [r0, #112]
  209:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** #endif /* (USE_HAL_UART_REGISTER_CALLBACKS) */
- 179              		.loc 1 209 5 is_stmt 1 view .LVU41
- 180 0070 FFF7FEFF 		bl	HAL_UART_MspInit
- 181              	.LVL10:
- 209:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** #endif /* (USE_HAL_UART_REGISTER_CALLBACKS) */
- 182              		.loc 1 209 5 is_stmt 0 view .LVU42
- 183 0074 CDE7     		b	.L5
- 184              	.L13:
+ 156              		.loc 1 209 0
+ 157 0070 FFF7FEFF 		bl	HAL_UART_MspInit
+ 158              	.LVL11:
+ 159 0074 CDE7     		b	.L5
+ 160              	.L13:
  226:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   }
- 185              		.loc 1 226 5 is_stmt 1 view .LVU43
- 186 0076 2046     		mov	r0, r4
- 187 0078 FFF7FEFF 		bl	UART_AdvFeatureConfig
- 188              	.LVL11:
- 189 007c D7E7     		b	.L6
- 190              	.LVL12:
- 191              	.L7:
- 192              	.LCFI3:
- 193              		.cfi_def_cfa_offset 0
- 194              		.cfi_restore 3
- 195              		.cfi_restore 4
- 196              		.cfi_restore 5
-ARM GAS  /tmp/cc1EZBap.s 			page 18
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\ccZKutpq.s 			page 17
 
 
- 197              		.cfi_restore 6
- 198              		.cfi_restore 7
- 199              		.cfi_restore 14
+ 161              		.loc 1 226 0
+ 162 0076 2046     		mov	r0, r4
+ 163 0078 FFF7FEFF 		bl	UART_AdvFeatureConfig
+ 164              	.LVL12:
+ 165 007c D7E7     		b	.L6
+ 166              	.LVL13:
+ 167              	.L7:
+ 168              	.LCFI3:
+ 169              		.cfi_def_cfa_offset 0
+ 170              		.cfi_restore 3
+ 171              		.cfi_restore 4
+ 172              		.cfi_restore 5
+ 173              		.cfi_restore 6
+ 174              		.cfi_restore 7
+ 175              		.cfi_restore 14
  178:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   }
- 200              		.loc 1 178 12 is_stmt 0 view .LVU44
- 201 007e 0120     		movs	r0, #1
- 202              	.LVL13:
+ 176              		.loc 1 178 0
+ 177 007e 0120     		movs	r0, #1
+ 178              	.LVL14:
+ 179 0080 7047     		bx	lr
+ 180              	.LVL15:
+ 181              	.L4:
+ 182              	.LCFI4:
+ 183              		.cfi_def_cfa_offset 24
+ 184              		.cfi_offset 3, -24
+ 185              		.cfi_offset 4, -20
+ 186              		.cfi_offset 5, -16
+ 187              		.cfi_offset 6, -12
+ 188              		.cfi_offset 7, -8
+ 189              		.cfi_offset 14, -4
  245:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 203              		.loc 1 245 1 view .LVU45
- 204 0080 7047     		bx	lr
- 205              		.cfi_endproc
- 206              	.LFE130:
- 208              		.section	.text.HAL_UARTEx_WakeupCallback,"ax",%progbits
- 209              		.align	1
- 210              		.weak	HAL_UARTEx_WakeupCallback
- 211              		.syntax unified
- 212              		.thumb
- 213              		.thumb_func
- 214              		.fpu fpv4-sp-d16
- 216              	HAL_UARTEx_WakeupCallback:
- 217              	.LVL14:
- 218              	.LFB131:
+ 190              		.loc 1 245 0
+ 191 0082 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 192              		.cfi_endproc
+ 193              	.LFE130:
+ 195              		.section	.text.HAL_UARTEx_WakeupCallback,"ax",%progbits
+ 196              		.align	1
+ 197              		.weak	HAL_UARTEx_WakeupCallback
+ 198              		.syntax unified
+ 199              		.thumb
+ 200              		.thumb_func
+ 201              		.fpu fpv4-sp-d16
+ 203              	HAL_UARTEx_WakeupCallback:
+ 204              	.LFB131:
  277:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   /* Prevent unused argument(s) compilation warning */
- 219              		.loc 1 277 1 is_stmt 1 view -0
- 220              		.cfi_startproc
- 221              		@ args = 0, pretend = 0, frame = 0
- 222              		@ frame_needed = 0, uses_anonymous_args = 0
- 223              		@ link register save eliminated.
- 279:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 224              		.loc 1 279 3 view .LVU47
- 284:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 225              		.loc 1 284 1 is_stmt 0 view .LVU48
- 226 0000 7047     		bx	lr
- 227              		.cfi_endproc
- 228              	.LFE131:
- 230              		.section	.text.HAL_UARTEx_EnableClockStopMode,"ax",%progbits
- 231              		.align	1
- 232              		.global	HAL_UARTEx_EnableClockStopMode
- 233              		.syntax unified
- 234              		.thumb
- 235              		.thumb_func
- 236              		.fpu fpv4-sp-d16
- 238              	HAL_UARTEx_EnableClockStopMode:
- 239              	.LVL15:
- 240              	.LFB132:
+ 205              		.loc 1 277 0
+ 206              		.cfi_startproc
+ 207              		@ args = 0, pretend = 0, frame = 0
+ 208              		@ frame_needed = 0, uses_anonymous_args = 0
+ 209              		@ link register save eliminated.
+ 210              	.LVL16:
+ 211 0000 7047     		bx	lr
+ 212              		.cfi_endproc
+ 213              	.LFE131:
+ 215              		.section	.text.HAL_UARTEx_EnableClockStopMode,"ax",%progbits
+ 216              		.align	1
+ 217              		.global	HAL_UARTEx_EnableClockStopMode
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\ccZKutpq.s 			page 18
+
+
+ 218              		.syntax unified
+ 219              		.thumb
+ 220              		.thumb_func
+ 221              		.fpu fpv4-sp-d16
+ 223              	HAL_UARTEx_EnableClockStopMode:
+ 224              	.LFB132:
  360:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   /* Process Locked */
- 241              		.loc 1 360 1 is_stmt 1 view -0
- 242              		.cfi_startproc
- 243              		@ args = 0, pretend = 0, frame = 0
- 244              		@ frame_needed = 0, uses_anonymous_args = 0
- 245              		@ link register save eliminated.
+ 225              		.loc 1 360 0
+ 226              		.cfi_startproc
+ 227              		@ args = 0, pretend = 0, frame = 0
+ 228              		@ frame_needed = 0, uses_anonymous_args = 0
+ 229              		@ link register save eliminated.
+ 230              	.LVL17:
  362:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 246              		.loc 1 362 3 view .LVU50
+ 231              		.loc 1 362 0
+ 232 0000 90F87030 		ldrb	r3, [r0, #112]	@ zero_extendqisi2
+ 233 0004 012B     		cmp	r3, #1
+ 234 0006 0CD0     		beq	.L17
  362:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 247              		.loc 1 362 3 view .LVU51
- 248 0000 90F87030 		ldrb	r3, [r0, #112]	@ zero_extendqisi2
- 249 0004 012B     		cmp	r3, #1
-ARM GAS  /tmp/cc1EZBap.s 			page 19
-
-
- 250 0006 0CD0     		beq	.L17
- 362:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 251              		.loc 1 362 3 discriminator 2 view .LVU52
- 252 0008 0123     		movs	r3, #1
- 253 000a 80F87030 		strb	r3, [r0, #112]
+ 235              		.loc 1 362 0 is_stmt 0 discriminator 2
+ 236 0008 0123     		movs	r3, #1
+ 237 000a 80F87030 		strb	r3, [r0, #112]
  365:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 254              		.loc 1 365 3 discriminator 2 view .LVU53
- 255 000e 0268     		ldr	r2, [r0]
- 256 0010 9368     		ldr	r3, [r2, #8]
- 257 0012 43F40003 		orr	r3, r3, #8388608
- 258 0016 9360     		str	r3, [r2, #8]
+ 238              		.loc 1 365 0 is_stmt 1 discriminator 2
+ 239 000e 0268     		ldr	r2, [r0]
+ 240 0010 9368     		ldr	r3, [r2, #8]
+ 241 0012 43F40003 		orr	r3, r3, #8388608
+ 242 0016 9360     		str	r3, [r2, #8]
  368:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 259              		.loc 1 368 3 discriminator 2 view .LVU54
- 368:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 260              		.loc 1 368 3 discriminator 2 view .LVU55
- 261 0018 0023     		movs	r3, #0
- 262 001a 80F87030 		strb	r3, [r0, #112]
+ 243              		.loc 1 368 0 discriminator 2
+ 244 0018 0023     		movs	r3, #0
+ 245 001a 80F87030 		strb	r3, [r0, #112]
  370:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** }
- 263              		.loc 1 370 3 discriminator 2 view .LVU56
- 370:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** }
- 264              		.loc 1 370 10 is_stmt 0 discriminator 2 view .LVU57
- 265 001e 1846     		mov	r0, r3
- 266              	.LVL16:
- 370:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** }
- 267              		.loc 1 370 10 discriminator 2 view .LVU58
- 268 0020 7047     		bx	lr
- 269              	.LVL17:
- 270              	.L17:
+ 246              		.loc 1 370 0 discriminator 2
+ 247 001e 1846     		mov	r0, r3
+ 248              	.LVL18:
+ 249 0020 7047     		bx	lr
+ 250              	.LVL19:
+ 251              	.L17:
  362:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 271              		.loc 1 362 3 view .LVU59
- 272 0022 0220     		movs	r0, #2
- 273              	.LVL18:
+ 252              		.loc 1 362 0
+ 253 0022 0220     		movs	r0, #2
+ 254              	.LVL20:
  371:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 274              		.loc 1 371 1 view .LVU60
- 275 0024 7047     		bx	lr
- 276              		.cfi_endproc
- 277              	.LFE132:
- 279              		.section	.text.HAL_UARTEx_DisableClockStopMode,"ax",%progbits
- 280              		.align	1
- 281              		.global	HAL_UARTEx_DisableClockStopMode
- 282              		.syntax unified
- 283              		.thumb
- 284              		.thumb_func
- 285              		.fpu fpv4-sp-d16
- 287              	HAL_UARTEx_DisableClockStopMode:
- 288              	.LVL19:
- 289              	.LFB133:
+ 255              		.loc 1 371 0
+ 256 0024 7047     		bx	lr
+ 257              		.cfi_endproc
+ 258              	.LFE132:
+ 260              		.section	.text.HAL_UARTEx_DisableClockStopMode,"ax",%progbits
+ 261              		.align	1
+ 262              		.global	HAL_UARTEx_DisableClockStopMode
+ 263              		.syntax unified
+ 264              		.thumb
+ 265              		.thumb_func
+ 266              		.fpu fpv4-sp-d16
+ 268              	HAL_UARTEx_DisableClockStopMode:
+ 269              	.LFB133:
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\ccZKutpq.s 			page 19
+
+
  379:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   /* Process Locked */
- 290              		.loc 1 379 1 is_stmt 1 view -0
- 291              		.cfi_startproc
- 292              		@ args = 0, pretend = 0, frame = 0
- 293              		@ frame_needed = 0, uses_anonymous_args = 0
- 294              		@ link register save eliminated.
+ 270              		.loc 1 379 0
+ 271              		.cfi_startproc
+ 272              		@ args = 0, pretend = 0, frame = 0
+ 273              		@ frame_needed = 0, uses_anonymous_args = 0
+ 274              		@ link register save eliminated.
+ 275              	.LVL21:
  381:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 295              		.loc 1 381 3 view .LVU62
+ 276              		.loc 1 381 0
+ 277 0000 90F87030 		ldrb	r3, [r0, #112]	@ zero_extendqisi2
+ 278 0004 012B     		cmp	r3, #1
+ 279 0006 0CD0     		beq	.L20
  381:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 296              		.loc 1 381 3 view .LVU63
-ARM GAS  /tmp/cc1EZBap.s 			page 20
-
-
- 297 0000 90F87030 		ldrb	r3, [r0, #112]	@ zero_extendqisi2
- 298 0004 012B     		cmp	r3, #1
- 299 0006 0CD0     		beq	.L20
- 381:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 300              		.loc 1 381 3 discriminator 2 view .LVU64
- 301 0008 0123     		movs	r3, #1
- 302 000a 80F87030 		strb	r3, [r0, #112]
+ 280              		.loc 1 381 0 is_stmt 0 discriminator 2
+ 281 0008 0123     		movs	r3, #1
+ 282 000a 80F87030 		strb	r3, [r0, #112]
  384:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 303              		.loc 1 384 3 discriminator 2 view .LVU65
- 304 000e 0268     		ldr	r2, [r0]
- 305 0010 9368     		ldr	r3, [r2, #8]
- 306 0012 23F40003 		bic	r3, r3, #8388608
- 307 0016 9360     		str	r3, [r2, #8]
+ 283              		.loc 1 384 0 is_stmt 1 discriminator 2
+ 284 000e 0268     		ldr	r2, [r0]
+ 285 0010 9368     		ldr	r3, [r2, #8]
+ 286 0012 23F40003 		bic	r3, r3, #8388608
+ 287 0016 9360     		str	r3, [r2, #8]
  387:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 308              		.loc 1 387 3 discriminator 2 view .LVU66
- 387:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 309              		.loc 1 387 3 discriminator 2 view .LVU67
- 310 0018 0023     		movs	r3, #0
- 311 001a 80F87030 		strb	r3, [r0, #112]
+ 288              		.loc 1 387 0 discriminator 2
+ 289 0018 0023     		movs	r3, #0
+ 290 001a 80F87030 		strb	r3, [r0, #112]
  389:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** }
- 312              		.loc 1 389 3 discriminator 2 view .LVU68
- 389:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** }
- 313              		.loc 1 389 10 is_stmt 0 discriminator 2 view .LVU69
- 314 001e 1846     		mov	r0, r3
- 315              	.LVL20:
- 389:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** }
- 316              		.loc 1 389 10 discriminator 2 view .LVU70
- 317 0020 7047     		bx	lr
- 318              	.LVL21:
- 319              	.L20:
+ 291              		.loc 1 389 0 discriminator 2
+ 292 001e 1846     		mov	r0, r3
+ 293              	.LVL22:
+ 294 0020 7047     		bx	lr
+ 295              	.LVL23:
+ 296              	.L20:
  381:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 320              		.loc 1 381 3 view .LVU71
- 321 0022 0220     		movs	r0, #2
- 322              	.LVL22:
+ 297              		.loc 1 381 0
+ 298 0022 0220     		movs	r0, #2
+ 299              	.LVL24:
  390:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** #endif /* USART_CR3_UCESM */
- 323              		.loc 1 390 1 view .LVU72
- 324 0024 7047     		bx	lr
- 325              		.cfi_endproc
- 326              	.LFE133:
- 328              		.section	.text.HAL_MultiProcessorEx_AddressLength_Set,"ax",%progbits
- 329              		.align	1
- 330              		.global	HAL_MultiProcessorEx_AddressLength_Set
- 331              		.syntax unified
- 332              		.thumb
- 333              		.thumb_func
- 334              		.fpu fpv4-sp-d16
- 336              	HAL_MultiProcessorEx_AddressLength_Set:
- 337              	.LVL23:
- 338              	.LFB134:
+ 300              		.loc 1 390 0
+ 301 0024 7047     		bx	lr
+ 302              		.cfi_endproc
+ 303              	.LFE133:
+ 305              		.section	.text.HAL_MultiProcessorEx_AddressLength_Set,"ax",%progbits
+ 306              		.align	1
+ 307              		.global	HAL_MultiProcessorEx_AddressLength_Set
+ 308              		.syntax unified
+ 309              		.thumb
+ 310              		.thumb_func
+ 311              		.fpu fpv4-sp-d16
+ 313              	HAL_MultiProcessorEx_AddressLength_Set:
+ 314              	.LFB134:
  407:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   /* Check the UART handle allocation */
- 339              		.loc 1 407 1 is_stmt 1 view -0
- 340              		.cfi_startproc
- 341              		@ args = 0, pretend = 0, frame = 0
- 342              		@ frame_needed = 0, uses_anonymous_args = 0
- 409:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   {
- 343              		.loc 1 409 3 view .LVU74
- 409:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   {
-ARM GAS  /tmp/cc1EZBap.s 			page 21
+ 315              		.loc 1 407 0
+ 316              		.cfi_startproc
+ 317              		@ args = 0, pretend = 0, frame = 0
+ 318              		@ frame_needed = 0, uses_anonymous_args = 0
+ 319              	.LVL25:
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\ccZKutpq.s 			page 20
 
 
- 344              		.loc 1 409 6 is_stmt 0 view .LVU75
- 345 0000 A8B1     		cbz	r0, .L23
+ 409:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   {
+ 320              		.loc 1 409 0
+ 321 0000 A8B1     		cbz	r0, .L23
  407:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   /* Check the UART handle allocation */
- 346              		.loc 1 407 1 view .LVU76
- 347 0002 08B5     		push	{r3, lr}
- 348              	.LCFI4:
- 349              		.cfi_def_cfa_offset 8
- 350              		.cfi_offset 3, -8
- 351              		.cfi_offset 14, -4
- 415:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 352              		.loc 1 415 3 is_stmt 1 view .LVU77
+ 322              		.loc 1 407 0
+ 323 0002 08B5     		push	{r3, lr}
+ 324              	.LCFI5:
+ 325              		.cfi_def_cfa_offset 8
+ 326              		.cfi_offset 3, -8
+ 327              		.cfi_offset 14, -4
  417:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 353              		.loc 1 417 3 view .LVU78
- 417:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 354              		.loc 1 417 17 is_stmt 0 view .LVU79
- 355 0004 2423     		movs	r3, #36
- 356 0006 4367     		str	r3, [r0, #116]
+ 328              		.loc 1 417 0
+ 329 0004 2423     		movs	r3, #36
+ 330 0006 4367     		str	r3, [r0, #116]
  420:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 357              		.loc 1 420 3 is_stmt 1 view .LVU80
- 358 0008 0268     		ldr	r2, [r0]
- 359 000a 1368     		ldr	r3, [r2]
- 360 000c 23F00103 		bic	r3, r3, #1
- 361 0010 1360     		str	r3, [r2]
+ 331              		.loc 1 420 0
+ 332 0008 0268     		ldr	r2, [r0]
+ 333 000a 1368     		ldr	r3, [r2]
+ 334 000c 23F00103 		bic	r3, r3, #1
+ 335 0010 1360     		str	r3, [r2]
  423:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 362              		.loc 1 423 3 view .LVU81
- 363 0012 0268     		ldr	r2, [r0]
- 364 0014 5368     		ldr	r3, [r2, #4]
- 365 0016 23F01003 		bic	r3, r3, #16
- 366 001a 1943     		orrs	r1, r1, r3
- 367              	.LVL24:
- 423:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 368              		.loc 1 423 3 is_stmt 0 view .LVU82
- 369 001c 5160     		str	r1, [r2, #4]
+ 336              		.loc 1 423 0
+ 337 0012 0268     		ldr	r2, [r0]
+ 338 0014 5368     		ldr	r3, [r2, #4]
+ 339 0016 23F01003 		bic	r3, r3, #16
+ 340 001a 1943     		orrs	r1, r1, r3
+ 341              	.LVL26:
+ 342 001c 5160     		str	r1, [r2, #4]
  426:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 370              		.loc 1 426 3 is_stmt 1 view .LVU83
- 371 001e 0268     		ldr	r2, [r0]
- 372 0020 1368     		ldr	r3, [r2]
- 373 0022 43F00103 		orr	r3, r3, #1
- 374 0026 1360     		str	r3, [r2]
+ 343              		.loc 1 426 0
+ 344 001e 0268     		ldr	r2, [r0]
+ 345 0020 1368     		ldr	r3, [r2]
+ 346 0022 43F00103 		orr	r3, r3, #1
+ 347 0026 1360     		str	r3, [r2]
  429:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** }
- 375              		.loc 1 429 3 view .LVU84
- 429:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** }
- 376              		.loc 1 429 11 is_stmt 0 view .LVU85
- 377 0028 FFF7FEFF 		bl	UART_CheckIdleState
- 378              	.LVL25:
- 430:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 379              		.loc 1 430 1 view .LVU86
- 380 002c 08BD     		pop	{r3, pc}
- 381              	.LVL26:
- 382              	.L23:
- 383              	.LCFI5:
- 384              		.cfi_def_cfa_offset 0
- 385              		.cfi_restore 3
- 386              		.cfi_restore 14
+ 348              		.loc 1 429 0
+ 349 0028 FFF7FEFF 		bl	UART_CheckIdleState
+ 350              	.LVL27:
+ 351 002c 08BD     		pop	{r3, pc}
+ 352              	.LVL28:
+ 353              	.L23:
+ 354              	.LCFI6:
+ 355              		.cfi_def_cfa_offset 0
+ 356              		.cfi_restore 3
+ 357              		.cfi_restore 14
  411:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   }
- 387              		.loc 1 411 12 view .LVU87
- 388 002e 0120     		movs	r0, #1
-ARM GAS  /tmp/cc1EZBap.s 			page 22
+ 358              		.loc 1 411 0
+ 359 002e 0120     		movs	r0, #1
+ 360              	.LVL29:
+ 361 0030 7047     		bx	lr
+ 362              		.cfi_endproc
+ 363              	.LFE134:
+ 365              		.section	.text.HAL_UARTEx_StopModeWakeUpSourceConfig,"ax",%progbits
+ 366              		.align	1
+ 367              		.global	HAL_UARTEx_StopModeWakeUpSourceConfig
+ 368              		.syntax unified
+ 369              		.thumb
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\ccZKutpq.s 			page 21
 
 
- 389              	.LVL27:
- 430:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 390              		.loc 1 430 1 view .LVU88
- 391 0030 7047     		bx	lr
- 392              		.cfi_endproc
- 393              	.LFE134:
- 395              		.section	.text.HAL_UARTEx_StopModeWakeUpSourceConfig,"ax",%progbits
- 396              		.align	1
- 397              		.global	HAL_UARTEx_StopModeWakeUpSourceConfig
- 398              		.syntax unified
- 399              		.thumb
- 400              		.thumb_func
- 401              		.fpu fpv4-sp-d16
- 403              	HAL_UARTEx_StopModeWakeUpSourceConfig:
- 404              	.LVL28:
- 405              	.LFB135:
+ 370              		.thumb_func
+ 371              		.fpu fpv4-sp-d16
+ 373              	HAL_UARTEx_StopModeWakeUpSourceConfig:
+ 374              	.LFB135:
  445:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   HAL_StatusTypeDef status = HAL_OK;
- 406              		.loc 1 445 1 is_stmt 1 view -0
- 407              		.cfi_startproc
- 408              		@ args = 0, pretend = 0, frame = 8
- 409              		@ frame_needed = 0, uses_anonymous_args = 0
- 445:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   HAL_StatusTypeDef status = HAL_OK;
- 410              		.loc 1 445 1 is_stmt 0 view .LVU90
- 411 0000 10B5     		push	{r4, lr}
- 412              	.LCFI6:
- 413              		.cfi_def_cfa_offset 8
- 414              		.cfi_offset 4, -8
- 415              		.cfi_offset 14, -4
- 416 0002 84B0     		sub	sp, sp, #16
- 417              	.LCFI7:
- 418              		.cfi_def_cfa_offset 24
- 419 0004 04AB     		add	r3, sp, #16
- 420 0006 03E90600 		stmdb	r3, {r1, r2}
- 446:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   uint32_t tickstart;
- 421              		.loc 1 446 3 is_stmt 1 view .LVU91
- 422              	.LVL29:
- 447:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 423              		.loc 1 447 3 view .LVU92
- 450:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   /* check the wake-up selection parameter */
- 424              		.loc 1 450 3 view .LVU93
- 452:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 425              		.loc 1 452 3 view .LVU94
+ 375              		.loc 1 445 0
+ 376              		.cfi_startproc
+ 377              		@ args = 0, pretend = 0, frame = 8
+ 378              		@ frame_needed = 0, uses_anonymous_args = 0
+ 379              	.LVL30:
+ 380 0000 10B5     		push	{r4, lr}
+ 381              	.LCFI7:
+ 382              		.cfi_def_cfa_offset 8
+ 383              		.cfi_offset 4, -8
+ 384              		.cfi_offset 14, -4
+ 385 0002 84B0     		sub	sp, sp, #16
+ 386              	.LCFI8:
+ 387              		.cfi_def_cfa_offset 24
+ 388 0004 04AB     		add	r3, sp, #16
+ 389 0006 03E90600 		stmdb	r3, {r1, r2}
+ 390              	.LVL31:
  455:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 426              		.loc 1 455 3 view .LVU95
+ 391              		.loc 1 455 0
+ 392 000a 90F87030 		ldrb	r3, [r0, #112]	@ zero_extendqisi2
+ 393 000e 012B     		cmp	r3, #1
+ 394 0010 35D0     		beq	.L32
+ 395 0012 0446     		mov	r4, r0
  455:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 427              		.loc 1 455 3 view .LVU96
- 428 000a 90F87030 		ldrb	r3, [r0, #112]	@ zero_extendqisi2
- 429 000e 012B     		cmp	r3, #1
- 430 0010 35D0     		beq	.L32
- 431 0012 0446     		mov	r4, r0
- 455:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 432              		.loc 1 455 3 discriminator 2 view .LVU97
- 433 0014 0123     		movs	r3, #1
- 434 0016 80F87030 		strb	r3, [r0, #112]
+ 396              		.loc 1 455 0 is_stmt 0 discriminator 2
+ 397 0014 0123     		movs	r3, #1
+ 398 0016 80F87030 		strb	r3, [r0, #112]
  457:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 435              		.loc 1 457 3 discriminator 2 view .LVU98
- 457:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
-ARM GAS  /tmp/cc1EZBap.s 			page 23
-
-
- 436              		.loc 1 457 17 is_stmt 0 discriminator 2 view .LVU99
- 437 001a 2423     		movs	r3, #36
- 438 001c 4367     		str	r3, [r0, #116]
+ 399              		.loc 1 457 0 is_stmt 1 discriminator 2
+ 400 001a 2423     		movs	r3, #36
+ 401 001c 4367     		str	r3, [r0, #116]
  460:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 439              		.loc 1 460 3 is_stmt 1 discriminator 2 view .LVU100
- 440 001e 0268     		ldr	r2, [r0]
- 441 0020 1368     		ldr	r3, [r2]
- 442 0022 23F00103 		bic	r3, r3, #1
- 443 0026 1360     		str	r3, [r2]
+ 402              		.loc 1 460 0 discriminator 2
+ 403 001e 0268     		ldr	r2, [r0]
+ 404 0020 1368     		ldr	r3, [r2]
+ 405 0022 23F00103 		bic	r3, r3, #1
+ 406 0026 1360     		str	r3, [r2]
  463:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 444              		.loc 1 463 3 discriminator 2 view .LVU101
- 445 0028 0168     		ldr	r1, [r0]
- 446 002a 8B68     		ldr	r3, [r1, #8]
- 447 002c 23F44013 		bic	r3, r3, #3145728
- 448 0030 029A     		ldr	r2, [sp, #8]
- 449 0032 1343     		orrs	r3, r3, r2
- 450 0034 8B60     		str	r3, [r1, #8]
+ 407              		.loc 1 463 0 discriminator 2
+ 408 0028 0168     		ldr	r1, [r0]
+ 409 002a 8B68     		ldr	r3, [r1, #8]
+ 410 002c 23F44013 		bic	r3, r3, #3145728
+ 411 0030 029A     		ldr	r2, [sp, #8]
+ 412 0032 1343     		orrs	r3, r3, r2
+ 413 0034 8B60     		str	r3, [r1, #8]
  465:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   {
- 451              		.loc 1 465 3 discriminator 2 view .LVU102
- 465:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   {
- 452              		.loc 1 465 6 is_stmt 0 discriminator 2 view .LVU103
- 453 0036 D2B1     		cbz	r2, .L35
- 454              	.LVL30:
- 455              	.L30:
+ 414              		.loc 1 465 0 discriminator 2
+ 415 0036 D2B1     		cbz	r2, .L35
+ 416              	.LVL32:
+ 417              	.L30:
  471:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 456              		.loc 1 471 3 is_stmt 1 view .LVU104
- 457 0038 2268     		ldr	r2, [r4]
- 458 003a 1368     		ldr	r3, [r2]
- 459 003c 43F00103 		orr	r3, r3, #1
- 460 0040 1360     		str	r3, [r2]
- 474:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 461              		.loc 1 474 3 view .LVU105
- 474:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 462              		.loc 1 474 15 is_stmt 0 view .LVU106
- 463 0042 FFF7FEFF 		bl	HAL_GetTick
- 464              	.LVL31:
- 477:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   {
- 465              		.loc 1 477 3 is_stmt 1 view .LVU107
- 477:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   {
- 466              		.loc 1 477 7 is_stmt 0 view .LVU108
- 467 0046 6FF07E43 		mvn	r3, #-33554432
- 468 004a 0093     		str	r3, [sp]
- 469 004c 0346     		mov	r3, r0
- 470 004e 0022     		movs	r2, #0
- 471 0050 4FF48001 		mov	r1, #4194304
- 472 0054 2046     		mov	r0, r4
- 473              	.LVL32:
- 477:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   {
- 474              		.loc 1 477 7 view .LVU109
- 475 0056 FFF7FEFF 		bl	UART_WaitOnFlagUntilTimeout
- 476              	.LVL33:
- 477:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   {
- 477              		.loc 1 477 6 view .LVU110
- 478 005a 0346     		mov	r3, r0
- 479 005c 68B9     		cbnz	r0, .L33
- 484:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   }
- 480              		.loc 1 484 5 is_stmt 1 view .LVU111
-ARM GAS  /tmp/cc1EZBap.s 			page 24
+ 418              		.loc 1 471 0
+ 419 0038 2268     		ldr	r2, [r4]
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\ccZKutpq.s 			page 22
 
 
+ 420 003a 1368     		ldr	r3, [r2]
+ 421 003c 43F00103 		orr	r3, r3, #1
+ 422 0040 1360     		str	r3, [r2]
+ 474:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
+ 423              		.loc 1 474 0
+ 424 0042 FFF7FEFF 		bl	HAL_GetTick
+ 425              	.LVL33:
+ 477:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   {
+ 426              		.loc 1 477 0
+ 427 0046 6FF07E43 		mvn	r3, #-33554432
+ 428 004a 0093     		str	r3, [sp]
+ 429 004c 0346     		mov	r3, r0
+ 430 004e 0022     		movs	r2, #0
+ 431 0050 4FF48001 		mov	r1, #4194304
+ 432 0054 2046     		mov	r0, r4
+ 433              	.LVL34:
+ 434 0056 FFF7FEFF 		bl	UART_WaitOnFlagUntilTimeout
+ 435              	.LVL35:
+ 436 005a 0346     		mov	r3, r0
+ 437 005c 68B9     		cbnz	r0, .L33
  484:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   }
- 481              		.loc 1 484 19 is_stmt 0 view .LVU112
- 482 005e 2022     		movs	r2, #32
- 483 0060 6267     		str	r2, [r4, #116]
- 484              	.L31:
- 485              	.LVL34:
+ 438              		.loc 1 484 0
+ 439 005e 2022     		movs	r2, #32
+ 440 0060 6267     		str	r2, [r4, #116]
+ 441              	.L31:
+ 442              	.LVL36:
  488:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 486              		.loc 1 488 3 is_stmt 1 view .LVU113
- 488:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 487              		.loc 1 488 3 view .LVU114
- 488 0062 0022     		movs	r2, #0
- 489 0064 84F87020 		strb	r2, [r4, #112]
- 490:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** }
- 490              		.loc 1 490 3 view .LVU115
- 491              	.LVL35:
- 492              	.L29:
+ 443              		.loc 1 488 0
+ 444 0062 0022     		movs	r2, #0
+ 445 0064 84F87020 		strb	r2, [r4, #112]
+ 446              	.LVL37:
+ 447              	.L29:
  491:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 493              		.loc 1 491 1 is_stmt 0 view .LVU116
- 494 0068 1846     		mov	r0, r3
- 495 006a 04B0     		add	sp, sp, #16
- 496              	.LCFI8:
- 497              		.cfi_remember_state
- 498              		.cfi_def_cfa_offset 8
- 499              		@ sp needed
- 500 006c 10BD     		pop	{r4, pc}
- 501              	.LVL36:
- 502              	.L35:
- 503              	.LCFI9:
- 504              		.cfi_restore_state
+ 448              		.loc 1 491 0
+ 449 0068 1846     		mov	r0, r3
+ 450 006a 04B0     		add	sp, sp, #16
+ 451              	.LCFI9:
+ 452              		.cfi_remember_state
+ 453              		.cfi_def_cfa_offset 8
+ 454              		@ sp needed
+ 455 006c 10BD     		pop	{r4, pc}
+ 456              	.LVL38:
+ 457              	.L35:
+ 458              	.LCFI10:
+ 459              		.cfi_restore_state
  467:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   }
- 505              		.loc 1 467 5 is_stmt 1 view .LVU117
- 506 006e 04AB     		add	r3, sp, #16
- 507 0070 13E90600 		ldmdb	r3, {r1, r2}
- 508 0074 FFF7FEFF 		bl	UARTEx_Wakeup_AddressConfig
- 509              	.LVL37:
- 467:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   }
- 510              		.loc 1 467 5 is_stmt 0 view .LVU118
- 511 0078 DEE7     		b	.L30
- 512              	.L33:
+ 460              		.loc 1 467 0
+ 461 006e 04AB     		add	r3, sp, #16
+ 462 0070 13E90600 		ldmdb	r3, {r1, r2}
+ 463 0074 FFF7FEFF 		bl	UARTEx_Wakeup_AddressConfig
+ 464              	.LVL39:
+ 465 0078 DEE7     		b	.L30
+ 466              	.L33:
  479:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   }
- 513              		.loc 1 479 12 view .LVU119
- 514 007a 0323     		movs	r3, #3
- 515 007c F1E7     		b	.L31
- 516              	.LVL38:
- 517              	.L32:
+ 467              		.loc 1 479 0
+ 468 007a 0323     		movs	r3, #3
+ 469 007c F1E7     		b	.L31
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\ccZKutpq.s 			page 23
+
+
+ 470              	.LVL40:
+ 471              	.L32:
  455:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 518              		.loc 1 455 3 view .LVU120
- 519 007e 0223     		movs	r3, #2
- 520 0080 F2E7     		b	.L29
- 521              		.cfi_endproc
- 522              	.LFE135:
- 524              		.section	.text.HAL_UARTEx_EnableStopMode,"ax",%progbits
- 525              		.align	1
- 526              		.global	HAL_UARTEx_EnableStopMode
- 527              		.syntax unified
- 528              		.thumb
- 529              		.thumb_func
-ARM GAS  /tmp/cc1EZBap.s 			page 25
-
-
- 530              		.fpu fpv4-sp-d16
- 532              	HAL_UARTEx_EnableStopMode:
- 533              	.LVL39:
- 534              	.LFB136:
+ 472              		.loc 1 455 0
+ 473 007e 0223     		movs	r3, #2
+ 474 0080 F2E7     		b	.L29
+ 475              		.cfi_endproc
+ 476              	.LFE135:
+ 478              		.section	.text.HAL_UARTEx_EnableStopMode,"ax",%progbits
+ 479              		.align	1
+ 480              		.global	HAL_UARTEx_EnableStopMode
+ 481              		.syntax unified
+ 482              		.thumb
+ 483              		.thumb_func
+ 484              		.fpu fpv4-sp-d16
+ 486              	HAL_UARTEx_EnableStopMode:
+ 487              	.LFB136:
  500:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   /* Process Locked */
- 535              		.loc 1 500 1 is_stmt 1 view -0
- 536              		.cfi_startproc
- 537              		@ args = 0, pretend = 0, frame = 0
- 538              		@ frame_needed = 0, uses_anonymous_args = 0
- 539              		@ link register save eliminated.
+ 488              		.loc 1 500 0
+ 489              		.cfi_startproc
+ 490              		@ args = 0, pretend = 0, frame = 0
+ 491              		@ frame_needed = 0, uses_anonymous_args = 0
+ 492              		@ link register save eliminated.
+ 493              	.LVL41:
  502:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 540              		.loc 1 502 3 view .LVU122
+ 494              		.loc 1 502 0
+ 495 0000 90F87030 		ldrb	r3, [r0, #112]	@ zero_extendqisi2
+ 496 0004 012B     		cmp	r3, #1
+ 497 0006 0CD0     		beq	.L38
  502:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 541              		.loc 1 502 3 view .LVU123
- 542 0000 90F87030 		ldrb	r3, [r0, #112]	@ zero_extendqisi2
- 543 0004 012B     		cmp	r3, #1
- 544 0006 0CD0     		beq	.L38
- 502:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 545              		.loc 1 502 3 discriminator 2 view .LVU124
- 546 0008 0123     		movs	r3, #1
- 547 000a 80F87030 		strb	r3, [r0, #112]
+ 498              		.loc 1 502 0 is_stmt 0 discriminator 2
+ 499 0008 0123     		movs	r3, #1
+ 500 000a 80F87030 		strb	r3, [r0, #112]
  505:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 548              		.loc 1 505 3 discriminator 2 view .LVU125
- 549 000e 0268     		ldr	r2, [r0]
- 550 0010 1368     		ldr	r3, [r2]
- 551 0012 43F00203 		orr	r3, r3, #2
- 552 0016 1360     		str	r3, [r2]
+ 501              		.loc 1 505 0 is_stmt 1 discriminator 2
+ 502 000e 0268     		ldr	r2, [r0]
+ 503 0010 1368     		ldr	r3, [r2]
+ 504 0012 43F00203 		orr	r3, r3, #2
+ 505 0016 1360     		str	r3, [r2]
  508:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 553              		.loc 1 508 3 discriminator 2 view .LVU126
- 508:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 554              		.loc 1 508 3 discriminator 2 view .LVU127
- 555 0018 0023     		movs	r3, #0
- 556 001a 80F87030 		strb	r3, [r0, #112]
+ 506              		.loc 1 508 0 discriminator 2
+ 507 0018 0023     		movs	r3, #0
+ 508 001a 80F87030 		strb	r3, [r0, #112]
  510:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** }
- 557              		.loc 1 510 3 discriminator 2 view .LVU128
- 510:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** }
- 558              		.loc 1 510 10 is_stmt 0 discriminator 2 view .LVU129
- 559 001e 1846     		mov	r0, r3
- 560              	.LVL40:
- 510:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** }
- 561              		.loc 1 510 10 discriminator 2 view .LVU130
- 562 0020 7047     		bx	lr
- 563              	.LVL41:
- 564              	.L38:
+ 509              		.loc 1 510 0 discriminator 2
+ 510 001e 1846     		mov	r0, r3
+ 511              	.LVL42:
+ 512 0020 7047     		bx	lr
+ 513              	.LVL43:
+ 514              	.L38:
  502:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 565              		.loc 1 502 3 view .LVU131
- 566 0022 0220     		movs	r0, #2
- 567              	.LVL42:
+ 515              		.loc 1 502 0
+ 516 0022 0220     		movs	r0, #2
+ 517              	.LVL44:
  511:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 568              		.loc 1 511 1 view .LVU132
- 569 0024 7047     		bx	lr
- 570              		.cfi_endproc
- 571              	.LFE136:
- 573              		.section	.text.HAL_UARTEx_DisableStopMode,"ax",%progbits
- 574              		.align	1
- 575              		.global	HAL_UARTEx_DisableStopMode
- 576              		.syntax unified
-ARM GAS  /tmp/cc1EZBap.s 			page 26
+ 518              		.loc 1 511 0
+ 519 0024 7047     		bx	lr
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\ccZKutpq.s 			page 24
 
 
- 577              		.thumb
- 578              		.thumb_func
- 579              		.fpu fpv4-sp-d16
- 581              	HAL_UARTEx_DisableStopMode:
- 582              	.LVL43:
- 583              	.LFB137:
+ 520              		.cfi_endproc
+ 521              	.LFE136:
+ 523              		.section	.text.HAL_UARTEx_DisableStopMode,"ax",%progbits
+ 524              		.align	1
+ 525              		.global	HAL_UARTEx_DisableStopMode
+ 526              		.syntax unified
+ 527              		.thumb
+ 528              		.thumb_func
+ 529              		.fpu fpv4-sp-d16
+ 531              	HAL_UARTEx_DisableStopMode:
+ 532              	.LFB137:
  519:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c ****   /* Process Locked */
- 584              		.loc 1 519 1 is_stmt 1 view -0
- 585              		.cfi_startproc
- 586              		@ args = 0, pretend = 0, frame = 0
- 587              		@ frame_needed = 0, uses_anonymous_args = 0
- 588              		@ link register save eliminated.
+ 533              		.loc 1 519 0
+ 534              		.cfi_startproc
+ 535              		@ args = 0, pretend = 0, frame = 0
+ 536              		@ frame_needed = 0, uses_anonymous_args = 0
+ 537              		@ link register save eliminated.
+ 538              	.LVL45:
  521:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 589              		.loc 1 521 3 view .LVU134
+ 539              		.loc 1 521 0
+ 540 0000 90F87030 		ldrb	r3, [r0, #112]	@ zero_extendqisi2
+ 541 0004 012B     		cmp	r3, #1
+ 542 0006 0CD0     		beq	.L41
  521:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 590              		.loc 1 521 3 view .LVU135
- 591 0000 90F87030 		ldrb	r3, [r0, #112]	@ zero_extendqisi2
- 592 0004 012B     		cmp	r3, #1
- 593 0006 0CD0     		beq	.L41
- 521:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 594              		.loc 1 521 3 discriminator 2 view .LVU136
- 595 0008 0123     		movs	r3, #1
- 596 000a 80F87030 		strb	r3, [r0, #112]
+ 543              		.loc 1 521 0 is_stmt 0 discriminator 2
+ 544 0008 0123     		movs	r3, #1
+ 545 000a 80F87030 		strb	r3, [r0, #112]
  524:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 597              		.loc 1 524 3 discriminator 2 view .LVU137
- 598 000e 0268     		ldr	r2, [r0]
- 599 0010 1368     		ldr	r3, [r2]
- 600 0012 23F00203 		bic	r3, r3, #2
- 601 0016 1360     		str	r3, [r2]
+ 546              		.loc 1 524 0 is_stmt 1 discriminator 2
+ 547 000e 0268     		ldr	r2, [r0]
+ 548 0010 1368     		ldr	r3, [r2]
+ 549 0012 23F00203 		bic	r3, r3, #2
+ 550 0016 1360     		str	r3, [r2]
  527:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 602              		.loc 1 527 3 discriminator 2 view .LVU138
- 527:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 603              		.loc 1 527 3 discriminator 2 view .LVU139
- 604 0018 0023     		movs	r3, #0
- 605 001a 80F87030 		strb	r3, [r0, #112]
+ 551              		.loc 1 527 0 discriminator 2
+ 552 0018 0023     		movs	r3, #0
+ 553 001a 80F87030 		strb	r3, [r0, #112]
  529:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** }
- 606              		.loc 1 529 3 discriminator 2 view .LVU140
- 529:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** }
- 607              		.loc 1 529 10 is_stmt 0 discriminator 2 view .LVU141
- 608 001e 1846     		mov	r0, r3
- 609              	.LVL44:
- 529:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** }
- 610              		.loc 1 529 10 discriminator 2 view .LVU142
- 611 0020 7047     		bx	lr
- 612              	.LVL45:
- 613              	.L41:
+ 554              		.loc 1 529 0 discriminator 2
+ 555 001e 1846     		mov	r0, r3
+ 556              	.LVL46:
+ 557 0020 7047     		bx	lr
+ 558              	.LVL47:
+ 559              	.L41:
  521:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 614              		.loc 1 521 3 view .LVU143
- 615 0022 0220     		movs	r0, #2
- 616              	.LVL46:
+ 560              		.loc 1 521 0
+ 561 0022 0220     		movs	r0, #2
+ 562              	.LVL48:
  530:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_uart_ex.c **** 
- 617              		.loc 1 530 1 view .LVU144
- 618 0024 7047     		bx	lr
- 619              		.cfi_endproc
- 620              	.LFE137:
- 622              		.text
- 623              	.Letext0:
-ARM GAS  /tmp/cc1EZBap.s 			page 27
+ 563              		.loc 1 530 0
+ 564 0024 7047     		bx	lr
+ 565              		.cfi_endproc
+ 566              	.LFE137:
+ 568              		.text
+ 569              	.Letext0:
+ 570              		.file 2 "c:\\program files (x86)\\gnu tools arm embedded\\6.2 2016q4\\arm-none-eabi\\include\\mach
+ 571              		.file 3 "c:\\program files (x86)\\gnu tools arm embedded\\6.2 2016q4\\arm-none-eabi\\include\\sys\
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\ccZKutpq.s 			page 25
 
 
- 624              		.file 2 "/usr/arm-none-eabi/include/machine/_default_types.h"
- 625              		.file 3 "/usr/arm-none-eabi/include/sys/_stdint.h"
- 626              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
- 627              		.file 5 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/system_stm32l4xx.h"
- 628              		.file 6 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l476xx.h"
- 629              		.file 7 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h"
- 630              		.file 8 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h"
- 631              		.file 9 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_dma.h"
- 632              		.file 10 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash.h"
- 633              		.file 11 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h"
- 634              		.file 12 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h"
- 635              		.file 13 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h"
-ARM GAS  /tmp/cc1EZBap.s 			page 28
+ 572              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
+ 573              		.file 5 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/system_stm32l4xx.h"
+ 574              		.file 6 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l476xx.h"
+ 575              		.file 7 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h"
+ 576              		.file 8 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h"
+ 577              		.file 9 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_dma.h"
+ 578              		.file 10 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash.h"
+ 579              		.file 11 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h"
+ 580              		.file 12 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h"
+ 581              		.file 13 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h"
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\ccZKutpq.s 			page 26
 
 
 DEFINED SYMBOLS
-                            *ABS*:0000000000000000 stm32l4xx_hal_uart_ex.c
-     /tmp/cc1EZBap.s:18     .text.UARTEx_Wakeup_AddressConfig:0000000000000000 $t
-     /tmp/cc1EZBap.s:25     .text.UARTEx_Wakeup_AddressConfig:0000000000000000 UARTEx_Wakeup_AddressConfig
-     /tmp/cc1EZBap.s:65     .text.HAL_RS485Ex_Init:0000000000000000 $t
-     /tmp/cc1EZBap.s:72     .text.HAL_RS485Ex_Init:0000000000000000 HAL_RS485Ex_Init
-     /tmp/cc1EZBap.s:209    .text.HAL_UARTEx_WakeupCallback:0000000000000000 $t
-     /tmp/cc1EZBap.s:216    .text.HAL_UARTEx_WakeupCallback:0000000000000000 HAL_UARTEx_WakeupCallback
-     /tmp/cc1EZBap.s:231    .text.HAL_UARTEx_EnableClockStopMode:0000000000000000 $t
-     /tmp/cc1EZBap.s:238    .text.HAL_UARTEx_EnableClockStopMode:0000000000000000 HAL_UARTEx_EnableClockStopMode
-     /tmp/cc1EZBap.s:280    .text.HAL_UARTEx_DisableClockStopMode:0000000000000000 $t
-     /tmp/cc1EZBap.s:287    .text.HAL_UARTEx_DisableClockStopMode:0000000000000000 HAL_UARTEx_DisableClockStopMode
-     /tmp/cc1EZBap.s:329    .text.HAL_MultiProcessorEx_AddressLength_Set:0000000000000000 $t
-     /tmp/cc1EZBap.s:336    .text.HAL_MultiProcessorEx_AddressLength_Set:0000000000000000 HAL_MultiProcessorEx_AddressLength_Set
-     /tmp/cc1EZBap.s:396    .text.HAL_UARTEx_StopModeWakeUpSourceConfig:0000000000000000 $t
-     /tmp/cc1EZBap.s:403    .text.HAL_UARTEx_StopModeWakeUpSourceConfig:0000000000000000 HAL_UARTEx_StopModeWakeUpSourceConfig
-     /tmp/cc1EZBap.s:525    .text.HAL_UARTEx_EnableStopMode:0000000000000000 $t
-     /tmp/cc1EZBap.s:532    .text.HAL_UARTEx_EnableStopMode:0000000000000000 HAL_UARTEx_EnableStopMode
-     /tmp/cc1EZBap.s:574    .text.HAL_UARTEx_DisableStopMode:0000000000000000 $t
-     /tmp/cc1EZBap.s:581    .text.HAL_UARTEx_DisableStopMode:0000000000000000 HAL_UARTEx_DisableStopMode
+                            *ABS*:00000000 stm32l4xx_hal_uart_ex.c
+C:\Users\hirot\AppData\Local\Temp\ccZKutpq.s:18     .text.UARTEx_Wakeup_AddressConfig:00000000 $t
+C:\Users\hirot\AppData\Local\Temp\ccZKutpq.s:24     .text.UARTEx_Wakeup_AddressConfig:00000000 UARTEx_Wakeup_AddressConfig
+C:\Users\hirot\AppData\Local\Temp\ccZKutpq.s:62     .text.HAL_RS485Ex_Init:00000000 $t
+C:\Users\hirot\AppData\Local\Temp\ccZKutpq.s:69     .text.HAL_RS485Ex_Init:00000000 HAL_RS485Ex_Init
+C:\Users\hirot\AppData\Local\Temp\ccZKutpq.s:196    .text.HAL_UARTEx_WakeupCallback:00000000 $t
+C:\Users\hirot\AppData\Local\Temp\ccZKutpq.s:203    .text.HAL_UARTEx_WakeupCallback:00000000 HAL_UARTEx_WakeupCallback
+C:\Users\hirot\AppData\Local\Temp\ccZKutpq.s:216    .text.HAL_UARTEx_EnableClockStopMode:00000000 $t
+C:\Users\hirot\AppData\Local\Temp\ccZKutpq.s:223    .text.HAL_UARTEx_EnableClockStopMode:00000000 HAL_UARTEx_EnableClockStopMode
+C:\Users\hirot\AppData\Local\Temp\ccZKutpq.s:261    .text.HAL_UARTEx_DisableClockStopMode:00000000 $t
+C:\Users\hirot\AppData\Local\Temp\ccZKutpq.s:268    .text.HAL_UARTEx_DisableClockStopMode:00000000 HAL_UARTEx_DisableClockStopMode
+C:\Users\hirot\AppData\Local\Temp\ccZKutpq.s:306    .text.HAL_MultiProcessorEx_AddressLength_Set:00000000 $t
+C:\Users\hirot\AppData\Local\Temp\ccZKutpq.s:313    .text.HAL_MultiProcessorEx_AddressLength_Set:00000000 HAL_MultiProcessorEx_AddressLength_Set
+C:\Users\hirot\AppData\Local\Temp\ccZKutpq.s:366    .text.HAL_UARTEx_StopModeWakeUpSourceConfig:00000000 $t
+C:\Users\hirot\AppData\Local\Temp\ccZKutpq.s:373    .text.HAL_UARTEx_StopModeWakeUpSourceConfig:00000000 HAL_UARTEx_StopModeWakeUpSourceConfig
+C:\Users\hirot\AppData\Local\Temp\ccZKutpq.s:479    .text.HAL_UARTEx_EnableStopMode:00000000 $t
+C:\Users\hirot\AppData\Local\Temp\ccZKutpq.s:486    .text.HAL_UARTEx_EnableStopMode:00000000 HAL_UARTEx_EnableStopMode
+C:\Users\hirot\AppData\Local\Temp\ccZKutpq.s:524    .text.HAL_UARTEx_DisableStopMode:00000000 $t
+C:\Users\hirot\AppData\Local\Temp\ccZKutpq.s:531    .text.HAL_UARTEx_DisableStopMode:00000000 HAL_UARTEx_DisableStopMode
+                     .debug_frame:00000010 $d
 
 UNDEFINED SYMBOLS
 UART_SetConfig

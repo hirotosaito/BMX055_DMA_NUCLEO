@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccc6gxmk.s 			page 1
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\cclI3Upc.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -20,14 +20,13 @@ ARM GAS  /tmp/ccc6gxmk.s 			page 1
   17              		.section	.RamFunc,"ax",%progbits
   18              		.align	1
   19              		.global	HAL_FLASHEx_EnableRunPowerDown
-  20              		.arch armv7e-m
-  21              		.syntax unified
-  22              		.thumb
-  23              		.thumb_func
-  24              		.fpu fpv4-sp-d16
-  26              	HAL_FLASHEx_EnableRunPowerDown:
-  27              	.LFB130:
-  28              		.file 1 "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c"
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  23              		.fpu fpv4-sp-d16
+  25              	HAL_FLASHEx_EnableRunPowerDown:
+  26              	.LFB130:
+  27              		.file 1 "Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c"
    1:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c **** /**
    2:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c ****   ******************************************************************************
    3:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c ****   * @file    stm32l4xx_hal_flash_ramfunc.c
@@ -58,10 +57,10 @@ ARM GAS  /tmp/ccc6gxmk.s 			page 1
   28:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c **** 
   29:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c ****     *** GNU Compiler ***
   30:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c ****     --------------------
-ARM GAS  /tmp/ccc6gxmk.s 			page 2
-
-
   31:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c ****     [..] RAM functions are defined using a specific toolchain attribute
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\cclI3Upc.s 			page 2
+
+
   32:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c ****          "__attribute__((section(".RamFunc")))".
   33:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c **** 
   34:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c ****   @endverbatim
@@ -118,10 +117,10 @@ ARM GAS  /tmp/ccc6gxmk.s 			page 1
   85:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c **** 
   86:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c **** @endverbatim
   87:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c ****   * @{
-ARM GAS  /tmp/ccc6gxmk.s 			page 3
-
-
   88:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c ****   */
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\cclI3Upc.s 			page 3
+
+
   89:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c **** 
   90:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c **** /**
   91:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c ****   * @brief   Enable the Power down in Run Mode
@@ -130,114 +129,107 @@ ARM GAS  /tmp/ccc6gxmk.s 			page 1
   94:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c ****   */
   95:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c **** __RAM_FUNC HAL_FLASHEx_EnableRunPowerDown(void)
   96:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c **** {
-  29              		.loc 1 96 1 view -0
-  30              		.cfi_startproc
-  31              		@ args = 0, pretend = 0, frame = 0
-  32              		@ frame_needed = 0, uses_anonymous_args = 0
-  33              		@ link register save eliminated.
+  28              		.loc 1 96 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
   97:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c ****   /* Enable the Power Down in Run mode*/
   98:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c ****   __HAL_FLASH_POWER_DOWN_ENABLE();
-  34              		.loc 1 98 3 view .LVU1
-  35              		.loc 1 98 3 view .LVU2
-  36 0000 054B     		ldr	r3, .L2
-  37 0002 064A     		ldr	r2, .L2+4
-  38 0004 5A60     		str	r2, [r3, #4]
-  39              		.loc 1 98 3 view .LVU3
-  40 0006 064A     		ldr	r2, .L2+8
-  41 0008 5A60     		str	r2, [r3, #4]
-  42              		.loc 1 98 3 view .LVU4
-  43 000a 1A68     		ldr	r2, [r3]
-  44 000c 42F40052 		orr	r2, r2, #8192
-  45 0010 1A60     		str	r2, [r3]
+  33              		.loc 1 98 0
+  34 0000 054B     		ldr	r3, .L2
+  35 0002 064A     		ldr	r2, .L2+4
+  36 0004 5A60     		str	r2, [r3, #4]
+  37 0006 064A     		ldr	r2, .L2+8
+  38 0008 5A60     		str	r2, [r3, #4]
+  39 000a 1A68     		ldr	r2, [r3]
+  40 000c 42F40052 		orr	r2, r2, #8192
+  41 0010 1A60     		str	r2, [r3]
   99:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c **** 
  100:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c ****   return HAL_OK;
-  46              		.loc 1 100 3 view .LVU5
  101:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c **** 
  102:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c **** }
-  47              		.loc 1 102 1 is_stmt 0 view .LVU6
-  48 0012 0020     		movs	r0, #0
-  49 0014 7047     		bx	lr
-  50              	.L3:
-  51 0016 00BF     		.align	2
-  52              	.L2:
-  53 0018 00200240 		.word	1073881088
-  54 001c 37261504 		.word	68494903
-  55 0020 FDFCFBFA 		.word	-84148995
-  56              		.cfi_endproc
-  57              	.LFE130:
-  59              		.align	1
-  60              		.global	HAL_FLASHEx_DisableRunPowerDown
-  61              		.syntax unified
-  62              		.thumb
-  63              		.thumb_func
-  64              		.fpu fpv4-sp-d16
-  66              	HAL_FLASHEx_DisableRunPowerDown:
-  67              	.LFB131:
+  42              		.loc 1 102 0
+  43 0012 0020     		movs	r0, #0
+  44 0014 7047     		bx	lr
+  45              	.L3:
+  46 0016 00BF     		.align	2
+  47              	.L2:
+  48 0018 00200240 		.word	1073881088
+  49 001c 37261504 		.word	68494903
+  50 0020 FDFCFBFA 		.word	-84148995
+  51              		.cfi_endproc
+  52              	.LFE130:
+  54              		.align	1
+  55              		.global	HAL_FLASHEx_DisableRunPowerDown
+  56              		.syntax unified
+  57              		.thumb
+  58              		.thumb_func
+  59              		.fpu fpv4-sp-d16
+  61              	HAL_FLASHEx_DisableRunPowerDown:
+  62              	.LFB131:
  103:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c **** 
  104:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c **** /**
  105:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c ****   * @brief   Disable the Power down in Run Mode
  106:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c ****   * @note    This function should be called and executed from SRAM memory
  107:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c ****   * @retval None
-ARM GAS  /tmp/ccc6gxmk.s 			page 4
-
-
  108:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c ****   */
  109:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c **** __RAM_FUNC HAL_FLASHEx_DisableRunPowerDown(void)
  110:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c **** {
-  68              		.loc 1 110 1 is_stmt 1 view -0
-  69              		.cfi_startproc
-  70              		@ args = 0, pretend = 0, frame = 0
-  71              		@ frame_needed = 0, uses_anonymous_args = 0
-  72              		@ link register save eliminated.
+  63              		.loc 1 110 0
+  64              		.cfi_startproc
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\cclI3Upc.s 			page 4
+
+
+  65              		@ args = 0, pretend = 0, frame = 0
+  66              		@ frame_needed = 0, uses_anonymous_args = 0
+  67              		@ link register save eliminated.
  111:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c ****   /* Disable the Power Down in Run mode*/
  112:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c ****   __HAL_FLASH_POWER_DOWN_DISABLE();
-  73              		.loc 1 112 3 view .LVU8
-  74              		.loc 1 112 3 view .LVU9
-  75 0024 054B     		ldr	r3, .L5
-  76 0026 064A     		ldr	r2, .L5+4
-  77 0028 5A60     		str	r2, [r3, #4]
-  78              		.loc 1 112 3 view .LVU10
-  79 002a 064A     		ldr	r2, .L5+8
-  80 002c 5A60     		str	r2, [r3, #4]
-  81              		.loc 1 112 3 view .LVU11
-  82 002e 1A68     		ldr	r2, [r3]
-  83 0030 22F40052 		bic	r2, r2, #8192
-  84 0034 1A60     		str	r2, [r3]
+  68              		.loc 1 112 0
+  69 0024 054B     		ldr	r3, .L5
+  70 0026 064A     		ldr	r2, .L5+4
+  71 0028 5A60     		str	r2, [r3, #4]
+  72 002a 064A     		ldr	r2, .L5+8
+  73 002c 5A60     		str	r2, [r3, #4]
+  74 002e 1A68     		ldr	r2, [r3]
+  75 0030 22F40052 		bic	r2, r2, #8192
+  76 0034 1A60     		str	r2, [r3]
  113:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c **** 
  114:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c ****   return HAL_OK;
-  85              		.loc 1 114 3 view .LVU12
  115:Drivers/STM32L4xx_HAL_Driver/Src/stm32l4xx_hal_flash_ramfunc.c **** }
-  86              		.loc 1 115 1 is_stmt 0 view .LVU13
-  87 0036 0020     		movs	r0, #0
-  88 0038 7047     		bx	lr
-  89              	.L6:
-  90 003a 00BF     		.align	2
-  91              	.L5:
-  92 003c 00200240 		.word	1073881088
-  93 0040 37261504 		.word	68494903
-  94 0044 FDFCFBFA 		.word	-84148995
-  95              		.cfi_endproc
-  96              	.LFE131:
-  98              		.text
-  99              	.Letext0:
- 100              		.file 2 "/usr/arm-none-eabi/include/machine/_default_types.h"
- 101              		.file 3 "/usr/arm-none-eabi/include/sys/_stdint.h"
- 102              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
- 103              		.file 5 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/system_stm32l4xx.h"
- 104              		.file 6 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l476xx.h"
- 105              		.file 7 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h"
- 106              		.file 8 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash.h"
- 107              		.file 9 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h"
-ARM GAS  /tmp/ccc6gxmk.s 			page 5
+  77              		.loc 1 115 0
+  78 0036 0020     		movs	r0, #0
+  79 0038 7047     		bx	lr
+  80              	.L6:
+  81 003a 00BF     		.align	2
+  82              	.L5:
+  83 003c 00200240 		.word	1073881088
+  84 0040 37261504 		.word	68494903
+  85 0044 FDFCFBFA 		.word	-84148995
+  86              		.cfi_endproc
+  87              	.LFE131:
+  89              		.text
+  90              	.Letext0:
+  91              		.file 2 "c:\\program files (x86)\\gnu tools arm embedded\\6.2 2016q4\\arm-none-eabi\\include\\mach
+  92              		.file 3 "c:\\program files (x86)\\gnu tools arm embedded\\6.2 2016q4\\arm-none-eabi\\include\\sys\
+  93              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
+  94              		.file 5 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/system_stm32l4xx.h"
+  95              		.file 6 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l476xx.h"
+  96              		.file 7 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h"
+  97              		.file 8 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash.h"
+  98              		.file 9 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h"
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\cclI3Upc.s 			page 5
 
 
 DEFINED SYMBOLS
-                            *ABS*:0000000000000000 stm32l4xx_hal_flash_ramfunc.c
-     /tmp/ccc6gxmk.s:18     .RamFunc:0000000000000000 $t
-     /tmp/ccc6gxmk.s:26     .RamFunc:0000000000000000 HAL_FLASHEx_EnableRunPowerDown
-     /tmp/ccc6gxmk.s:53     .RamFunc:0000000000000018 $d
-     /tmp/ccc6gxmk.s:59     .RamFunc:0000000000000024 $t
-     /tmp/ccc6gxmk.s:66     .RamFunc:0000000000000024 HAL_FLASHEx_DisableRunPowerDown
-     /tmp/ccc6gxmk.s:92     .RamFunc:000000000000003c $d
+                            *ABS*:00000000 stm32l4xx_hal_flash_ramfunc.c
+C:\Users\hirot\AppData\Local\Temp\cclI3Upc.s:18     .RamFunc:00000000 $t
+C:\Users\hirot\AppData\Local\Temp\cclI3Upc.s:25     .RamFunc:00000000 HAL_FLASHEx_EnableRunPowerDown
+C:\Users\hirot\AppData\Local\Temp\cclI3Upc.s:48     .RamFunc:00000018 $d
+C:\Users\hirot\AppData\Local\Temp\cclI3Upc.s:54     .RamFunc:00000024 $t
+C:\Users\hirot\AppData\Local\Temp\cclI3Upc.s:61     .RamFunc:00000024 HAL_FLASHEx_DisableRunPowerDown
+C:\Users\hirot\AppData\Local\Temp\cclI3Upc.s:83     .RamFunc:0000003c $d
+                     .debug_frame:00000010 $d
 
 NO UNDEFINED SYMBOLS

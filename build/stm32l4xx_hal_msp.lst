@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccdcsmux.s 			page 1
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\ccBW4o2N.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -20,14 +20,13 @@ ARM GAS  /tmp/ccdcsmux.s 			page 1
   17              		.section	.text.HAL_MspInit,"ax",%progbits
   18              		.align	1
   19              		.global	HAL_MspInit
-  20              		.arch armv7e-m
-  21              		.syntax unified
-  22              		.thumb
-  23              		.thumb_func
-  24              		.fpu fpv4-sp-d16
-  26              	HAL_MspInit:
-  27              	.LFB130:
-  28              		.file 1 "Src/stm32l4xx_hal_msp.c"
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  23              		.fpu fpv4-sp-d16
+  25              	HAL_MspInit:
+  26              	.LFB130:
+  27              		.file 1 "Src/stm32l4xx_hal_msp.c"
    1:Src/stm32l4xx_hal_msp.c **** /* USER CODE BEGIN Header */
    2:Src/stm32l4xx_hal_msp.c **** /**
    3:Src/stm32l4xx_hal_msp.c ****   ******************************************************************************
@@ -58,10 +57,10 @@ ARM GAS  /tmp/ccdcsmux.s 			page 1
   28:Src/stm32l4xx_hal_msp.c **** /* Private typedef -----------------------------------------------------------*/
   29:Src/stm32l4xx_hal_msp.c **** /* USER CODE BEGIN TD */
   30:Src/stm32l4xx_hal_msp.c **** 
-ARM GAS  /tmp/ccdcsmux.s 			page 2
-
-
   31:Src/stm32l4xx_hal_msp.c **** /* USER CODE END TD */
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\ccBW4o2N.s 			page 2
+
+
   32:Src/stm32l4xx_hal_msp.c **** 
   33:Src/stm32l4xx_hal_msp.c **** /* Private define ------------------------------------------------------------*/
   34:Src/stm32l4xx_hal_msp.c **** /* USER CODE BEGIN Define */
@@ -96,52 +95,44 @@ ARM GAS  /tmp/ccdcsmux.s 			page 1
   63:Src/stm32l4xx_hal_msp.c ****   */
   64:Src/stm32l4xx_hal_msp.c **** void HAL_MspInit(void)
   65:Src/stm32l4xx_hal_msp.c **** {
-  29              		.loc 1 65 1 view -0
-  30              		.cfi_startproc
-  31              		@ args = 0, pretend = 0, frame = 8
-  32              		@ frame_needed = 0, uses_anonymous_args = 0
-  33              		@ link register save eliminated.
-  34 0000 82B0     		sub	sp, sp, #8
-  35              	.LCFI0:
-  36              		.cfi_def_cfa_offset 8
+  28              		.loc 1 65 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 8
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+  33 0000 82B0     		sub	sp, sp, #8
+  34              	.LCFI0:
+  35              		.cfi_def_cfa_offset 8
+  36              	.LBB2:
   66:Src/stm32l4xx_hal_msp.c ****   /* USER CODE BEGIN MspInit 0 */
   67:Src/stm32l4xx_hal_msp.c **** 
   68:Src/stm32l4xx_hal_msp.c ****   /* USER CODE END MspInit 0 */
   69:Src/stm32l4xx_hal_msp.c **** 
   70:Src/stm32l4xx_hal_msp.c ****   __HAL_RCC_SYSCFG_CLK_ENABLE();
-  37              		.loc 1 70 3 view .LVU1
-  38              	.LBB2:
-  39              		.loc 1 70 3 view .LVU2
-  40              		.loc 1 70 3 view .LVU3
-  41 0002 0A4B     		ldr	r3, .L3
-  42 0004 1A6E     		ldr	r2, [r3, #96]
-  43 0006 42F00102 		orr	r2, r2, #1
-  44 000a 1A66     		str	r2, [r3, #96]
-  45              		.loc 1 70 3 view .LVU4
-ARM GAS  /tmp/ccdcsmux.s 			page 3
+  37              		.loc 1 70 0
+  38 0002 0A4B     		ldr	r3, .L3
+  39 0004 1A6E     		ldr	r2, [r3, #96]
+  40 0006 42F00102 		orr	r2, r2, #1
+  41 000a 1A66     		str	r2, [r3, #96]
+  42 000c 1A6E     		ldr	r2, [r3, #96]
+  43 000e 02F00102 		and	r2, r2, #1
+  44 0012 0092     		str	r2, [sp]
+  45 0014 009A     		ldr	r2, [sp]
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\ccBW4o2N.s 			page 3
 
 
-  46 000c 1A6E     		ldr	r2, [r3, #96]
-  47 000e 02F00102 		and	r2, r2, #1
-  48 0012 0092     		str	r2, [sp]
-  49              		.loc 1 70 3 view .LVU5
-  50 0014 009A     		ldr	r2, [sp]
-  51              	.LBE2:
+  46              	.LBE2:
+  47              	.LBB3:
   71:Src/stm32l4xx_hal_msp.c ****   __HAL_RCC_PWR_CLK_ENABLE();
-  52              		.loc 1 71 3 view .LVU6
-  53              	.LBB3:
-  54              		.loc 1 71 3 view .LVU7
-  55              		.loc 1 71 3 view .LVU8
-  56 0016 9A6D     		ldr	r2, [r3, #88]
-  57 0018 42F08052 		orr	r2, r2, #268435456
-  58 001c 9A65     		str	r2, [r3, #88]
-  59              		.loc 1 71 3 view .LVU9
-  60 001e 9B6D     		ldr	r3, [r3, #88]
-  61 0020 03F08053 		and	r3, r3, #268435456
-  62 0024 0193     		str	r3, [sp, #4]
-  63              		.loc 1 71 3 view .LVU10
-  64 0026 019B     		ldr	r3, [sp, #4]
-  65              	.LBE3:
+  48              		.loc 1 71 0
+  49 0016 9A6D     		ldr	r2, [r3, #88]
+  50 0018 42F08052 		orr	r2, r2, #268435456
+  51 001c 9A65     		str	r2, [r3, #88]
+  52 001e 9B6D     		ldr	r3, [r3, #88]
+  53 0020 03F08053 		and	r3, r3, #268435456
+  54 0024 0193     		str	r3, [sp, #4]
+  55 0026 019B     		ldr	r3, [sp, #4]
+  56              	.LBE3:
   72:Src/stm32l4xx_hal_msp.c **** 
   73:Src/stm32l4xx_hal_msp.c ****   /* System interrupt init*/
   74:Src/stm32l4xx_hal_msp.c **** 
@@ -149,35 +140,36 @@ ARM GAS  /tmp/ccdcsmux.s 			page 1
   76:Src/stm32l4xx_hal_msp.c **** 
   77:Src/stm32l4xx_hal_msp.c ****   /* USER CODE END MspInit 1 */
   78:Src/stm32l4xx_hal_msp.c **** }
-  66              		.loc 1 78 1 is_stmt 0 view .LVU11
-  67 0028 02B0     		add	sp, sp, #8
-  68              	.LCFI1:
-  69              		.cfi_def_cfa_offset 0
-  70              		@ sp needed
-  71 002a 7047     		bx	lr
-  72              	.L4:
-  73              		.align	2
-  74              	.L3:
-  75 002c 00100240 		.word	1073876992
-  76              		.cfi_endproc
-  77              	.LFE130:
-  79              		.text
-  80              	.Letext0:
-  81              		.file 2 "/usr/arm-none-eabi/include/machine/_default_types.h"
-  82              		.file 3 "/usr/arm-none-eabi/include/sys/_stdint.h"
-  83              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
-  84              		.file 5 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/system_stm32l4xx.h"
-  85              		.file 6 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l476xx.h"
-  86              		.file 7 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h"
-  87              		.file 8 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash.h"
-  88              		.file 9 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h"
-ARM GAS  /tmp/ccdcsmux.s 			page 4
+  57              		.loc 1 78 0
+  58 0028 02B0     		add	sp, sp, #8
+  59              	.LCFI1:
+  60              		.cfi_def_cfa_offset 0
+  61              		@ sp needed
+  62 002a 7047     		bx	lr
+  63              	.L4:
+  64              		.align	2
+  65              	.L3:
+  66 002c 00100240 		.word	1073876992
+  67              		.cfi_endproc
+  68              	.LFE130:
+  70              		.text
+  71              	.Letext0:
+  72              		.file 2 "c:\\program files (x86)\\gnu tools arm embedded\\6.2 2016q4\\arm-none-eabi\\include\\mach
+  73              		.file 3 "c:\\program files (x86)\\gnu tools arm embedded\\6.2 2016q4\\arm-none-eabi\\include\\sys\
+  74              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
+  75              		.file 5 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/system_stm32l4xx.h"
+  76              		.file 6 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l476xx.h"
+  77              		.file 7 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h"
+  78              		.file 8 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash.h"
+  79              		.file 9 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h"
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\ccBW4o2N.s 			page 4
 
 
 DEFINED SYMBOLS
-                            *ABS*:0000000000000000 stm32l4xx_hal_msp.c
-     /tmp/ccdcsmux.s:18     .text.HAL_MspInit:0000000000000000 $t
-     /tmp/ccdcsmux.s:26     .text.HAL_MspInit:0000000000000000 HAL_MspInit
-     /tmp/ccdcsmux.s:75     .text.HAL_MspInit:000000000000002c $d
+                            *ABS*:00000000 stm32l4xx_hal_msp.c
+C:\Users\hirot\AppData\Local\Temp\ccBW4o2N.s:18     .text.HAL_MspInit:00000000 $t
+C:\Users\hirot\AppData\Local\Temp\ccBW4o2N.s:25     .text.HAL_MspInit:00000000 HAL_MspInit
+C:\Users\hirot\AppData\Local\Temp\ccBW4o2N.s:66     .text.HAL_MspInit:0000002c $d
+                     .debug_frame:00000010 $d
 
 NO UNDEFINED SYMBOLS

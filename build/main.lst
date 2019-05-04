@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccr5D7CW.s 			page 1
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -17,18 +17,16 @@ ARM GAS  /tmp/ccr5D7CW.s 			page 1
   14              		.text
   15              	.Ltext0:
   16              		.cfi_sections	.debug_frame
-  17              		.section	.text.HAL_I2C_MemRxCpltCallback,"ax",%progbits
+  17              		.section	.text.SystemClock_Config,"ax",%progbits
   18              		.align	1
-  19              		.global	HAL_I2C_MemRxCpltCallback
-  20              		.arch armv7e-m
-  21              		.syntax unified
-  22              		.thumb
-  23              		.thumb_func
-  24              		.fpu fpv4-sp-d16
-  26              	HAL_I2C_MemRxCpltCallback:
-  27              	.LVL0:
-  28              	.LFB134:
-  29              		.file 1 "Src/main.c"
+  19              		.global	SystemClock_Config
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  23              		.fpu fpv4-sp-d16
+  25              	SystemClock_Config:
+  26              	.LFB132:
+  27              		.file 1 "Src/main.c"
    1:Src/main.c    **** /* USER CODE BEGIN Header */
    2:Src/main.c    **** /**
    3:Src/main.c    ****  ******************************************************************************
@@ -58,11 +56,11 @@ ARM GAS  /tmp/ccr5D7CW.s 			page 1
   27:Src/main.c    **** #include "i2c.h"
   28:Src/main.c    **** #include "usart.h"
   29:Src/main.c    **** 
-ARM GAS  /tmp/ccr5D7CW.s 			page 2
-
-
   30:Src/main.c    **** /* Private includes ----------------------------------------------------------*/
   31:Src/main.c    **** /* USER CODE BEGIN Includes */
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s 			page 2
+
+
   32:Src/main.c    **** 
   33:Src/main.c    **** /* USER CODE END Includes */
   34:Src/main.c    **** 
@@ -88,569 +86,1211 @@ ARM GAS  /tmp/ccr5D7CW.s 			page 1
   54:Src/main.c    **** 
   55:Src/main.c    **** /* USER CODE BEGIN PV */
   56:Src/main.c    **** char k[I2C_BUF_SIZE];
-  57:Src/main.c    **** 
-  58:Src/main.c    **** /* USER CODE END PV */
-  59:Src/main.c    **** 
-  60:Src/main.c    **** /* Private function prototypes -----------------------------------------------*/
-  61:Src/main.c    **** void SystemClock_Config(void);
-  62:Src/main.c    **** /* USER CODE BEGIN PFP */
-  63:Src/main.c    **** 
-  64:Src/main.c    **** /* USER CODE END PFP */
+  57:Src/main.c    **** uint8_t isxready = false;
+  58:Src/main.c    **** uint8_t isyready = false;
+  59:Src/main.c    **** uint8_t iszready = false;
+  60:Src/main.c    **** 
+  61:Src/main.c    **** float xAccl = 0.00;
+  62:Src/main.c    **** float yAccl = 0.00;
+  63:Src/main.c    **** float zAccl = 0.00;
+  64:Src/main.c    **** float f = 3.14;
   65:Src/main.c    **** 
-  66:Src/main.c    **** /* Private user code ---------------------------------------------------------*/
-  67:Src/main.c    **** /* USER CODE BEGIN 0 */
-  68:Src/main.c    **** 
-  69:Src/main.c    **** int isI2CRunning;
-  70:Src/main.c    **** 
-  71:Src/main.c    **** /* USER CODE END 0 */
-  72:Src/main.c    **** 
-  73:Src/main.c    **** /**
-  74:Src/main.c    ****  * @brief  The application entry point.
-  75:Src/main.c    ****  * @retval int
-  76:Src/main.c    ****  */
-  77:Src/main.c    **** int main(void) {
-  78:Src/main.c    ****   /* USER CODE BEGIN 1 */
-  79:Src/main.c    **** 
-  80:Src/main.c    ****   /* USER CODE END 1 */
-  81:Src/main.c    **** 
-  82:Src/main.c    ****   /* MCU Configuration--------------------------------------------------------*/
-  83:Src/main.c    **** 
-  84:Src/main.c    ****   /* Reset of all peripherals, Initializes the Flash interface and the Systick.
-  85:Src/main.c    ****    */
-  86:Src/main.c    ****   HAL_Init();
-ARM GAS  /tmp/ccr5D7CW.s 			page 3
-
-
-  87:Src/main.c    **** 
-  88:Src/main.c    ****   /* USER CODE BEGIN Init */
-  89:Src/main.c    **** 
-  90:Src/main.c    ****   /* USER CODE END Init */
-  91:Src/main.c    **** 
-  92:Src/main.c    ****   /* Configure the system clock */
-  93:Src/main.c    ****   SystemClock_Config();
-  94:Src/main.c    **** 
-  95:Src/main.c    ****   /* USER CODE BEGIN SysInit */
-  96:Src/main.c    **** 
-  97:Src/main.c    ****   /* USER CODE END SysInit */
-  98:Src/main.c    **** 
-  99:Src/main.c    ****   /* Initialize all configured peripherals */
- 100:Src/main.c    ****   MX_GPIO_Init();
- 101:Src/main.c    ****   MX_DMA_Init();
- 102:Src/main.c    ****   MX_USART2_UART_Init();
- 103:Src/main.c    ****   MX_I2C1_Init();
- 104:Src/main.c    ****   /* USER CODE BEGIN 2 */
- 105:Src/main.c    **** 
- 106:Src/main.c    ****   isI2CRunning = 1;
- 107:Src/main.c    ****   /* USER CODE END 2 */
- 108:Src/main.c    **** 
- 109:Src/main.c    ****   /* Infinite loop */
- 110:Src/main.c    ****   /* USER CODE BEGIN WHILE */
- 111:Src/main.c    ****   int i = 0;
- 112:Src/main.c    ****   while (1) {
- 113:Src/main.c    ****     /* USER CODE END WHILE */
- 114:Src/main.c    ****     sprintf(k, "kaisuu : %d \n", i++);
- 115:Src/main.c    ****     HAL_UART_Transmit(&huart2, (uint8_t *)(&k[0]), strlen(&k[0]), 100);
- 116:Src/main.c    **** 
- 117:Src/main.c    ****     uint8_t LxAccl;
- 118:Src/main.c    ****     HAL_I2C_Mem_Read_DMA(&hi2c1, Addr_Accl << 1, 0x02, 1, &LxAccl, 1);
- 119:Src/main.c    **** 
- 120:Src/main.c    ****     if (isI2CRunning == 0) {
- 121:Src/main.c    ****       sprintf(k, "dma run : %d \n", i);
- 122:Src/main.c    ****       HAL_UART_Transmit(&huart2, (uint8_t *)(&k[0]), strlen(&k[0]), 100);
- 123:Src/main.c    ****     }
- 124:Src/main.c    **** 
- 125:Src/main.c    ****     HAL_Delay(1000);
- 126:Src/main.c    **** 
- 127:Src/main.c    ****     /* USER CODE BEGIN 3 */
- 128:Src/main.c    ****   }
- 129:Src/main.c    ****   /* USER CODE END 3 */
- 130:Src/main.c    **** }
- 131:Src/main.c    **** 
- 132:Src/main.c    **** void HAL_I2C_MemRxCpltCallback(I2C_HandleTypeDef *hi2c1) { isI2CRunning = 0; }
-  30              		.loc 1 132 58 view -0
-  31              		.cfi_startproc
-  32              		@ args = 0, pretend = 0, frame = 0
-  33              		@ frame_needed = 0, uses_anonymous_args = 0
-  34              		@ link register save eliminated.
-  35              		.loc 1 132 60 view .LVU1
-  36              		.loc 1 132 73 is_stmt 0 view .LVU2
-  37 0000 014B     		ldr	r3, .L2
-  38 0002 0022     		movs	r2, #0
-  39 0004 1A60     		str	r2, [r3]
-  40              		.loc 1 132 1 view .LVU3
-ARM GAS  /tmp/ccr5D7CW.s 			page 4
-
-
-  41 0006 7047     		bx	lr
-  42              	.L3:
-  43              		.align	2
-  44              	.L2:
-  45 0008 00000000 		.word	isI2CRunning
-  46              		.cfi_endproc
-  47              	.LFE134:
-  49              		.section	.text.SystemClock_Config,"ax",%progbits
-  50              		.align	1
-  51              		.global	SystemClock_Config
-  52              		.syntax unified
-  53              		.thumb
-  54              		.thumb_func
-  55              		.fpu fpv4-sp-d16
-  57              	SystemClock_Config:
-  58              	.LFB135:
- 133:Src/main.c    **** 
- 134:Src/main.c    **** /**
- 135:Src/main.c    ****  * @brief System Clock Configuration
- 136:Src/main.c    ****  * @retval None
- 137:Src/main.c    ****  */
- 138:Src/main.c    **** void SystemClock_Config(void) {
-  59              		.loc 1 138 31 is_stmt 1 view -0
-  60              		.cfi_startproc
-  61              		@ args = 0, pretend = 0, frame = 224
-  62              		@ frame_needed = 0, uses_anonymous_args = 0
-  63 0000 10B5     		push	{r4, lr}
-  64              	.LCFI0:
-  65              		.cfi_def_cfa_offset 8
-  66              		.cfi_offset 4, -8
-  67              		.cfi_offset 14, -4
-  68 0002 B8B0     		sub	sp, sp, #224
-  69              	.LCFI1:
-  70              		.cfi_def_cfa_offset 232
- 139:Src/main.c    ****   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
-  71              		.loc 1 139 3 view .LVU5
-  72              		.loc 1 139 22 is_stmt 0 view .LVU6
-  73 0004 2422     		movs	r2, #36
-  74 0006 0021     		movs	r1, #0
-  75 0008 28A8     		add	r0, sp, #160
-  76 000a FFF7FEFF 		bl	memset
-  77              	.LVL1:
- 140:Src/main.c    ****   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
-  78              		.loc 1 140 3 is_stmt 1 view .LVU7
-  79              		.loc 1 140 22 is_stmt 0 view .LVU8
-  80 000e 0024     		movs	r4, #0
-  81 0010 2294     		str	r4, [sp, #136]
-  82 0012 2394     		str	r4, [sp, #140]
-  83 0014 2494     		str	r4, [sp, #144]
-  84 0016 2594     		str	r4, [sp, #148]
-  85 0018 2694     		str	r4, [sp, #152]
- 141:Src/main.c    ****   RCC_PeriphCLKInitTypeDef PeriphClkInit = {0};
-  86              		.loc 1 141 3 is_stmt 1 view .LVU9
-  87              		.loc 1 141 28 is_stmt 0 view .LVU10
-  88 001a 8822     		movs	r2, #136
-  89 001c 2146     		mov	r1, r4
-  90 001e 6846     		mov	r0, sp
-ARM GAS  /tmp/ccr5D7CW.s 			page 5
-
-
-  91 0020 FFF7FEFF 		bl	memset
-  92              	.LVL2:
- 142:Src/main.c    **** 
- 143:Src/main.c    ****   /** Initializes the CPU, AHB and APB busses clocks
- 144:Src/main.c    ****    */
- 145:Src/main.c    ****   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
-  93              		.loc 1 145 3 is_stmt 1 view .LVU11
-  94              		.loc 1 145 36 is_stmt 0 view .LVU12
-  95 0024 0223     		movs	r3, #2
-  96 0026 2793     		str	r3, [sp, #156]
- 146:Src/main.c    ****   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
-  97              		.loc 1 146 3 is_stmt 1 view .LVU13
-  98              		.loc 1 146 30 is_stmt 0 view .LVU14
-  99 0028 4FF48072 		mov	r2, #256
- 100 002c 2A92     		str	r2, [sp, #168]
- 147:Src/main.c    ****   RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
- 101              		.loc 1 147 3 is_stmt 1 view .LVU15
- 102              		.loc 1 147 41 is_stmt 0 view .LVU16
- 103 002e 1022     		movs	r2, #16
- 104 0030 2B92     		str	r2, [sp, #172]
- 148:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
- 105              		.loc 1 148 3 is_stmt 1 view .LVU17
- 106              		.loc 1 148 34 is_stmt 0 view .LVU18
- 107 0032 3193     		str	r3, [sp, #196]
- 149:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
- 108              		.loc 1 149 3 is_stmt 1 view .LVU19
- 109              		.loc 1 149 35 is_stmt 0 view .LVU20
- 110 0034 3293     		str	r3, [sp, #200]
- 150:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLM = 1;
- 111              		.loc 1 150 3 is_stmt 1 view .LVU21
- 112              		.loc 1 150 30 is_stmt 0 view .LVU22
- 113 0036 0122     		movs	r2, #1
- 114 0038 3392     		str	r2, [sp, #204]
- 151:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLN = 10;
- 115              		.loc 1 151 3 is_stmt 1 view .LVU23
- 116              		.loc 1 151 30 is_stmt 0 view .LVU24
- 117 003a 0A22     		movs	r2, #10
- 118 003c 3492     		str	r2, [sp, #208]
- 152:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV7;
- 119              		.loc 1 152 3 is_stmt 1 view .LVU25
- 120              		.loc 1 152 30 is_stmt 0 view .LVU26
- 121 003e 0722     		movs	r2, #7
- 122 0040 3592     		str	r2, [sp, #212]
- 153:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLQ = RCC_PLLQ_DIV2;
- 123              		.loc 1 153 3 is_stmt 1 view .LVU27
- 124              		.loc 1 153 30 is_stmt 0 view .LVU28
- 125 0042 3693     		str	r3, [sp, #216]
- 154:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLR = RCC_PLLR_DIV2;
- 126              		.loc 1 154 3 is_stmt 1 view .LVU29
- 127              		.loc 1 154 30 is_stmt 0 view .LVU30
- 128 0044 3793     		str	r3, [sp, #220]
- 155:Src/main.c    ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK) {
- 129              		.loc 1 155 3 is_stmt 1 view .LVU31
- 130              		.loc 1 155 7 is_stmt 0 view .LVU32
- 131 0046 27A8     		add	r0, sp, #156
- 132 0048 FFF7FEFF 		bl	HAL_RCC_OscConfig
- 133              	.LVL3:
-ARM GAS  /tmp/ccr5D7CW.s 			page 6
-
-
- 156:Src/main.c    ****     Error_Handler();
- 157:Src/main.c    ****   }
- 158:Src/main.c    ****   /** Initializes the CPU, AHB and APB busses clocks
- 159:Src/main.c    ****    */
- 160:Src/main.c    ****   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_SYSCLK |
- 134              		.loc 1 160 3 is_stmt 1 view .LVU33
- 135              		.loc 1 160 31 is_stmt 0 view .LVU34
- 136 004c 0F23     		movs	r3, #15
- 137 004e 2293     		str	r3, [sp, #136]
- 161:Src/main.c    ****                                 RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2;
- 162:Src/main.c    ****   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
- 138              		.loc 1 162 3 is_stmt 1 view .LVU35
- 139              		.loc 1 162 34 is_stmt 0 view .LVU36
- 140 0050 0323     		movs	r3, #3
- 141 0052 2393     		str	r3, [sp, #140]
- 163:Src/main.c    ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
- 142              		.loc 1 163 3 is_stmt 1 view .LVU37
- 143              		.loc 1 163 35 is_stmt 0 view .LVU38
- 144 0054 2494     		str	r4, [sp, #144]
- 164:Src/main.c    ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
- 145              		.loc 1 164 3 is_stmt 1 view .LVU39
- 146              		.loc 1 164 36 is_stmt 0 view .LVU40
- 147 0056 2594     		str	r4, [sp, #148]
- 165:Src/main.c    ****   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
- 148              		.loc 1 165 3 is_stmt 1 view .LVU41
- 149              		.loc 1 165 36 is_stmt 0 view .LVU42
- 150 0058 2694     		str	r4, [sp, #152]
- 166:Src/main.c    **** 
- 167:Src/main.c    ****   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_4) != HAL_OK) {
- 151              		.loc 1 167 3 is_stmt 1 view .LVU43
- 152              		.loc 1 167 7 is_stmt 0 view .LVU44
- 153 005a 0421     		movs	r1, #4
- 154 005c 22A8     		add	r0, sp, #136
- 155 005e FFF7FEFF 		bl	HAL_RCC_ClockConfig
- 156              	.LVL4:
- 168:Src/main.c    ****     Error_Handler();
- 169:Src/main.c    ****   }
- 170:Src/main.c    ****   PeriphClkInit.PeriphClockSelection =
- 157              		.loc 1 170 3 is_stmt 1 view .LVU45
- 158              		.loc 1 170 38 is_stmt 0 view .LVU46
- 159 0062 4223     		movs	r3, #66
- 160 0064 0093     		str	r3, [sp]
- 171:Src/main.c    ****       RCC_PERIPHCLK_USART2 | RCC_PERIPHCLK_I2C1;
- 172:Src/main.c    ****   PeriphClkInit.Usart2ClockSelection = RCC_USART2CLKSOURCE_PCLK1;
- 161              		.loc 1 172 3 is_stmt 1 view .LVU47
- 162              		.loc 1 172 38 is_stmt 0 view .LVU48
- 163 0066 0F94     		str	r4, [sp, #60]
- 173:Src/main.c    ****   PeriphClkInit.I2c1ClockSelection = RCC_I2C1CLKSOURCE_PCLK1;
- 164              		.loc 1 173 3 is_stmt 1 view .LVU49
- 165              		.loc 1 173 36 is_stmt 0 view .LVU50
- 166 0068 1494     		str	r4, [sp, #80]
- 174:Src/main.c    ****   if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK) {
- 167              		.loc 1 174 3 is_stmt 1 view .LVU51
- 168              		.loc 1 174 7 is_stmt 0 view .LVU52
- 169 006a 6846     		mov	r0, sp
- 170 006c FFF7FEFF 		bl	HAL_RCCEx_PeriphCLKConfig
- 171              	.LVL5:
-ARM GAS  /tmp/ccr5D7CW.s 			page 7
-
-
- 175:Src/main.c    ****     Error_Handler();
- 176:Src/main.c    ****   }
- 177:Src/main.c    ****   /** Configure the main internal regulator output voltage
- 178:Src/main.c    ****    */
- 179:Src/main.c    ****   if (HAL_PWREx_ControlVoltageScaling(PWR_REGULATOR_VOLTAGE_SCALE1) != HAL_OK) {
- 172              		.loc 1 179 3 is_stmt 1 view .LVU53
- 173              		.loc 1 179 7 is_stmt 0 view .LVU54
- 174 0070 4FF40070 		mov	r0, #512
- 175 0074 FFF7FEFF 		bl	HAL_PWREx_ControlVoltageScaling
- 176              	.LVL6:
- 180:Src/main.c    ****     Error_Handler();
- 181:Src/main.c    ****   }
- 182:Src/main.c    **** }
- 177              		.loc 1 182 1 view .LVU55
- 178 0078 38B0     		add	sp, sp, #224
- 179              	.LCFI2:
- 180              		.cfi_def_cfa_offset 8
- 181              		@ sp needed
- 182 007a 10BD     		pop	{r4, pc}
- 183              		.cfi_endproc
- 184              	.LFE135:
- 186              		.section	.text.main,"ax",%progbits
- 187              		.align	1
- 188              		.global	main
- 189              		.syntax unified
- 190              		.thumb
- 191              		.thumb_func
- 192              		.fpu fpv4-sp-d16
- 194              	main:
- 195              	.LFB133:
-  77:Src/main.c    ****   /* USER CODE BEGIN 1 */
- 196              		.loc 1 77 16 is_stmt 1 view -0
- 197              		.cfi_startproc
- 198              		@ args = 0, pretend = 0, frame = 8
- 199              		@ frame_needed = 0, uses_anonymous_args = 0
- 200 0000 30B5     		push	{r4, r5, lr}
- 201              	.LCFI3:
- 202              		.cfi_def_cfa_offset 12
- 203              		.cfi_offset 4, -12
- 204              		.cfi_offset 5, -8
- 205              		.cfi_offset 14, -4
- 206 0002 85B0     		sub	sp, sp, #20
- 207              	.LCFI4:
- 208              		.cfi_def_cfa_offset 32
+  66:Src/main.c    **** float xGyro;
+  67:Src/main.c    **** float yGyro;
+  68:Src/main.c    **** float zGyro;
+  69:Src/main.c    **** 
+  70:Src/main.c    **** int isI2CRunning;
+  71:Src/main.c    **** 
+  72:Src/main.c    **** typedef struct {
+  73:Src/main.c    ****   /* data */
+  74:Src/main.c    ****   uint8_t xLSB;
+  75:Src/main.c    ****   uint8_t xMSB;
+  76:Src/main.c    ****   uint8_t yLSB;
+  77:Src/main.c    ****   uint8_t yMSB;
+  78:Src/main.c    ****   uint8_t zLSB;
+  79:Src/main.c    ****   uint8_t zMSB;  
+  80:Src/main.c    **** 
+  81:Src/main.c    **** } bmxAccl;
+  82:Src/main.c    **** 
+  83:Src/main.c    **** bmxAccl Accl_temp = {0,0,0,0,0,0};
+  84:Src/main.c    **** bmxAccl Accl = {0,0,0,0,0,0};
+  85:Src/main.c    **** 
   86:Src/main.c    **** 
- 209              		.loc 1 86 3 view .LVU57
- 210 0004 FFF7FEFF 		bl	HAL_Init
- 211              	.LVL7:
-  93:Src/main.c    **** 
- 212              		.loc 1 93 3 view .LVU58
- 213 0008 FFF7FEFF 		bl	SystemClock_Config
- 214              	.LVL8:
- 100:Src/main.c    ****   MX_DMA_Init();
- 215              		.loc 1 100 3 view .LVU59
- 216 000c FFF7FEFF 		bl	MX_GPIO_Init
- 217              	.LVL9:
- 101:Src/main.c    ****   MX_USART2_UART_Init();
-ARM GAS  /tmp/ccr5D7CW.s 			page 8
+  87:Src/main.c    **** /* USER CODE END PV */
+  88:Src/main.c    **** 
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s 			page 3
 
 
- 218              		.loc 1 101 3 view .LVU60
- 219 0010 FFF7FEFF 		bl	MX_DMA_Init
- 220              	.LVL10:
- 102:Src/main.c    ****   MX_I2C1_Init();
- 221              		.loc 1 102 3 view .LVU61
- 222 0014 FFF7FEFF 		bl	MX_USART2_UART_Init
- 223              	.LVL11:
- 103:Src/main.c    ****   /* USER CODE BEGIN 2 */
- 224              		.loc 1 103 3 view .LVU62
- 225 0018 FFF7FEFF 		bl	MX_I2C1_Init
- 226              	.LVL12:
- 106:Src/main.c    ****   /* USER CODE END 2 */
- 227              		.loc 1 106 3 view .LVU63
- 106:Src/main.c    ****   /* USER CODE END 2 */
- 228              		.loc 1 106 16 is_stmt 0 view .LVU64
- 229 001c 1A4B     		ldr	r3, .L10
- 230 001e 0122     		movs	r2, #1
- 231 0020 1A60     		str	r2, [r3]
- 111:Src/main.c    ****   while (1) {
- 232              		.loc 1 111 3 is_stmt 1 view .LVU65
- 233              	.LVL13:
- 111:Src/main.c    ****   while (1) {
- 234              		.loc 1 111 7 is_stmt 0 view .LVU66
- 235 0022 0022     		movs	r2, #0
- 236 0024 04E0     		b	.L8
- 237              	.LVL14:
- 238              	.L7:
- 239              	.LBB2:
- 125:Src/main.c    **** 
- 240              		.loc 1 125 5 is_stmt 1 view .LVU67
- 241 0026 4FF47A70 		mov	r0, #1000
- 242 002a FFF7FEFF 		bl	HAL_Delay
- 243              	.LVL15:
- 114:Src/main.c    ****     HAL_UART_Transmit(&huart2, (uint8_t *)(&k[0]), strlen(&k[0]), 100);
- 244              		.loc 1 114 5 is_stmt 0 view .LVU68
- 245 002e 2A46     		mov	r2, r5
- 246              	.LVL16:
- 247              	.L8:
- 114:Src/main.c    ****     HAL_UART_Transmit(&huart2, (uint8_t *)(&k[0]), strlen(&k[0]), 100);
- 248              		.loc 1 114 5 view .LVU69
- 249              	.LBE2:
- 112:Src/main.c    ****     /* USER CODE END WHILE */
- 250              		.loc 1 112 3 is_stmt 1 view .LVU70
- 251              	.LBB3:
- 114:Src/main.c    ****     HAL_UART_Transmit(&huart2, (uint8_t *)(&k[0]), strlen(&k[0]), 100);
- 252              		.loc 1 114 5 view .LVU71
- 253 0030 551C     		adds	r5, r2, #1
- 254              	.LVL17:
- 114:Src/main.c    ****     HAL_UART_Transmit(&huart2, (uint8_t *)(&k[0]), strlen(&k[0]), 100);
- 255              		.loc 1 114 5 is_stmt 0 view .LVU72
- 256 0032 164C     		ldr	r4, .L10+4
- 257 0034 1649     		ldr	r1, .L10+8
- 258 0036 2046     		mov	r0, r4
- 259 0038 FFF7FEFF 		bl	sprintf
- 260              	.LVL18:
- 115:Src/main.c    **** 
- 261              		.loc 1 115 5 is_stmt 1 view .LVU73
-ARM GAS  /tmp/ccr5D7CW.s 			page 9
+  89:Src/main.c    **** /* Private function prototypes -----------------------------------------------*/
+  90:Src/main.c    **** void SystemClock_Config(void);
+  91:Src/main.c    **** /* USER CODE BEGIN PFP */
+  92:Src/main.c    **** void Show_float(char*, float);
+  93:Src/main.c    **** void BMX_Init(void);
+  94:Src/main.c    **** 
+  95:Src/main.c    **** /* USER CODE END PFP */
+  96:Src/main.c    **** 
+  97:Src/main.c    **** /* Private user code ---------------------------------------------------------*/
+  98:Src/main.c    **** /* USER CODE BEGIN 0 */
+  99:Src/main.c    **** 
+ 100:Src/main.c    **** 
+ 101:Src/main.c    **** /* USER CODE END 0 */
+ 102:Src/main.c    **** 
+ 103:Src/main.c    **** /**
+ 104:Src/main.c    ****  * @brief  The application entry point.
+ 105:Src/main.c    ****  * @retval int
+ 106:Src/main.c    ****  */
+ 107:Src/main.c    **** int main(void) {
+ 108:Src/main.c    ****   /* USER CODE BEGIN 1 */
+ 109:Src/main.c    **** 
+ 110:Src/main.c    ****   /* USER CODE END 1 */
+ 111:Src/main.c    **** 
+ 112:Src/main.c    ****   /* MCU Configuration--------------------------------------------------------*/
+ 113:Src/main.c    **** 
+ 114:Src/main.c    ****   /* Reset of all peripherals, Initializes the Flash interface and the Systick.
+ 115:Src/main.c    ****    */
+ 116:Src/main.c    ****   HAL_Init();
+ 117:Src/main.c    **** 
+ 118:Src/main.c    ****   /* USER CODE BEGIN Init */
+ 119:Src/main.c    **** 
+ 120:Src/main.c    ****   /* USER CODE END Init */
+ 121:Src/main.c    **** 
+ 122:Src/main.c    ****   /* Configure the system clock */
+ 123:Src/main.c    ****   SystemClock_Config();
+ 124:Src/main.c    **** 
+ 125:Src/main.c    ****   /* USER CODE BEGIN SysInit */
+ 126:Src/main.c    **** 
+ 127:Src/main.c    ****   /* USER CODE END SysInit */
+ 128:Src/main.c    **** 
+ 129:Src/main.c    ****   /* Initialize all configured peripherals */
+ 130:Src/main.c    ****   MX_GPIO_Init();
+ 131:Src/main.c    ****   MX_DMA_Init();
+ 132:Src/main.c    ****   MX_USART2_UART_Init();
+ 133:Src/main.c    ****   MX_I2C1_Init();
+ 134:Src/main.c    ****   /* USER CODE BEGIN 2 */
+ 135:Src/main.c    ****   BMX_Init();
+ 136:Src/main.c    ****   // first time to read sensor value
+ 137:Src/main.c    ****   HAL_I2C_Mem_Read_DMA(&hi2c1, Addr_Accl << 1, 0x00, 1,(&Accl_temp), 6);
+ 138:Src/main.c    ****   /* USER CODE END 2 */
+ 139:Src/main.c    **** 
+ 140:Src/main.c    ****   /* Infinite loop */
+ 141:Src/main.c    ****   /* USER CODE BEGIN WHILE */
+ 142:Src/main.c    ****   uint8_t i = 0;
+ 143:Src/main.c    ****   while (1) {
+ 144:Src/main.c    ****     /* USER CODE END WHILE */
+ 145:Src/main.c    ****     sprintf(k, "kaisuu : %d\n", i++);
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s 			page 4
 
 
- 115:Src/main.c    **** 
- 262              		.loc 1 115 52 is_stmt 0 view .LVU74
- 263 003c 2046     		mov	r0, r4
- 264 003e FFF7FEFF 		bl	strlen
- 265              	.LVL19:
- 115:Src/main.c    **** 
- 266              		.loc 1 115 5 view .LVU75
- 267 0042 6423     		movs	r3, #100
- 268 0044 82B2     		uxth	r2, r0
- 269 0046 2146     		mov	r1, r4
- 270 0048 1248     		ldr	r0, .L10+12
- 271 004a FFF7FEFF 		bl	HAL_UART_Transmit
- 272              	.LVL20:
- 117:Src/main.c    ****     HAL_I2C_Mem_Read_DMA(&hi2c1, Addr_Accl << 1, 0x02, 1, &LxAccl, 1);
- 273              		.loc 1 117 5 is_stmt 1 view .LVU76
- 118:Src/main.c    **** 
- 274              		.loc 1 118 5 view .LVU77
- 275 004e 0123     		movs	r3, #1
- 276 0050 0193     		str	r3, [sp, #4]
- 277 0052 0DF10F02 		add	r2, sp, #15
- 278 0056 0092     		str	r2, [sp]
- 279 0058 0222     		movs	r2, #2
- 280 005a 3221     		movs	r1, #50
- 281 005c 0E48     		ldr	r0, .L10+16
- 282 005e FFF7FEFF 		bl	HAL_I2C_Mem_Read_DMA
- 283              	.LVL21:
- 120:Src/main.c    ****       sprintf(k, "dma run : %d \n", i);
- 284              		.loc 1 120 5 view .LVU78
- 120:Src/main.c    ****       sprintf(k, "dma run : %d \n", i);
- 285              		.loc 1 120 22 is_stmt 0 view .LVU79
- 286 0062 094B     		ldr	r3, .L10
- 287 0064 1B68     		ldr	r3, [r3]
- 120:Src/main.c    ****       sprintf(k, "dma run : %d \n", i);
- 288              		.loc 1 120 8 view .LVU80
- 289 0066 002B     		cmp	r3, #0
- 290 0068 DDD1     		bne	.L7
- 121:Src/main.c    ****       HAL_UART_Transmit(&huart2, (uint8_t *)(&k[0]), strlen(&k[0]), 100);
- 291              		.loc 1 121 7 is_stmt 1 view .LVU81
- 292 006a 2A46     		mov	r2, r5
- 293 006c 0B49     		ldr	r1, .L10+20
- 294 006e 2046     		mov	r0, r4
- 295 0070 FFF7FEFF 		bl	sprintf
- 296              	.LVL22:
- 122:Src/main.c    ****     }
- 297              		.loc 1 122 7 view .LVU82
- 122:Src/main.c    ****     }
- 298              		.loc 1 122 54 is_stmt 0 view .LVU83
- 299 0074 2046     		mov	r0, r4
- 300 0076 FFF7FEFF 		bl	strlen
- 301              	.LVL23:
- 122:Src/main.c    ****     }
- 302              		.loc 1 122 7 view .LVU84
- 303 007a 6423     		movs	r3, #100
- 304 007c 82B2     		uxth	r2, r0
- 305 007e 2146     		mov	r1, r4
- 306 0080 0448     		ldr	r0, .L10+12
- 307 0082 FFF7FEFF 		bl	HAL_UART_Transmit
-ARM GAS  /tmp/ccr5D7CW.s 			page 10
+ 146:Src/main.c    ****     HAL_UART_Transmit(&huart2, (uint8_t *)(&k[0]), strlen(&k[0]), 100);
+ 147:Src/main.c    **** 
+ 148:Src/main.c    ****     //move the value from temp to buffer
+ 149:Src/main.c    ****     if(isxready == true){
+ 150:Src/main.c    ****       Accl.xLSB = Accl_temp.xLSB;
+ 151:Src/main.c    ****       Accl.xMSB = Accl_temp.xMSB;     
+ 152:Src/main.c    ****       
+ 153:Src/main.c    ****       xAccl = ((Accl.xMSB*256) + (Accl.xLSB & 0xF0))/16;
+ 154:Src/main.c    ****       if(xAccl>2047) xAccl -= 4096;
+ 155:Src/main.c    ****       xAccl = xAccl*0.0098;
+ 156:Src/main.c    **** 
+ 157:Src/main.c    ****       isxready = false;
+ 158:Src/main.c    ****     }
+ 159:Src/main.c    **** 
+ 160:Src/main.c    ****     if(isyready == true){
+ 161:Src/main.c    ****       Accl.yLSB = Accl_temp.yLSB;
+ 162:Src/main.c    ****       Accl.yMSB = Accl_temp.yMSB;
+ 163:Src/main.c    ****       
+ 164:Src/main.c    ****       yAccl = ((Accl.yMSB*256) + (Accl.yLSB & 0xF0))/16;
+ 165:Src/main.c    ****       if(yAccl>2047) yAccl -= 4096; 
+ 166:Src/main.c    ****       yAccl = yAccl*0.0098;
+ 167:Src/main.c    **** 
+ 168:Src/main.c    ****       
+ 169:Src/main.c    ****       isyready = false;
+ 170:Src/main.c    ****     }
+ 171:Src/main.c    **** 
+ 172:Src/main.c    ****     if(iszready == true){
+ 173:Src/main.c    ****       Accl.zLSB = Accl_temp.zLSB;
+ 174:Src/main.c    ****       Accl.zMSB = Accl_temp.zMSB;
+ 175:Src/main.c    **** 
+ 176:Src/main.c    ****       zAccl = ((Accl.zMSB*256) + (Accl.zLSB & 0xF0))/16;
+ 177:Src/main.c    ****       if(zAccl>2047) zAccl -= 4096; 
+ 178:Src/main.c    ****       zAccl = zAccl*0.0098;
+ 179:Src/main.c    ****       
+ 180:Src/main.c    ****       iszready = false;
+ 181:Src/main.c    ****     }
+ 182:Src/main.c    **** 
+ 183:Src/main.c    **** //     HAL_I2C_Mem_Read_DMA(&hi2c1, Addr_Accl << 1, 0x02, 1, &Accl_temp, 6);
+ 184:Src/main.c    **** /*
+ 185:Src/main.c    ****     if (isxready == true) {
+ 186:Src/main.c    ****       sprintf(k, "xready\n");
+ 187:Src/main.c    ****       HAL_UART_Transmit(&huart2, (uint8_t *)(&k[0]), strlen(&k[0]), 100);
+ 188:Src/main.c    ****     }
+ 189:Src/main.c    **** */  Show_float("xAccl = ",xAccl);
+ 190:Src/main.c    ****     Show_float("yAccl = ",yAccl);
+ 191:Src/main.c    ****     Show_float("zAccl = ",zAccl);
+ 192:Src/main.c    **** 
+ 193:Src/main.c    ****     HAL_Delay(1000);
+ 194:Src/main.c    **** 
+ 195:Src/main.c    ****     /* USER CODE BEGIN 3 */
+ 196:Src/main.c    ****   }
+ 197:Src/main.c    ****   /* USER CODE END 3 */
+ 198:Src/main.c    **** }
+ 199:Src/main.c    **** 
+ 200:Src/main.c    **** 
+ 201:Src/main.c    **** 
+ 202:Src/main.c    **** /**
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s 			page 5
 
 
- 308              	.LVL24:
- 309 0086 CEE7     		b	.L7
- 310              	.L11:
- 311              		.align	2
- 312              	.L10:
- 313 0088 00000000 		.word	isI2CRunning
- 314 008c 00000000 		.word	k
- 315 0090 00000000 		.word	.LC0
- 316 0094 00000000 		.word	huart2
- 317 0098 00000000 		.word	hi2c1
- 318 009c 10000000 		.word	.LC1
- 319              	.LBE3:
- 320              		.cfi_endproc
- 321              	.LFE133:
- 323              		.section	.text.Error_Handler,"ax",%progbits
- 324              		.align	1
- 325              		.global	Error_Handler
- 326              		.syntax unified
- 327              		.thumb
- 328              		.thumb_func
- 329              		.fpu fpv4-sp-d16
- 331              	Error_Handler:
- 332              	.LFB136:
- 183:Src/main.c    **** 
- 184:Src/main.c    **** /* USER CODE BEGIN 4 */
- 185:Src/main.c    **** 
- 186:Src/main.c    **** /* USER CODE END 4 */
- 187:Src/main.c    **** 
- 188:Src/main.c    **** /**
- 189:Src/main.c    ****  * @brief  This function is executed in case of error occurrence.
- 190:Src/main.c    ****  * @retval None
- 191:Src/main.c    ****  */
- 192:Src/main.c    **** void Error_Handler(void) {
- 333              		.loc 1 192 26 is_stmt 1 view -0
- 334              		.cfi_startproc
- 335              		@ args = 0, pretend = 0, frame = 0
- 336              		@ frame_needed = 0, uses_anonymous_args = 0
- 337              		@ link register save eliminated.
- 193:Src/main.c    ****   /* USER CODE BEGIN Error_Handler_Debug */
- 194:Src/main.c    ****   /* User can add his own implementation to report the HAL error return state */
- 195:Src/main.c    **** 
- 196:Src/main.c    ****   /* USER CODE END Error_Handler_Debug */
- 197:Src/main.c    **** }
- 338              		.loc 1 197 1 view .LVU86
- 339 0000 7047     		bx	lr
- 340              		.cfi_endproc
- 341              	.LFE136:
- 343              		.comm	isI2CRunning,4,4
- 344              		.comm	k,100,4
- 345              		.section	.rodata.main.str1.4,"aMS",%progbits,1
- 346              		.align	2
- 347              	.LC0:
- 348 0000 6B616973 		.ascii	"kaisuu : %d \012\000"
- 348      7575203A 
- 348      20256420 
- 348      0A00
- 349 000e 0000     		.space	2
-ARM GAS  /tmp/ccr5D7CW.s 			page 11
+ 203:Src/main.c    ****  * @brief System Clock Configuration
+ 204:Src/main.c    ****  * @retval None
+ 205:Src/main.c    ****  */
+ 206:Src/main.c    **** void SystemClock_Config(void) {
+  28              		.loc 1 206 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 224
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 10B5     		push	{r4, lr}
+  33              	.LCFI0:
+  34              		.cfi_def_cfa_offset 8
+  35              		.cfi_offset 4, -8
+  36              		.cfi_offset 14, -4
+  37 0002 B8B0     		sub	sp, sp, #224
+  38              	.LCFI1:
+  39              		.cfi_def_cfa_offset 232
+ 207:Src/main.c    ****   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+  40              		.loc 1 207 0
+  41 0004 4422     		movs	r2, #68
+  42 0006 0021     		movs	r1, #0
+  43 0008 27A8     		add	r0, sp, #156
+  44 000a FFF7FEFF 		bl	memset
+  45              	.LVL0:
+ 208:Src/main.c    ****   RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+  46              		.loc 1 208 0
+  47 000e 0024     		movs	r4, #0
+  48 0010 2294     		str	r4, [sp, #136]
+  49 0012 2394     		str	r4, [sp, #140]
+  50 0014 2494     		str	r4, [sp, #144]
+  51 0016 2594     		str	r4, [sp, #148]
+  52 0018 2694     		str	r4, [sp, #152]
+ 209:Src/main.c    ****   RCC_PeriphCLKInitTypeDef PeriphClkInit = {0};
+  53              		.loc 1 209 0
+  54 001a 8822     		movs	r2, #136
+  55 001c 2146     		mov	r1, r4
+  56 001e 6846     		mov	r0, sp
+  57 0020 FFF7FEFF 		bl	memset
+  58              	.LVL1:
+ 210:Src/main.c    **** 
+ 211:Src/main.c    ****   /** Initializes the CPU, AHB and APB busses clocks
+ 212:Src/main.c    ****    */
+ 213:Src/main.c    ****   RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
+  59              		.loc 1 213 0
+  60 0024 0223     		movs	r3, #2
+  61 0026 2793     		str	r3, [sp, #156]
+ 214:Src/main.c    ****   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
+  62              		.loc 1 214 0
+  63 0028 4FF48072 		mov	r2, #256
+  64 002c 2A92     		str	r2, [sp, #168]
+ 215:Src/main.c    ****   RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
+  65              		.loc 1 215 0
+  66 002e 1022     		movs	r2, #16
+  67 0030 2B92     		str	r2, [sp, #172]
+ 216:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+  68              		.loc 1 216 0
+  69 0032 3193     		str	r3, [sp, #196]
+ 217:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s 			page 6
 
 
- 350              	.LC1:
- 351 0010 646D6120 		.ascii	"dma run : %d \012\000"
- 351      72756E20 
- 351      3A202564 
- 351      200A00
- 352              		.text
- 353              	.Letext0:
- 354              		.file 2 "/usr/arm-none-eabi/include/machine/_default_types.h"
- 355              		.file 3 "/usr/arm-none-eabi/include/sys/_stdint.h"
- 356              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
- 357              		.file 5 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/system_stm32l4xx.h"
- 358              		.file 6 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l476xx.h"
- 359              		.file 7 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h"
- 360              		.file 8 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h"
- 361              		.file 9 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc_ex.h"
- 362              		.file 10 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_dma.h"
- 363              		.file 11 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash.h"
- 364              		.file 12 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_i2c.h"
- 365              		.file 13 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h"
- 366              		.file 14 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h"
- 367              		.file 15 "/usr/arm-none-eabi/include/sys/lock.h"
- 368              		.file 16 "/usr/arm-none-eabi/include/sys/_types.h"
- 369              		.file 17 "/usr/lib/gcc/arm-none-eabi/8.3.0/include/stddef.h"
- 370              		.file 18 "/usr/arm-none-eabi/include/sys/reent.h"
- 371              		.file 19 "Inc/i2c.h"
- 372              		.file 20 "Inc/usart.h"
- 373              		.file 21 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr_ex.h"
- 374              		.file 22 "/usr/arm-none-eabi/include/stdio.h"
- 375              		.file 23 "/usr/arm-none-eabi/include/string.h"
- 376              		.file 24 "Inc/gpio.h"
- 377              		.file 25 "Inc/dma.h"
- 378              		.file 26 "<built-in>"
-ARM GAS  /tmp/ccr5D7CW.s 			page 12
+  70              		.loc 1 217 0
+  71 0034 3293     		str	r3, [sp, #200]
+ 218:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLM = 1;
+  72              		.loc 1 218 0
+  73 0036 0122     		movs	r2, #1
+  74 0038 3392     		str	r2, [sp, #204]
+ 219:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLN = 10;
+  75              		.loc 1 219 0
+  76 003a 0A22     		movs	r2, #10
+  77 003c 3492     		str	r2, [sp, #208]
+ 220:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV7;
+  78              		.loc 1 220 0
+  79 003e 0722     		movs	r2, #7
+  80 0040 3592     		str	r2, [sp, #212]
+ 221:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLQ = RCC_PLLQ_DIV2;
+  81              		.loc 1 221 0
+  82 0042 3693     		str	r3, [sp, #216]
+ 222:Src/main.c    ****   RCC_OscInitStruct.PLL.PLLR = RCC_PLLR_DIV2;
+  83              		.loc 1 222 0
+  84 0044 3793     		str	r3, [sp, #220]
+ 223:Src/main.c    ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK) {
+  85              		.loc 1 223 0
+  86 0046 27A8     		add	r0, sp, #156
+  87 0048 FFF7FEFF 		bl	HAL_RCC_OscConfig
+  88              	.LVL2:
+ 224:Src/main.c    ****     Error_Handler();
+ 225:Src/main.c    ****   }
+ 226:Src/main.c    ****   /** Initializes the CPU, AHB and APB busses clocks
+ 227:Src/main.c    ****    */
+ 228:Src/main.c    ****   RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK | RCC_CLOCKTYPE_SYSCLK |
+  89              		.loc 1 228 0
+  90 004c 0F23     		movs	r3, #15
+  91 004e 2293     		str	r3, [sp, #136]
+ 229:Src/main.c    ****                                 RCC_CLOCKTYPE_PCLK1 | RCC_CLOCKTYPE_PCLK2;
+ 230:Src/main.c    ****   RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
+  92              		.loc 1 230 0
+  93 0050 0323     		movs	r3, #3
+  94 0052 2393     		str	r3, [sp, #140]
+ 231:Src/main.c    ****   RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+  95              		.loc 1 231 0
+  96 0054 2494     		str	r4, [sp, #144]
+ 232:Src/main.c    ****   RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
+  97              		.loc 1 232 0
+  98 0056 2594     		str	r4, [sp, #148]
+ 233:Src/main.c    ****   RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
+  99              		.loc 1 233 0
+ 100 0058 2694     		str	r4, [sp, #152]
+ 234:Src/main.c    **** 
+ 235:Src/main.c    ****   if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_4) != HAL_OK) {
+ 101              		.loc 1 235 0
+ 102 005a 0421     		movs	r1, #4
+ 103 005c 22A8     		add	r0, sp, #136
+ 104 005e FFF7FEFF 		bl	HAL_RCC_ClockConfig
+ 105              	.LVL3:
+ 236:Src/main.c    ****     Error_Handler();
+ 237:Src/main.c    ****   }
+ 238:Src/main.c    ****   PeriphClkInit.PeriphClockSelection =
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s 			page 7
+
+
+ 106              		.loc 1 238 0
+ 107 0062 4223     		movs	r3, #66
+ 108 0064 0093     		str	r3, [sp]
+ 239:Src/main.c    ****       RCC_PERIPHCLK_USART2 | RCC_PERIPHCLK_I2C1;
+ 240:Src/main.c    ****   PeriphClkInit.Usart2ClockSelection = RCC_USART2CLKSOURCE_PCLK1;
+ 109              		.loc 1 240 0
+ 110 0066 0F94     		str	r4, [sp, #60]
+ 241:Src/main.c    ****   PeriphClkInit.I2c1ClockSelection = RCC_I2C1CLKSOURCE_PCLK1;
+ 111              		.loc 1 241 0
+ 112 0068 1494     		str	r4, [sp, #80]
+ 242:Src/main.c    ****   if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInit) != HAL_OK) {
+ 113              		.loc 1 242 0
+ 114 006a 6846     		mov	r0, sp
+ 115 006c FFF7FEFF 		bl	HAL_RCCEx_PeriphCLKConfig
+ 116              	.LVL4:
+ 243:Src/main.c    ****     Error_Handler();
+ 244:Src/main.c    ****   }
+ 245:Src/main.c    ****   /** Configure the main internal regulator output voltage
+ 246:Src/main.c    ****    */
+ 247:Src/main.c    ****   if (HAL_PWREx_ControlVoltageScaling(PWR_REGULATOR_VOLTAGE_SCALE1) != HAL_OK) {
+ 117              		.loc 1 247 0
+ 118 0070 4FF40070 		mov	r0, #512
+ 119 0074 FFF7FEFF 		bl	HAL_PWREx_ControlVoltageScaling
+ 120              	.LVL5:
+ 248:Src/main.c    ****     Error_Handler();
+ 249:Src/main.c    ****   }
+ 250:Src/main.c    **** }
+ 121              		.loc 1 250 0
+ 122 0078 38B0     		add	sp, sp, #224
+ 123              	.LCFI2:
+ 124              		.cfi_def_cfa_offset 8
+ 125              		@ sp needed
+ 126 007a 10BD     		pop	{r4, pc}
+ 127              		.cfi_endproc
+ 128              	.LFE132:
+ 130              		.section	.text.BMX_Init,"ax",%progbits
+ 131              		.align	1
+ 132              		.global	BMX_Init
+ 133              		.syntax unified
+ 134              		.thumb
+ 135              		.thumb_func
+ 136              		.fpu fpv4-sp-d16
+ 138              	BMX_Init:
+ 139              	.LFB133:
+ 251:Src/main.c    **** 
+ 252:Src/main.c    **** /* USER CODE BEGIN 4 */
+ 253:Src/main.c    **** 
+ 254:Src/main.c    **** /** BMX Init*/
+ 255:Src/main.c    **** void BMX_Init(void){
+ 140              		.loc 1 255 0
+ 141              		.cfi_startproc
+ 142              		@ args = 0, pretend = 0, frame = 8
+ 143              		@ frame_needed = 0, uses_anonymous_args = 0
+ 144 0000 70B5     		push	{r4, r5, r6, lr}
+ 145              	.LCFI3:
+ 146              		.cfi_def_cfa_offset 16
+ 147              		.cfi_offset 4, -16
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s 			page 8
+
+
+ 148              		.cfi_offset 5, -12
+ 149              		.cfi_offset 6, -8
+ 150              		.cfi_offset 14, -4
+ 151 0002 86B0     		sub	sp, sp, #24
+ 152              	.LCFI4:
+ 153              		.cfi_def_cfa_offset 40
+ 154              	.LVL6:
+ 256:Src/main.c    **** // init x axis 
+ 257:Src/main.c    **** 
+ 258:Src/main.c    **** //select PMU band width resisiter and set to 7.81 Hz
+ 259:Src/main.c    **** uint16_t Mem_PMU_BW = 0x10;
+ 260:Src/main.c    **** uint8_t p_BW = 0x08;
+ 155              		.loc 1 260 0
+ 156 0004 06AB     		add	r3, sp, #24
+ 157 0006 0822     		movs	r2, #8
+ 158 0008 03F8012D 		strb	r2, [r3, #-1]!
+ 261:Src/main.c    **** HAL_I2C_Mem_Write(&hi2c1,Addr_Accl<<1,Mem_PMU_BW,1,&p_BW,1,100);
+ 159              		.loc 1 261 0
+ 160 000c 184E     		ldr	r6, .L5
+ 161 000e 6424     		movs	r4, #100
+ 162 0010 0294     		str	r4, [sp, #8]
+ 163 0012 0125     		movs	r5, #1
+ 164 0014 0195     		str	r5, [sp, #4]
+ 165 0016 0093     		str	r3, [sp]
+ 166 0018 2B46     		mov	r3, r5
+ 167 001a 1022     		movs	r2, #16
+ 168 001c 3221     		movs	r1, #50
+ 169 001e 3046     		mov	r0, r6
+ 170 0020 FFF7FEFF 		bl	HAL_I2C_Mem_Write
+ 171              	.LVL7:
+ 262:Src/main.c    **** HAL_Delay(100);
+ 172              		.loc 1 262 0
+ 173 0024 2046     		mov	r0, r4
+ 174 0026 FFF7FEFF 		bl	HAL_Delay
+ 175              	.LVL8:
+ 263:Src/main.c    **** 
+ 264:Src/main.c    **** //select PMU range resisiter and set to -2
+ 265:Src/main.c    **** uint16_t Mem_PMU_Range = 0x0F;
+ 266:Src/main.c    **** uint8_t p_Range = 0x03;
+ 176              		.loc 1 266 0
+ 177 002a 06AB     		add	r3, sp, #24
+ 178 002c 0322     		movs	r2, #3
+ 179 002e 03F8022D 		strb	r2, [r3, #-2]!
+ 267:Src/main.c    **** HAL_I2C_Mem_Write(&hi2c1,Addr_Accl<<1,Mem_PMU_Range,1,&p_Range,1,100);
+ 180              		.loc 1 267 0
+ 181 0032 0294     		str	r4, [sp, #8]
+ 182 0034 0195     		str	r5, [sp, #4]
+ 183 0036 0093     		str	r3, [sp]
+ 184 0038 2B46     		mov	r3, r5
+ 185 003a 0F22     		movs	r2, #15
+ 186 003c 3221     		movs	r1, #50
+ 187 003e 3046     		mov	r0, r6
+ 188 0040 FFF7FEFF 		bl	HAL_I2C_Mem_Write
+ 189              	.LVL9:
+ 268:Src/main.c    **** HAL_Delay(100);
+ 190              		.loc 1 268 0
+ 191 0044 2046     		mov	r0, r4
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s 			page 9
+
+
+ 192 0046 FFF7FEFF 		bl	HAL_Delay
+ 193              	.LVL10:
+ 269:Src/main.c    **** 
+ 270:Src/main.c    **** //select PMU LPW resisiter and Normal mode
+ 271:Src/main.c    **** uint16_t Mem_PMU_LPW = 0x11;
+ 272:Src/main.c    **** uint8_t p_LPW = 0x00;
+ 194              		.loc 1 272 0
+ 195 004a 06AB     		add	r3, sp, #24
+ 196 004c 0022     		movs	r2, #0
+ 197 004e 03F8032D 		strb	r2, [r3, #-3]!
+ 273:Src/main.c    **** HAL_I2C_Mem_Write(&hi2c1,Addr_Accl<<1,Mem_PMU_LPW,1,&p_LPW,1,100);
+ 198              		.loc 1 273 0
+ 199 0052 0294     		str	r4, [sp, #8]
+ 200 0054 0195     		str	r5, [sp, #4]
+ 201 0056 0093     		str	r3, [sp]
+ 202 0058 2B46     		mov	r3, r5
+ 203 005a 1122     		movs	r2, #17
+ 204 005c 3221     		movs	r1, #50
+ 205 005e 3046     		mov	r0, r6
+ 206 0060 FFF7FEFF 		bl	HAL_I2C_Mem_Write
+ 207              	.LVL11:
+ 274:Src/main.c    **** HAL_Delay(100);
+ 208              		.loc 1 274 0
+ 209 0064 2046     		mov	r0, r4
+ 210 0066 FFF7FEFF 		bl	HAL_Delay
+ 211              	.LVL12:
+ 275:Src/main.c    **** 
+ 276:Src/main.c    **** }
+ 212              		.loc 1 276 0
+ 213 006a 06B0     		add	sp, sp, #24
+ 214              	.LCFI5:
+ 215              		.cfi_def_cfa_offset 16
+ 216              		@ sp needed
+ 217 006c 70BD     		pop	{r4, r5, r6, pc}
+ 218              	.L6:
+ 219 006e 00BF     		.align	2
+ 220              	.L5:
+ 221 0070 00000000 		.word	hi2c1
+ 222              		.cfi_endproc
+ 223              	.LFE133:
+ 225              		.section	.text.HAL_I2C_MemRxCpltCallback,"ax",%progbits
+ 226              		.align	1
+ 227              		.global	HAL_I2C_MemRxCpltCallback
+ 228              		.syntax unified
+ 229              		.thumb
+ 230              		.thumb_func
+ 231              		.fpu fpv4-sp-d16
+ 233              	HAL_I2C_MemRxCpltCallback:
+ 234              	.LFB134:
+ 277:Src/main.c    **** 
+ 278:Src/main.c    **** void HAL_I2C_MemRxCpltCallback(I2C_HandleTypeDef *hi2c1) {
+ 235              		.loc 1 278 0
+ 236              		.cfi_startproc
+ 237              		@ args = 0, pretend = 0, frame = 0
+ 238              		@ frame_needed = 0, uses_anonymous_args = 0
+ 239              	.LVL13:
+ 240 0000 00B5     		push	{lr}
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s 			page 10
+
+
+ 241              	.LCFI6:
+ 242              		.cfi_def_cfa_offset 4
+ 243              		.cfi_offset 14, -4
+ 244 0002 83B0     		sub	sp, sp, #12
+ 245              	.LCFI7:
+ 246              		.cfi_def_cfa_offset 16
+ 279:Src/main.c    ****   if((Accl_temp.xLSB && 0b00000001 == 0b00000001)) isxready = true;
+ 247              		.loc 1 279 0
+ 248 0004 0E4B     		ldr	r3, .L12
+ 249 0006 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 250 0008 13B1     		cbz	r3, .L8
+ 251              		.loc 1 279 0 is_stmt 0 discriminator 1
+ 252 000a 0122     		movs	r2, #1
+ 253 000c 0D4B     		ldr	r3, .L12+4
+ 254 000e 1A70     		strb	r2, [r3]
+ 255              	.L8:
+ 280:Src/main.c    ****   if((Accl_temp.yLSB && 0b00000001 == 0b00000001)) isyready = true;
+ 256              		.loc 1 280 0 is_stmt 1
+ 257 0010 0B4B     		ldr	r3, .L12
+ 258 0012 9B78     		ldrb	r3, [r3, #2]	@ zero_extendqisi2
+ 259 0014 13B1     		cbz	r3, .L9
+ 260              		.loc 1 280 0 is_stmt 0 discriminator 1
+ 261 0016 0122     		movs	r2, #1
+ 262 0018 0B4B     		ldr	r3, .L12+8
+ 263 001a 1A70     		strb	r2, [r3]
+ 264              	.L9:
+ 281:Src/main.c    ****   if((Accl_temp.zLSB && 0b00000001 == 0b00000001)) iszready = true;
+ 265              		.loc 1 281 0 is_stmt 1
+ 266 001c 084B     		ldr	r3, .L12
+ 267 001e 1B79     		ldrb	r3, [r3, #4]	@ zero_extendqisi2
+ 268 0020 13B1     		cbz	r3, .L10
+ 269              		.loc 1 281 0 is_stmt 0 discriminator 1
+ 270 0022 0122     		movs	r2, #1
+ 271 0024 094B     		ldr	r3, .L12+12
+ 272 0026 1A70     		strb	r2, [r3]
+ 273              	.L10:
+ 282:Src/main.c    ****   HAL_I2C_Mem_Read_DMA(hi2c1, Addr_Accl << 1, 0x02, 1, &Accl_temp, 6); //関数定義でhi2cのポ�
+ 274              		.loc 1 282 0 is_stmt 1
+ 275 0028 0623     		movs	r3, #6
+ 276 002a 0193     		str	r3, [sp, #4]
+ 277 002c 044B     		ldr	r3, .L12
+ 278 002e 0093     		str	r3, [sp]
+ 279 0030 0123     		movs	r3, #1
+ 280 0032 0222     		movs	r2, #2
+ 281 0034 3221     		movs	r1, #50
+ 282 0036 FFF7FEFF 		bl	HAL_I2C_Mem_Read_DMA
+ 283              	.LVL14:
+ 283:Src/main.c    **** }
+ 284              		.loc 1 283 0
+ 285 003a 03B0     		add	sp, sp, #12
+ 286              	.LCFI8:
+ 287              		.cfi_def_cfa_offset 4
+ 288              		@ sp needed
+ 289 003c 5DF804FB 		ldr	pc, [sp], #4
+ 290              	.L13:
+ 291              		.align	2
+ 292              	.L12:
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s 			page 11
+
+
+ 293 0040 00000000 		.word	.LANCHOR0
+ 294 0044 00000000 		.word	.LANCHOR1
+ 295 0048 00000000 		.word	.LANCHOR2
+ 296 004c 00000000 		.word	.LANCHOR3
+ 297              		.cfi_endproc
+ 298              	.LFE134:
+ 300              		.global	__aeabi_f2d
+ 301              		.global	__aeabi_i2d
+ 302              		.global	__aeabi_dsub
+ 303              		.global	__aeabi_d2f
+ 304              		.section	.text.Show_float,"ax",%progbits
+ 305              		.align	1
+ 306              		.global	Show_float
+ 307              		.syntax unified
+ 308              		.thumb
+ 309              		.thumb_func
+ 310              		.fpu fpv4-sp-d16
+ 312              	Show_float:
+ 313              	.LFB135:
+ 284:Src/main.c    **** 
+ 285:Src/main.c    **** void Show_float(char *str, float value){
+ 314              		.loc 1 285 0
+ 315              		.cfi_startproc
+ 316              		@ args = 0, pretend = 0, frame = 24
+ 317              		@ frame_needed = 0, uses_anonymous_args = 0
+ 318              	.LVL15:
+ 319 0000 2DE97043 		push	{r4, r5, r6, r8, r9, lr}
+ 320              	.LCFI9:
+ 321              		.cfi_def_cfa_offset 24
+ 322              		.cfi_offset 4, -24
+ 323              		.cfi_offset 5, -20
+ 324              		.cfi_offset 6, -16
+ 325              		.cfi_offset 8, -12
+ 326              		.cfi_offset 9, -8
+ 327              		.cfi_offset 14, -4
+ 328 0004 2DED028B 		vpush.64	{d8}
+ 329              	.LCFI10:
+ 330              		.cfi_def_cfa_offset 32
+ 331              		.cfi_offset 80, -32
+ 332              		.cfi_offset 81, -28
+ 333 0008 88B0     		sub	sp, sp, #32
+ 334              	.LCFI11:
+ 335              		.cfi_def_cfa_offset 64
+ 336 000a 0546     		mov	r5, r0
+ 337 000c B0EE408A 		vmov.f32	s16, s0
+ 286:Src/main.c    ****   char temp[20];
+ 287:Src/main.c    ****   char *tempsign = (value < 0) ? "-":"";
+ 338              		.loc 1 287 0
+ 339 0010 B5EEC00A 		vcmpe.f32	s0, #0
+ 340 0014 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 341 0018 3AD4     		bmi	.L24
+ 342 001a 204E     		ldr	r6, .L26
+ 343              	.L15:
+ 344              	.LVL16:
+ 288:Src/main.c    ****   double tempval = (value<0) ? -1*value:value;
+ 345              		.loc 1 288 0 discriminator 4
+ 346 001c B5EEC08A 		vcmpe.f32	s16, #0
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s 			page 12
+
+
+ 347 0020 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 348 0024 36D4     		bmi	.L25
+ 349              	.L17:
+ 350 0026 18EE100A 		vmov	r0, s16
+ 351              	.LVL17:
+ 352 002a FFF7FEFF 		bl	__aeabi_f2d
+ 353              	.LVL18:
+ 354 002e 8046     		mov	r8, r0
+ 355 0030 8946     		mov	r9, r1
+ 356              	.LVL19:
+ 289:Src/main.c    ****   int tempInt1 = (int)tempval;
+ 357              		.loc 1 289 0 discriminator 4
+ 358 0032 FDEEC87A 		vcvt.s32.f32	s15, s16
+ 359 0036 17EE904A 		vmov	r4, s15	@ int
+ 360              	.LVL20:
+ 290:Src/main.c    ****   float tempfrac = tempval - tempInt1;
+ 361              		.loc 1 290 0 discriminator 4
+ 362 003a 17EE900A 		vmov	r0, s15	@ int
+ 363 003e FFF7FEFF 		bl	__aeabi_i2d
+ 364              	.LVL21:
+ 365 0042 0246     		mov	r2, r0
+ 366 0044 0B46     		mov	r3, r1
+ 367 0046 4046     		mov	r0, r8
+ 368 0048 4946     		mov	r1, r9
+ 369 004a FFF7FEFF 		bl	__aeabi_dsub
+ 370              	.LVL22:
+ 371 004e FFF7FEFF 		bl	__aeabi_d2f
+ 372              	.LVL23:
+ 291:Src/main.c    ****   int tempInt2 = trunc(tempfrac*100000);  
+ 373              		.loc 1 291 0 discriminator 4
+ 374 0052 DFED137A 		vldr.32	s15, .L26+4
+ 375 0056 07EE100A 		vmov	s14, r0
+ 376 005a 67EE277A 		vmul.f32	s15, s14, s15
+ 377 005e FDEEE77A 		vcvt.s32.f32	s15, s15
+ 378              	.LVL24:
+ 292:Src/main.c    **** 
+ 293:Src/main.c    ****   sprintf(temp,"%s%s%d.%04d\n",str,tempsign,tempInt1,tempInt2);
+ 379              		.loc 1 293 0 discriminator 4
+ 380 0062 CDED017A 		vstr.32	s15, [sp, #4]	@ int
+ 381 0066 0094     		str	r4, [sp]
+ 382 0068 3346     		mov	r3, r6
+ 383 006a 2A46     		mov	r2, r5
+ 384 006c 0D49     		ldr	r1, .L26+8
+ 385 006e 03A8     		add	r0, sp, #12
+ 386              	.LVL25:
+ 387 0070 FFF7FEFF 		bl	sprintf
+ 388              	.LVL26:
+ 294:Src/main.c    ****   HAL_UART_Transmit (&huart2,(uint8_t*)(&temp[0]),strlen(&temp[0]),100);
+ 389              		.loc 1 294 0 discriminator 4
+ 390 0074 03A8     		add	r0, sp, #12
+ 391 0076 FFF7FEFF 		bl	strlen
+ 392              	.LVL27:
+ 393 007a 6423     		movs	r3, #100
+ 394 007c 82B2     		uxth	r2, r0
+ 395 007e 03A9     		add	r1, sp, #12
+ 396 0080 0948     		ldr	r0, .L26+12
+ 397 0082 FFF7FEFF 		bl	HAL_UART_Transmit
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s 			page 13
+
+
+ 398              	.LVL28:
+ 295:Src/main.c    **** }
+ 399              		.loc 1 295 0 discriminator 4
+ 400 0086 08B0     		add	sp, sp, #32
+ 401              	.LCFI12:
+ 402              		.cfi_remember_state
+ 403              		.cfi_def_cfa_offset 32
+ 404              		@ sp needed
+ 405 0088 BDEC028B 		vldm	sp!, {d8}
+ 406              	.LCFI13:
+ 407              		.cfi_restore 80
+ 408              		.cfi_restore 81
+ 409              		.cfi_def_cfa_offset 24
+ 410 008c BDE87083 		pop	{r4, r5, r6, r8, r9, pc}
+ 411              	.LVL29:
+ 412              	.L24:
+ 413              	.LCFI14:
+ 414              		.cfi_restore_state
+ 287:Src/main.c    ****   double tempval = (value<0) ? -1*value:value;
+ 415              		.loc 1 287 0
+ 416 0090 064E     		ldr	r6, .L26+16
+ 417 0092 C3E7     		b	.L15
+ 418              	.LVL30:
+ 419              	.L25:
+ 288:Src/main.c    ****   int tempInt1 = (int)tempval;
+ 420              		.loc 1 288 0 discriminator 1
+ 421 0094 B1EE488A 		vneg.f32	s16, s16
+ 422 0098 C5E7     		b	.L17
+ 423              	.L27:
+ 424 009a 00BF     		.align	2
+ 425              	.L26:
+ 426 009c 04000000 		.word	.LC1
+ 427 00a0 0050C347 		.word	1203982336
+ 428 00a4 08000000 		.word	.LC2
+ 429 00a8 00000000 		.word	huart2
+ 430 00ac 00000000 		.word	.LC0
+ 431              		.cfi_endproc
+ 432              	.LFE135:
+ 434              		.global	__aeabi_dmul
+ 435              		.section	.text.main,"ax",%progbits
+ 436              		.align	1
+ 437              		.global	main
+ 438              		.syntax unified
+ 439              		.thumb
+ 440              		.thumb_func
+ 441              		.fpu fpv4-sp-d16
+ 443              	main:
+ 444              	.LFB131:
+ 107:Src/main.c    ****   /* USER CODE BEGIN 1 */
+ 445              		.loc 1 107 0
+ 446              		.cfi_startproc
+ 447              		@ args = 0, pretend = 0, frame = 0
+ 448              		@ frame_needed = 0, uses_anonymous_args = 0
+ 449 0000 30B5     		push	{r4, r5, lr}
+ 450              	.LCFI15:
+ 451              		.cfi_def_cfa_offset 12
+ 452              		.cfi_offset 4, -12
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s 			page 14
+
+
+ 453              		.cfi_offset 5, -8
+ 454              		.cfi_offset 14, -4
+ 455 0002 83B0     		sub	sp, sp, #12
+ 456              	.LCFI16:
+ 457              		.cfi_def_cfa_offset 24
+ 116:Src/main.c    **** 
+ 458              		.loc 1 116 0
+ 459 0004 FFF7FEFF 		bl	HAL_Init
+ 460              	.LVL31:
+ 123:Src/main.c    **** 
+ 461              		.loc 1 123 0
+ 462 0008 FFF7FEFF 		bl	SystemClock_Config
+ 463              	.LVL32:
+ 130:Src/main.c    ****   MX_DMA_Init();
+ 464              		.loc 1 130 0
+ 465 000c FFF7FEFF 		bl	MX_GPIO_Init
+ 466              	.LVL33:
+ 131:Src/main.c    ****   MX_USART2_UART_Init();
+ 467              		.loc 1 131 0
+ 468 0010 FFF7FEFF 		bl	MX_DMA_Init
+ 469              	.LVL34:
+ 132:Src/main.c    ****   MX_I2C1_Init();
+ 470              		.loc 1 132 0
+ 471 0014 FFF7FEFF 		bl	MX_USART2_UART_Init
+ 472              	.LVL35:
+ 133:Src/main.c    ****   /* USER CODE BEGIN 2 */
+ 473              		.loc 1 133 0
+ 474 0018 FFF7FEFF 		bl	MX_I2C1_Init
+ 475              	.LVL36:
+ 135:Src/main.c    ****   // first time to read sensor value
+ 476              		.loc 1 135 0
+ 477 001c FFF7FEFF 		bl	BMX_Init
+ 478              	.LVL37:
+ 137:Src/main.c    ****   /* USER CODE END 2 */
+ 479              		.loc 1 137 0
+ 480 0020 0623     		movs	r3, #6
+ 481 0022 0193     		str	r3, [sp, #4]
+ 482 0024 684B     		ldr	r3, .L48+8
+ 483 0026 0093     		str	r3, [sp]
+ 484 0028 0123     		movs	r3, #1
+ 485 002a 0022     		movs	r2, #0
+ 486 002c 3221     		movs	r1, #50
+ 487 002e 6748     		ldr	r0, .L48+12
+ 488 0030 FFF7FEFF 		bl	HAL_I2C_Mem_Read_DMA
+ 489              	.LVL38:
+ 142:Src/main.c    ****   while (1) {
+ 490              		.loc 1 142 0
+ 491 0034 0022     		movs	r2, #0
+ 492 0036 83E0     		b	.L41
+ 493              	.LVL39:
+ 494              	.L46:
+ 150:Src/main.c    ****       Accl.xMSB = Accl_temp.xMSB;     
+ 495              		.loc 1 150 0
+ 496 0038 634A     		ldr	r2, .L48+8
+ 497 003a 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+ 498 003c 6449     		ldr	r1, .L48+16
+ 499 003e 0B70     		strb	r3, [r1]
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s 			page 15
+
+
+ 151:Src/main.c    ****       
+ 500              		.loc 1 151 0
+ 501 0040 5278     		ldrb	r2, [r2, #1]	@ zero_extendqisi2
+ 502 0042 4A70     		strb	r2, [r1, #1]
+ 153:Src/main.c    ****       if(xAccl>2047) xAccl -= 4096;
+ 503              		.loc 1 153 0
+ 504 0044 03F0F003 		and	r3, r3, #240
+ 505 0048 03EB0223 		add	r3, r3, r2, lsl #8
+ 506 004c 1B11     		asrs	r3, r3, #4
+ 507 004e 07EE903A 		vmov	s15, r3	@ int
+ 508 0052 F8EEE77A 		vcvt.f32.s32	s15, s15
+ 509 0056 5F4B     		ldr	r3, .L48+20
+ 510 0058 C3ED007A 		vstr.32	s15, [r3]
+ 154:Src/main.c    ****       xAccl = xAccl*0.0098;
+ 511              		.loc 1 154 0
+ 512 005c 9FED5E7A 		vldr.32	s14, .L48+24
+ 513 0060 F4EEC77A 		vcmpe.f32	s15, s14
+ 514 0064 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 515 0068 05DD     		ble	.L31
+ 154:Src/main.c    ****       xAccl = xAccl*0.0098;
+ 516              		.loc 1 154 0 is_stmt 0 discriminator 1
+ 517 006a 9FED5C7A 		vldr.32	s14, .L48+28
+ 518 006e 77EEC77A 		vsub.f32	s15, s15, s14
+ 519 0072 C3ED007A 		vstr.32	s15, [r3]
+ 520              	.L31:
+ 155:Src/main.c    **** 
+ 521              		.loc 1 155 0 is_stmt 1
+ 522 0076 574D     		ldr	r5, .L48+20
+ 523 0078 2868     		ldr	r0, [r5]	@ float
+ 524 007a FFF7FEFF 		bl	__aeabi_f2d
+ 525              	.LVL40:
+ 526 007e 50A3     		adr	r3, .L48
+ 527 0080 D3E90023 		ldrd	r2, [r3]
+ 528 0084 FFF7FEFF 		bl	__aeabi_dmul
+ 529              	.LVL41:
+ 530 0088 FFF7FEFF 		bl	__aeabi_d2f
+ 531              	.LVL42:
+ 532 008c 2860     		str	r0, [r5]	@ float
+ 157:Src/main.c    ****     }
+ 533              		.loc 1 157 0
+ 534 008e 0022     		movs	r2, #0
+ 535 0090 534B     		ldr	r3, .L48+32
+ 536 0092 1A70     		strb	r2, [r3]
+ 537 0094 69E0     		b	.L29
+ 538              	.L47:
+ 161:Src/main.c    ****       Accl.yMSB = Accl_temp.yMSB;
+ 539              		.loc 1 161 0
+ 540 0096 4C4A     		ldr	r2, .L48+8
+ 541 0098 9378     		ldrb	r3, [r2, #2]	@ zero_extendqisi2
+ 542 009a 4D49     		ldr	r1, .L48+16
+ 543 009c 8B70     		strb	r3, [r1, #2]
+ 162:Src/main.c    ****       
+ 544              		.loc 1 162 0
+ 545 009e D278     		ldrb	r2, [r2, #3]	@ zero_extendqisi2
+ 546 00a0 CA70     		strb	r2, [r1, #3]
+ 164:Src/main.c    ****       if(yAccl>2047) yAccl -= 4096; 
+ 547              		.loc 1 164 0
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s 			page 16
+
+
+ 548 00a2 03F0F003 		and	r3, r3, #240
+ 549 00a6 03EB0223 		add	r3, r3, r2, lsl #8
+ 550 00aa 1B11     		asrs	r3, r3, #4
+ 551 00ac 07EE903A 		vmov	s15, r3	@ int
+ 552 00b0 F8EEE77A 		vcvt.f32.s32	s15, s15
+ 553 00b4 4B4B     		ldr	r3, .L48+36
+ 554 00b6 C3ED007A 		vstr.32	s15, [r3]
+ 165:Src/main.c    ****       yAccl = yAccl*0.0098;
+ 555              		.loc 1 165 0
+ 556 00ba 9FED477A 		vldr.32	s14, .L48+24
+ 557 00be F4EEC77A 		vcmpe.f32	s15, s14
+ 558 00c2 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 559 00c6 05DD     		ble	.L35
+ 165:Src/main.c    ****       yAccl = yAccl*0.0098;
+ 560              		.loc 1 165 0 is_stmt 0 discriminator 1
+ 561 00c8 9FED447A 		vldr.32	s14, .L48+28
+ 562 00cc 77EEC77A 		vsub.f32	s15, s15, s14
+ 563 00d0 C3ED007A 		vstr.32	s15, [r3]
+ 564              	.L35:
+ 166:Src/main.c    **** 
+ 565              		.loc 1 166 0 is_stmt 1
+ 566 00d4 434D     		ldr	r5, .L48+36
+ 567 00d6 2868     		ldr	r0, [r5]	@ float
+ 568 00d8 FFF7FEFF 		bl	__aeabi_f2d
+ 569              	.LVL43:
+ 570 00dc 38A3     		adr	r3, .L48
+ 571 00de D3E90023 		ldrd	r2, [r3]
+ 572 00e2 FFF7FEFF 		bl	__aeabi_dmul
+ 573              	.LVL44:
+ 574 00e6 FFF7FEFF 		bl	__aeabi_d2f
+ 575              	.LVL45:
+ 576 00ea 2860     		str	r0, [r5]	@ float
+ 169:Src/main.c    ****     }
+ 577              		.loc 1 169 0
+ 578 00ec 0022     		movs	r2, #0
+ 579 00ee 3E4B     		ldr	r3, .L48+40
+ 580 00f0 1A70     		strb	r2, [r3]
+ 581 00f2 3EE0     		b	.L33
+ 582              	.L39:
+ 178:Src/main.c    ****       
+ 583              		.loc 1 178 0
+ 584 00f4 3D4D     		ldr	r5, .L48+44
+ 585 00f6 2868     		ldr	r0, [r5]	@ float
+ 586 00f8 FFF7FEFF 		bl	__aeabi_f2d
+ 587              	.LVL46:
+ 588 00fc 30A3     		adr	r3, .L48
+ 589 00fe D3E90023 		ldrd	r2, [r3]
+ 590 0102 FFF7FEFF 		bl	__aeabi_dmul
+ 591              	.LVL47:
+ 592 0106 FFF7FEFF 		bl	__aeabi_d2f
+ 593              	.LVL48:
+ 594 010a 2860     		str	r0, [r5]	@ float
+ 180:Src/main.c    ****     }
+ 595              		.loc 1 180 0
+ 596 010c 0022     		movs	r2, #0
+ 597 010e 384B     		ldr	r3, .L48+48
+ 598 0110 1A70     		strb	r2, [r3]
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s 			page 17
+
+
+ 599              	.L37:
+ 189:Src/main.c    ****     Show_float("yAccl = ",yAccl);
+ 600              		.loc 1 189 0
+ 601 0112 304B     		ldr	r3, .L48+20
+ 602 0114 93ED000A 		vldr.32	s0, [r3]
+ 603 0118 3648     		ldr	r0, .L48+52
+ 604 011a FFF7FEFF 		bl	Show_float
+ 605              	.LVL49:
+ 190:Src/main.c    ****     Show_float("zAccl = ",zAccl);
+ 606              		.loc 1 190 0
+ 607 011e 314B     		ldr	r3, .L48+36
+ 608 0120 93ED000A 		vldr.32	s0, [r3]
+ 609 0124 3448     		ldr	r0, .L48+56
+ 610 0126 FFF7FEFF 		bl	Show_float
+ 611              	.LVL50:
+ 191:Src/main.c    **** 
+ 612              		.loc 1 191 0
+ 613 012a 304B     		ldr	r3, .L48+44
+ 614 012c 93ED000A 		vldr.32	s0, [r3]
+ 615 0130 3248     		ldr	r0, .L48+60
+ 616 0132 FFF7FEFF 		bl	Show_float
+ 617              	.LVL51:
+ 193:Src/main.c    **** 
+ 618              		.loc 1 193 0
+ 619 0136 4FF47A70 		mov	r0, #1000
+ 620 013a FFF7FEFF 		bl	HAL_Delay
+ 621              	.LVL52:
+ 145:Src/main.c    ****     HAL_UART_Transmit(&huart2, (uint8_t *)(&k[0]), strlen(&k[0]), 100);
+ 622              		.loc 1 145 0
+ 623 013e 2246     		mov	r2, r4
+ 624              	.LVL53:
+ 625              	.L41:
+ 626 0140 541C     		adds	r4, r2, #1
+ 627 0142 E4B2     		uxtb	r4, r4
+ 628              	.LVL54:
+ 629 0144 2E4D     		ldr	r5, .L48+64
+ 630 0146 2F49     		ldr	r1, .L48+68
+ 631 0148 2846     		mov	r0, r5
+ 632 014a FFF7FEFF 		bl	sprintf
+ 633              	.LVL55:
+ 146:Src/main.c    **** 
+ 634              		.loc 1 146 0
+ 635 014e 2846     		mov	r0, r5
+ 636 0150 FFF7FEFF 		bl	strlen
+ 637              	.LVL56:
+ 638 0154 6423     		movs	r3, #100
+ 639 0156 82B2     		uxth	r2, r0
+ 640 0158 2946     		mov	r1, r5
+ 641 015a 2B48     		ldr	r0, .L48+72
+ 642 015c FFF7FEFF 		bl	HAL_UART_Transmit
+ 643              	.LVL57:
+ 149:Src/main.c    ****       Accl.xLSB = Accl_temp.xLSB;
+ 644              		.loc 1 149 0
+ 645 0160 1F4B     		ldr	r3, .L48+32
+ 646 0162 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 647 0164 012B     		cmp	r3, #1
+ 648 0166 3FF467AF 		beq	.L46
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s 			page 18
+
+
+ 649              	.L29:
+ 160:Src/main.c    ****       Accl.yLSB = Accl_temp.yLSB;
+ 650              		.loc 1 160 0
+ 651 016a 1F4B     		ldr	r3, .L48+40
+ 652 016c 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 653 016e 012B     		cmp	r3, #1
+ 654 0170 91D0     		beq	.L47
+ 655              	.L33:
+ 172:Src/main.c    ****       Accl.zLSB = Accl_temp.zLSB;
+ 656              		.loc 1 172 0
+ 657 0172 1F4B     		ldr	r3, .L48+48
+ 658 0174 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 659 0176 012B     		cmp	r3, #1
+ 660 0178 CBD1     		bne	.L37
+ 173:Src/main.c    ****       Accl.zMSB = Accl_temp.zMSB;
+ 661              		.loc 1 173 0
+ 662 017a 134A     		ldr	r2, .L48+8
+ 663 017c 1379     		ldrb	r3, [r2, #4]	@ zero_extendqisi2
+ 664 017e 1449     		ldr	r1, .L48+16
+ 665 0180 0B71     		strb	r3, [r1, #4]
+ 174:Src/main.c    **** 
+ 666              		.loc 1 174 0
+ 667 0182 5279     		ldrb	r2, [r2, #5]	@ zero_extendqisi2
+ 668 0184 4A71     		strb	r2, [r1, #5]
+ 176:Src/main.c    ****       if(zAccl>2047) zAccl -= 4096; 
+ 669              		.loc 1 176 0
+ 670 0186 03F0F003 		and	r3, r3, #240
+ 671 018a 03EB0223 		add	r3, r3, r2, lsl #8
+ 672 018e 1B11     		asrs	r3, r3, #4
+ 673 0190 07EE903A 		vmov	s15, r3	@ int
+ 674 0194 F8EEE77A 		vcvt.f32.s32	s15, s15
+ 675 0198 144B     		ldr	r3, .L48+44
+ 676 019a C3ED007A 		vstr.32	s15, [r3]
+ 177:Src/main.c    ****       zAccl = zAccl*0.0098;
+ 677              		.loc 1 177 0
+ 678 019e 9FED0E7A 		vldr.32	s14, .L48+24
+ 679 01a2 F4EEC77A 		vcmpe.f32	s15, s14
+ 680 01a6 F1EE10FA 		vmrs	APSR_nzcv, FPSCR
+ 681 01aa A3DD     		ble	.L39
+ 177:Src/main.c    ****       zAccl = zAccl*0.0098;
+ 682              		.loc 1 177 0 is_stmt 0 discriminator 1
+ 683 01ac 9FED0B7A 		vldr.32	s14, .L48+28
+ 684 01b0 77EEC77A 		vsub.f32	s15, s15, s14
+ 685 01b4 C3ED007A 		vstr.32	s15, [r3]
+ 686 01b8 9CE7     		b	.L39
+ 687              	.L49:
+ 688 01ba 00BFAFF3 		.align	3
+ 688      0080
+ 689              	.L48:
+ 690 01c0 6EA301BC 		.word	-1140743314
+ 691 01c4 0512843F 		.word	1065619973
+ 692 01c8 00000000 		.word	.LANCHOR0
+ 693 01cc 00000000 		.word	hi2c1
+ 694 01d0 00000000 		.word	.LANCHOR4
+ 695 01d4 00000000 		.word	.LANCHOR5
+ 696 01d8 00E0FF44 		.word	1157619712
+ 697 01dc 00008045 		.word	1166016512
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s 			page 19
+
+
+ 698 01e0 00000000 		.word	.LANCHOR1
+ 699 01e4 00000000 		.word	.LANCHOR6
+ 700 01e8 00000000 		.word	.LANCHOR2
+ 701 01ec 00000000 		.word	.LANCHOR7
+ 702 01f0 00000000 		.word	.LANCHOR3
+ 703 01f4 10000000 		.word	.LC4
+ 704 01f8 1C000000 		.word	.LC5
+ 705 01fc 28000000 		.word	.LC6
+ 706 0200 00000000 		.word	k
+ 707 0204 00000000 		.word	.LC3
+ 708 0208 00000000 		.word	huart2
+ 709              		.cfi_endproc
+ 710              	.LFE131:
+ 712              		.section	.text.Error_Handler,"ax",%progbits
+ 713              		.align	1
+ 714              		.global	Error_Handler
+ 715              		.syntax unified
+ 716              		.thumb
+ 717              		.thumb_func
+ 718              		.fpu fpv4-sp-d16
+ 720              	Error_Handler:
+ 721              	.LFB136:
+ 296:Src/main.c    **** 
+ 297:Src/main.c    **** /* USER CODE END 4 */
+ 298:Src/main.c    **** 
+ 299:Src/main.c    **** /**
+ 300:Src/main.c    ****  * @brief  This function is executed in case of error occurrence.
+ 301:Src/main.c    ****  * @retval None
+ 302:Src/main.c    ****  */
+ 303:Src/main.c    **** void Error_Handler(void) {
+ 722              		.loc 1 303 0 is_stmt 1
+ 723              		.cfi_startproc
+ 724              		@ args = 0, pretend = 0, frame = 0
+ 725              		@ frame_needed = 0, uses_anonymous_args = 0
+ 726              		@ link register save eliminated.
+ 727 0000 7047     		bx	lr
+ 728              		.cfi_endproc
+ 729              	.LFE136:
+ 731              		.global	Accl
+ 732              		.global	Accl_temp
+ 733              		.comm	isI2CRunning,4,4
+ 734              		.comm	zGyro,4,4
+ 735              		.comm	yGyro,4,4
+ 736              		.comm	xGyro,4,4
+ 737              		.global	f
+ 738              		.global	zAccl
+ 739              		.global	yAccl
+ 740              		.global	xAccl
+ 741              		.global	iszready
+ 742              		.global	isyready
+ 743              		.global	isxready
+ 744              		.comm	k,100,4
+ 745              		.section	.bss.Accl,"aw",%nobits
+ 746              		.align	2
+ 747              		.set	.LANCHOR4,. + 0
+ 750              	Accl:
+ 751 0000 00000000 		.space	6
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s 			page 20
+
+
+ 751      0000
+ 752              		.section	.bss.Accl_temp,"aw",%nobits
+ 753              		.align	2
+ 754              		.set	.LANCHOR0,. + 0
+ 757              	Accl_temp:
+ 758 0000 00000000 		.space	6
+ 758      0000
+ 759              		.section	.bss.isxready,"aw",%nobits
+ 760              		.set	.LANCHOR1,. + 0
+ 763              	isxready:
+ 764 0000 00       		.space	1
+ 765              		.section	.bss.isyready,"aw",%nobits
+ 766              		.set	.LANCHOR2,. + 0
+ 769              	isyready:
+ 770 0000 00       		.space	1
+ 771              		.section	.bss.iszready,"aw",%nobits
+ 772              		.set	.LANCHOR3,. + 0
+ 775              	iszready:
+ 776 0000 00       		.space	1
+ 777              		.section	.bss.xAccl,"aw",%nobits
+ 778              		.align	2
+ 779              		.set	.LANCHOR5,. + 0
+ 782              	xAccl:
+ 783 0000 00000000 		.space	4
+ 784              		.section	.bss.yAccl,"aw",%nobits
+ 785              		.align	2
+ 786              		.set	.LANCHOR6,. + 0
+ 789              	yAccl:
+ 790 0000 00000000 		.space	4
+ 791              		.section	.bss.zAccl,"aw",%nobits
+ 792              		.align	2
+ 793              		.set	.LANCHOR7,. + 0
+ 796              	zAccl:
+ 797 0000 00000000 		.space	4
+ 798              		.section	.data.f,"aw",%progbits
+ 799              		.align	2
+ 802              	f:
+ 803 0000 C3F54840 		.word	1078523331
+ 804              		.section	.rodata.Show_float.str1.4,"aMS",%progbits,1
+ 805              		.align	2
+ 806              	.LC0:
+ 807 0000 2D00     		.ascii	"-\000"
+ 808 0002 0000     		.space	2
+ 809              	.LC1:
+ 810 0004 00       		.ascii	"\000"
+ 811 0005 000000   		.space	3
+ 812              	.LC2:
+ 813 0008 25732573 		.ascii	"%s%s%d.%04d\012\000"
+ 813      25642E25 
+ 813      3034640A 
+ 813      00
+ 814              		.section	.rodata.main.str1.4,"aMS",%progbits,1
+ 815              		.align	2
+ 816              	.LC3:
+ 817 0000 6B616973 		.ascii	"kaisuu : %d\012\000"
+ 817      7575203A 
+ 817      2025640A 
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s 			page 21
+
+
+ 817      00
+ 818 000d 000000   		.space	3
+ 819              	.LC4:
+ 820 0010 78416363 		.ascii	"xAccl = \000"
+ 820      6C203D20 
+ 820      00
+ 821 0019 000000   		.space	3
+ 822              	.LC5:
+ 823 001c 79416363 		.ascii	"yAccl = \000"
+ 823      6C203D20 
+ 823      00
+ 824 0025 000000   		.space	3
+ 825              	.LC6:
+ 826 0028 7A416363 		.ascii	"zAccl = \000"
+ 826      6C203D20 
+ 826      00
+ 827              		.text
+ 828              	.Letext0:
+ 829              		.file 2 "c:\\program files (x86)\\gnu tools arm embedded\\6.2 2016q4\\arm-none-eabi\\include\\mach
+ 830              		.file 3 "c:\\program files (x86)\\gnu tools arm embedded\\6.2 2016q4\\arm-none-eabi\\include\\sys\
+ 831              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
+ 832              		.file 5 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/system_stm32l4xx.h"
+ 833              		.file 6 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l476xx.h"
+ 834              		.file 7 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h"
+ 835              		.file 8 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h"
+ 836              		.file 9 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc_ex.h"
+ 837              		.file 10 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_dma.h"
+ 838              		.file 11 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash.h"
+ 839              		.file 12 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_i2c.h"
+ 840              		.file 13 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h"
+ 841              		.file 14 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h"
+ 842              		.file 15 "c:\\program files (x86)\\gnu tools arm embedded\\6.2 2016q4\\arm-none-eabi\\include\\sys
+ 843              		.file 16 "c:\\program files (x86)\\gnu tools arm embedded\\6.2 2016q4\\arm-none-eabi\\include\\sys
+ 844              		.file 17 "c:\\program files (x86)\\gnu tools arm embedded\\6.2 2016q4\\lib\\gcc\\arm-none-eabi\\6.
+ 845              		.file 18 "c:\\program files (x86)\\gnu tools arm embedded\\6.2 2016q4\\arm-none-eabi\\include\\sys
+ 846              		.file 19 "Inc/i2c.h"
+ 847              		.file 20 "Inc/usart.h"
+ 848              		.file 21 "c:\\program files (x86)\\gnu tools arm embedded\\6.2 2016q4\\arm-none-eabi\\include\\std
+ 849              		.file 22 "c:\\program files (x86)\\gnu tools arm embedded\\6.2 2016q4\\arm-none-eabi\\include\\str
+ 850              		.file 23 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr_ex.h"
+ 851              		.file 24 "Inc/gpio.h"
+ 852              		.file 25 "Inc/dma.h"
+ 853              		.file 26 "<built-in>"
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s 			page 22
 
 
 DEFINED SYMBOLS
-                            *ABS*:0000000000000000 main.c
-     /tmp/ccr5D7CW.s:18     .text.HAL_I2C_MemRxCpltCallback:0000000000000000 $t
-     /tmp/ccr5D7CW.s:26     .text.HAL_I2C_MemRxCpltCallback:0000000000000000 HAL_I2C_MemRxCpltCallback
-     /tmp/ccr5D7CW.s:45     .text.HAL_I2C_MemRxCpltCallback:0000000000000008 $d
-                            *COM*:0000000000000004 isI2CRunning
-     /tmp/ccr5D7CW.s:50     .text.SystemClock_Config:0000000000000000 $t
-     /tmp/ccr5D7CW.s:57     .text.SystemClock_Config:0000000000000000 SystemClock_Config
-     /tmp/ccr5D7CW.s:187    .text.main:0000000000000000 $t
-     /tmp/ccr5D7CW.s:194    .text.main:0000000000000000 main
-     /tmp/ccr5D7CW.s:313    .text.main:0000000000000088 $d
-                            *COM*:0000000000000064 k
-     /tmp/ccr5D7CW.s:324    .text.Error_Handler:0000000000000000 $t
-     /tmp/ccr5D7CW.s:331    .text.Error_Handler:0000000000000000 Error_Handler
-     /tmp/ccr5D7CW.s:346    .rodata.main.str1.4:0000000000000000 $d
+                            *ABS*:00000000 main.c
+C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s:18     .text.SystemClock_Config:00000000 $t
+C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s:25     .text.SystemClock_Config:00000000 SystemClock_Config
+C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s:131    .text.BMX_Init:00000000 $t
+C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s:138    .text.BMX_Init:00000000 BMX_Init
+C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s:221    .text.BMX_Init:00000070 $d
+C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s:226    .text.HAL_I2C_MemRxCpltCallback:00000000 $t
+C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s:233    .text.HAL_I2C_MemRxCpltCallback:00000000 HAL_I2C_MemRxCpltCallback
+C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s:293    .text.HAL_I2C_MemRxCpltCallback:00000040 $d
+C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s:305    .text.Show_float:00000000 $t
+C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s:312    .text.Show_float:00000000 Show_float
+C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s:426    .text.Show_float:0000009c $d
+C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s:436    .text.main:00000000 $t
+C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s:443    .text.main:00000000 main
+C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s:690    .text.main:000001c0 $d
+                            *COM*:00000064 k
+C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s:713    .text.Error_Handler:00000000 $t
+C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s:720    .text.Error_Handler:00000000 Error_Handler
+C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s:750    .bss.Accl:00000000 Accl
+C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s:757    .bss.Accl_temp:00000000 Accl_temp
+                            *COM*:00000004 isI2CRunning
+                            *COM*:00000004 zGyro
+                            *COM*:00000004 yGyro
+                            *COM*:00000004 xGyro
+C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s:802    .data.f:00000000 f
+C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s:796    .bss.zAccl:00000000 zAccl
+C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s:789    .bss.yAccl:00000000 yAccl
+C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s:782    .bss.xAccl:00000000 xAccl
+C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s:775    .bss.iszready:00000000 iszready
+C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s:769    .bss.isyready:00000000 isyready
+C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s:763    .bss.isxready:00000000 isxready
+C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s:746    .bss.Accl:00000000 $d
+C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s:753    .bss.Accl_temp:00000000 $d
+C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s:764    .bss.isxready:00000000 $d
+C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s:770    .bss.isyready:00000000 $d
+C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s:776    .bss.iszready:00000000 $d
+C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s:778    .bss.xAccl:00000000 $d
+C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s:785    .bss.yAccl:00000000 $d
+C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s:792    .bss.zAccl:00000000 $d
+C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s:799    .data.f:00000000 $d
+C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s:805    .rodata.Show_float.str1.4:00000000 $d
+C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s:815    .rodata.main.str1.4:00000000 $d
+                     .debug_frame:00000010 $d
 
 UNDEFINED SYMBOLS
 memset
@@ -658,15 +1298,24 @@ HAL_RCC_OscConfig
 HAL_RCC_ClockConfig
 HAL_RCCEx_PeriphCLKConfig
 HAL_PWREx_ControlVoltageScaling
+HAL_I2C_Mem_Write
+HAL_Delay
+hi2c1
+HAL_I2C_Mem_Read_DMA
+__aeabi_f2d
+__aeabi_i2d
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\cc2B0BkN.s 			page 23
+
+
+__aeabi_dsub
+__aeabi_d2f
+sprintf
+strlen
+HAL_UART_Transmit
+huart2
+__aeabi_dmul
 HAL_Init
 MX_GPIO_Init
 MX_DMA_Init
 MX_USART2_UART_Init
 MX_I2C1_Init
-HAL_Delay
-sprintf
-strlen
-HAL_UART_Transmit
-HAL_I2C_Mem_Read_DMA
-huart2
-hi2c1

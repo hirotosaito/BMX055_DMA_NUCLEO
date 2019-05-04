@@ -1,4 +1,4 @@
-ARM GAS  /tmp/ccjP4bVW.s 			page 1
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\ccOmQ3Eo.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -20,14 +20,13 @@ ARM GAS  /tmp/ccjP4bVW.s 			page 1
   17              		.section	.text.SystemInit,"ax",%progbits
   18              		.align	1
   19              		.global	SystemInit
-  20              		.arch armv7e-m
-  21              		.syntax unified
-  22              		.thumb
-  23              		.thumb_func
-  24              		.fpu fpv4-sp-d16
-  26              	SystemInit:
-  27              	.LFB130:
-  28              		.file 1 "Src/system_stm32l4xx.c"
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  23              		.fpu fpv4-sp-d16
+  25              	SystemInit:
+  26              	.LFB130:
+  27              		.file 1 "Src/system_stm32l4xx.c"
    1:Src/system_stm32l4xx.c **** /**
    2:Src/system_stm32l4xx.c ****   ******************************************************************************
    3:Src/system_stm32l4xx.c ****   * @file    system_stm32l4xx.c
@@ -58,10 +57,10 @@ ARM GAS  /tmp/ccjP4bVW.s 			page 1
   28:Src/system_stm32l4xx.c ****   *        System Clock source                    | MSI
   29:Src/system_stm32l4xx.c ****   *-----------------------------------------------------------------------------
   30:Src/system_stm32l4xx.c ****   *        SYSCLK(Hz)                             | 4000000
-ARM GAS  /tmp/ccjP4bVW.s 			page 2
-
-
   31:Src/system_stm32l4xx.c ****   *-----------------------------------------------------------------------------
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\ccOmQ3Eo.s 			page 2
+
+
   32:Src/system_stm32l4xx.c ****   *        HCLK(Hz)                               | 4000000
   33:Src/system_stm32l4xx.c ****   *-----------------------------------------------------------------------------
   34:Src/system_stm32l4xx.c ****   *        AHB Prescaler                          | 1
@@ -118,10 +117,10 @@ ARM GAS  /tmp/ccjP4bVW.s 			page 1
   85:Src/system_stm32l4xx.c ****   * @{
   86:Src/system_stm32l4xx.c ****   */
   87:Src/system_stm32l4xx.c **** 
-ARM GAS  /tmp/ccjP4bVW.s 			page 3
-
-
   88:Src/system_stm32l4xx.c **** /** @addtogroup STM32L4xx_System_Private_Includes
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\ccOmQ3Eo.s 			page 3
+
+
   89:Src/system_stm32l4xx.c ****   * @{
   90:Src/system_stm32l4xx.c ****   */
   91:Src/system_stm32l4xx.c **** 
@@ -178,10 +177,10 @@ ARM GAS  /tmp/ccjP4bVW.s 			page 1
  142:Src/system_stm32l4xx.c ****   * @{
  143:Src/system_stm32l4xx.c ****   */
  144:Src/system_stm32l4xx.c ****   /* The SystemCoreClock variable is updated in three ways:
-ARM GAS  /tmp/ccjP4bVW.s 			page 4
-
-
  145:Src/system_stm32l4xx.c ****       1) by calling CMSIS function SystemCoreClockUpdate()
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\ccOmQ3Eo.s 			page 4
+
+
  146:Src/system_stm32l4xx.c ****       2) by calling HAL API function HAL_RCC_GetHCLKFreq()
  147:Src/system_stm32l4xx.c ****       3) each time HAL_RCC_ClockConfig() is called to configure the system clock frequency
  148:Src/system_stm32l4xx.c ****          Note: If you use this function to configure the system clock; then there
@@ -218,104 +217,95 @@ ARM GAS  /tmp/ccjP4bVW.s 			page 1
  179:Src/system_stm32l4xx.c **** 
  180:Src/system_stm32l4xx.c **** void SystemInit(void)
  181:Src/system_stm32l4xx.c **** {
-  29              		.loc 1 181 1 view -0
-  30              		.cfi_startproc
-  31              		@ args = 0, pretend = 0, frame = 0
-  32              		@ frame_needed = 0, uses_anonymous_args = 0
-  33              		@ link register save eliminated.
+  28              		.loc 1 181 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
  182:Src/system_stm32l4xx.c ****   /* FPU settings ------------------------------------------------------------*/
  183:Src/system_stm32l4xx.c ****   #if (__FPU_PRESENT == 1) && (__FPU_USED == 1)
  184:Src/system_stm32l4xx.c ****     SCB->CPACR |= ((3UL << 10*2)|(3UL << 11*2));  /* set CP10 and CP11 Full Access */
-  34              		.loc 1 184 5 view .LVU1
-  35              		.loc 1 184 16 is_stmt 0 view .LVU2
-  36 0000 0F49     		ldr	r1, .L2
-  37 0002 D1F88830 		ldr	r3, [r1, #136]
-  38 0006 43F47003 		orr	r3, r3, #15728640
-  39 000a C1F88830 		str	r3, [r1, #136]
+  33              		.loc 1 184 0
+  34 0000 0F49     		ldr	r1, .L2
+  35 0002 D1F88830 		ldr	r3, [r1, #136]
+  36 0006 43F47003 		orr	r3, r3, #15728640
+  37 000a C1F88830 		str	r3, [r1, #136]
  185:Src/system_stm32l4xx.c ****   #endif
  186:Src/system_stm32l4xx.c **** 
  187:Src/system_stm32l4xx.c ****   /* Reset the RCC clock configuration to the default reset state ------------*/
  188:Src/system_stm32l4xx.c ****   /* Set MSION bit */
  189:Src/system_stm32l4xx.c ****   RCC->CR |= RCC_CR_MSION;
-  40              		.loc 1 189 3 is_stmt 1 view .LVU3
-ARM GAS  /tmp/ccjP4bVW.s 			page 5
+  38              		.loc 1 189 0
+  39 000e 0D4B     		ldr	r3, .L2+4
+  40 0010 1A68     		ldr	r2, [r3]
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\ccOmQ3Eo.s 			page 5
 
 
-  41              		.loc 1 189 11 is_stmt 0 view .LVU4
-  42 000e 0D4B     		ldr	r3, .L2+4
-  43 0010 1A68     		ldr	r2, [r3]
-  44 0012 42F00102 		orr	r2, r2, #1
-  45 0016 1A60     		str	r2, [r3]
+  41 0012 42F00102 		orr	r2, r2, #1
+  42 0016 1A60     		str	r2, [r3]
  190:Src/system_stm32l4xx.c **** 
  191:Src/system_stm32l4xx.c ****   /* Reset CFGR register */
  192:Src/system_stm32l4xx.c ****   RCC->CFGR = 0x00000000U;
-  46              		.loc 1 192 3 is_stmt 1 view .LVU5
-  47              		.loc 1 192 13 is_stmt 0 view .LVU6
-  48 0018 0020     		movs	r0, #0
-  49 001a 9860     		str	r0, [r3, #8]
+  43              		.loc 1 192 0
+  44 0018 0020     		movs	r0, #0
+  45 001a 9860     		str	r0, [r3, #8]
  193:Src/system_stm32l4xx.c **** 
  194:Src/system_stm32l4xx.c ****   /* Reset HSEON, CSSON , HSION, and PLLON bits */
  195:Src/system_stm32l4xx.c ****   RCC->CR &= 0xEAF6FFFFU;
-  50              		.loc 1 195 3 is_stmt 1 view .LVU7
-  51              		.loc 1 195 11 is_stmt 0 view .LVU8
-  52 001c 1A68     		ldr	r2, [r3]
-  53 001e 22F0A852 		bic	r2, r2, #352321536
-  54 0022 22F41022 		bic	r2, r2, #589824
-  55 0026 1A60     		str	r2, [r3]
+  46              		.loc 1 195 0
+  47 001c 1A68     		ldr	r2, [r3]
+  48 001e 22F0A852 		bic	r2, r2, #352321536
+  49 0022 22F41022 		bic	r2, r2, #589824
+  50 0026 1A60     		str	r2, [r3]
  196:Src/system_stm32l4xx.c **** 
  197:Src/system_stm32l4xx.c ****   /* Reset PLLCFGR register */
  198:Src/system_stm32l4xx.c ****   RCC->PLLCFGR = 0x00001000U;
-  56              		.loc 1 198 3 is_stmt 1 view .LVU9
-  57              		.loc 1 198 16 is_stmt 0 view .LVU10
-  58 0028 4FF48052 		mov	r2, #4096
-  59 002c DA60     		str	r2, [r3, #12]
+  51              		.loc 1 198 0
+  52 0028 4FF48052 		mov	r2, #4096
+  53 002c DA60     		str	r2, [r3, #12]
  199:Src/system_stm32l4xx.c **** 
  200:Src/system_stm32l4xx.c ****   /* Reset HSEBYP bit */
  201:Src/system_stm32l4xx.c ****   RCC->CR &= 0xFFFBFFFFU;
-  60              		.loc 1 201 3 is_stmt 1 view .LVU11
-  61              		.loc 1 201 11 is_stmt 0 view .LVU12
-  62 002e 1A68     		ldr	r2, [r3]
-  63 0030 22F48022 		bic	r2, r2, #262144
-  64 0034 1A60     		str	r2, [r3]
+  54              		.loc 1 201 0
+  55 002e 1A68     		ldr	r2, [r3]
+  56 0030 22F48022 		bic	r2, r2, #262144
+  57 0034 1A60     		str	r2, [r3]
  202:Src/system_stm32l4xx.c **** 
  203:Src/system_stm32l4xx.c ****   /* Disable all interrupts */
  204:Src/system_stm32l4xx.c ****   RCC->CIER = 0x00000000U;
-  65              		.loc 1 204 3 is_stmt 1 view .LVU13
-  66              		.loc 1 204 13 is_stmt 0 view .LVU14
-  67 0036 9861     		str	r0, [r3, #24]
+  58              		.loc 1 204 0
+  59 0036 9861     		str	r0, [r3, #24]
  205:Src/system_stm32l4xx.c **** 
  206:Src/system_stm32l4xx.c ****   /* Configure the Vector Table location add offset address ------------------*/
  207:Src/system_stm32l4xx.c **** #ifdef VECT_TAB_SRAM
  208:Src/system_stm32l4xx.c ****   SCB->VTOR = SRAM_BASE | VECT_TAB_OFFSET; /* Vector Table Relocation in Internal SRAM */
  209:Src/system_stm32l4xx.c **** #else
  210:Src/system_stm32l4xx.c ****   SCB->VTOR = FLASH_BASE | VECT_TAB_OFFSET; /* Vector Table Relocation in Internal FLASH */
-  68              		.loc 1 210 3 is_stmt 1 view .LVU15
-  69              		.loc 1 210 13 is_stmt 0 view .LVU16
-  70 0038 4FF00063 		mov	r3, #134217728
-  71 003c 8B60     		str	r3, [r1, #8]
+  60              		.loc 1 210 0
+  61 0038 4FF00063 		mov	r3, #134217728
+  62 003c 8B60     		str	r3, [r1, #8]
+  63 003e 7047     		bx	lr
+  64              	.L3:
+  65              		.align	2
+  66              	.L2:
+  67 0040 00ED00E0 		.word	-536810240
+  68 0044 00100240 		.word	1073876992
+  69              		.cfi_endproc
+  70              	.LFE130:
+  72              		.section	.text.SystemCoreClockUpdate,"ax",%progbits
+  73              		.align	1
+  74              		.global	SystemCoreClockUpdate
+  75              		.syntax unified
+  76              		.thumb
+  77              		.thumb_func
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\ccOmQ3Eo.s 			page 6
+
+
+  78              		.fpu fpv4-sp-d16
+  80              	SystemCoreClockUpdate:
+  81              	.LFB131:
  211:Src/system_stm32l4xx.c **** #endif
  212:Src/system_stm32l4xx.c **** }
-  72              		.loc 1 212 1 view .LVU17
-  73 003e 7047     		bx	lr
-  74              	.L3:
-ARM GAS  /tmp/ccjP4bVW.s 			page 6
-
-
-  75              		.align	2
-  76              	.L2:
-  77 0040 00ED00E0 		.word	-536810240
-  78 0044 00100240 		.word	1073876992
-  79              		.cfi_endproc
-  80              	.LFE130:
-  82              		.section	.text.SystemCoreClockUpdate,"ax",%progbits
-  83              		.align	1
-  84              		.global	SystemCoreClockUpdate
-  85              		.syntax unified
-  86              		.thumb
-  87              		.thumb_func
-  88              		.fpu fpv4-sp-d16
-  90              	SystemCoreClockUpdate:
-  91              	.LFB131:
  213:Src/system_stm32l4xx.c **** 
  214:Src/system_stm32l4xx.c **** /**
  215:Src/system_stm32l4xx.c ****   * @brief  Update SystemCoreClock variable according to Clock Register Values.
@@ -358,40 +348,35 @@ ARM GAS  /tmp/ccjP4bVW.s 			page 1
  252:Src/system_stm32l4xx.c ****   *
  253:Src/system_stm32l4xx.c ****   * @param  None
  254:Src/system_stm32l4xx.c ****   * @retval None
-ARM GAS  /tmp/ccjP4bVW.s 			page 7
-
-
  255:Src/system_stm32l4xx.c ****   */
  256:Src/system_stm32l4xx.c **** void SystemCoreClockUpdate(void)
  257:Src/system_stm32l4xx.c **** {
-  92              		.loc 1 257 1 is_stmt 1 view -0
-  93              		.cfi_startproc
-  94              		@ args = 0, pretend = 0, frame = 0
-  95              		@ frame_needed = 0, uses_anonymous_args = 0
-  96              		@ link register save eliminated.
+  82              		.loc 1 257 0
+  83              		.cfi_startproc
+  84              		@ args = 0, pretend = 0, frame = 0
+  85              		@ frame_needed = 0, uses_anonymous_args = 0
+  86              		@ link register save eliminated.
+  87              	.LVL0:
  258:Src/system_stm32l4xx.c ****   uint32_t tmp = 0U, msirange = 0U, pllvco = 0U, pllr = 2U, pllsource = 0U, pllm = 2U;
-  97              		.loc 1 258 3 view .LVU19
-  98              	.LVL0:
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\ccOmQ3Eo.s 			page 7
+
+
  259:Src/system_stm32l4xx.c **** 
  260:Src/system_stm32l4xx.c ****   /* Get MSI Range frequency--------------------------------------------------*/
  261:Src/system_stm32l4xx.c ****   if((RCC->CR & RCC_CR_MSIRGSEL) == RESET)
-  99              		.loc 1 261 3 view .LVU20
- 100              		.loc 1 261 10 is_stmt 0 view .LVU21
- 101 0000 2F4B     		ldr	r3, .L19
- 102 0002 1B68     		ldr	r3, [r3]
- 103              		.loc 1 261 5 view .LVU22
- 104 0004 13F0080F 		tst	r3, #8
- 105 0008 16D1     		bne	.L5
+  88              		.loc 1 261 0
+  89 0000 2F4B     		ldr	r3, .L19
+  90 0002 1B68     		ldr	r3, [r3]
+  91 0004 13F0080F 		tst	r3, #8
+  92 0008 16D1     		bne	.L5
  262:Src/system_stm32l4xx.c ****   { /* MSISRANGE from RCC_CSR applies */
  263:Src/system_stm32l4xx.c ****     msirange = (RCC->CSR & RCC_CSR_MSISRANGE) >> 8U;
- 106              		.loc 1 263 5 is_stmt 1 view .LVU23
- 107              		.loc 1 263 20 is_stmt 0 view .LVU24
- 108 000a 2D4B     		ldr	r3, .L19
- 109 000c D3F89430 		ldr	r3, [r3, #148]
- 110              		.loc 1 263 14 view .LVU25
- 111 0010 C3F30323 		ubfx	r3, r3, #8, #4
- 112              	.LVL1:
- 113              	.L6:
+  93              		.loc 1 263 0
+  94 000a 2D4B     		ldr	r3, .L19
+  95 000c D3F89430 		ldr	r3, [r3, #148]
+  96 0010 C3F30323 		ubfx	r3, r3, #8, #4
+  97              	.LVL1:
+  98              	.L6:
  264:Src/system_stm32l4xx.c ****   }
  265:Src/system_stm32l4xx.c ****   else
  266:Src/system_stm32l4xx.c ****   { /* MSIRANGE from RCC_CR applies */
@@ -399,70 +384,58 @@ ARM GAS  /tmp/ccjP4bVW.s 			page 1
  268:Src/system_stm32l4xx.c ****   }
  269:Src/system_stm32l4xx.c ****   /*MSI frequency range in HZ*/
  270:Src/system_stm32l4xx.c ****   msirange = MSIRangeTable[msirange];
- 114              		.loc 1 270 3 is_stmt 1 view .LVU26
- 115              		.loc 1 270 12 is_stmt 0 view .LVU27
- 116 0014 2B4A     		ldr	r2, .L19+4
- 117 0016 52F82310 		ldr	r1, [r2, r3, lsl #2]
- 118              	.LVL2:
+  99              		.loc 1 270 0
+ 100 0014 2B4A     		ldr	r2, .L19+4
+ 101 0016 52F82320 		ldr	r2, [r2, r3, lsl #2]
+ 102              	.LVL2:
  271:Src/system_stm32l4xx.c **** 
  272:Src/system_stm32l4xx.c ****   /* Get SYSCLK source -------------------------------------------------------*/
  273:Src/system_stm32l4xx.c ****   switch (RCC->CFGR & RCC_CFGR_SWS)
- 119              		.loc 1 273 3 is_stmt 1 view .LVU28
- 120              		.loc 1 273 14 is_stmt 0 view .LVU29
- 121 001a 294A     		ldr	r2, .L19
- 122 001c 9368     		ldr	r3, [r2, #8]
- 123              		.loc 1 273 21 view .LVU30
- 124 001e 03F00C03 		and	r3, r3, #12
- 125              		.loc 1 273 3 view .LVU31
- 126 0022 0C2B     		cmp	r3, #12
- 127 0024 48D8     		bhi	.L7
- 128 0026 DFE803F0 		tbb	[pc, r3]
- 129              	.L9:
-ARM GAS  /tmp/ccjP4bVW.s 			page 8
+ 103              		.loc 1 273 0
+ 104 001a 294B     		ldr	r3, .L19
+ 105 001c 9B68     		ldr	r3, [r3, #8]
+ 106 001e 03F00C03 		and	r3, r3, #12
+ 107 0022 0C2B     		cmp	r3, #12
+ 108 0024 48D8     		bhi	.L7
+ 109 0026 DFE803F0 		tbb	[pc, r3]
+ 110              	.L9:
+ 111 002a 0C       		.byte	(.L8-.L9)/2
+ 112 002b 47       		.byte	(.L7-.L9)/2
+ 113 002c 47       		.byte	(.L7-.L9)/2
+ 114 002d 47       		.byte	(.L7-.L9)/2
+ 115 002e 19       		.byte	(.L10-.L9)/2
+ 116 002f 47       		.byte	(.L7-.L9)/2
+ 117 0030 47       		.byte	(.L7-.L9)/2
+ 118 0031 47       		.byte	(.L7-.L9)/2
+ 119 0032 1D       		.byte	(.L11-.L9)/2
+ 120 0033 47       		.byte	(.L7-.L9)/2
+ 121 0034 47       		.byte	(.L7-.L9)/2
+ 122 0035 47       		.byte	(.L7-.L9)/2
+ 123 0036 21       		.byte	(.L12-.L9)/2
+ 124              	.LVL3:
+ 125 0037 00       		.p2align 1
+ 126              	.L5:
+ 267:Src/system_stm32l4xx.c ****   }
+ 127              		.loc 1 267 0
+ 128 0038 214B     		ldr	r3, .L19
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\ccOmQ3Eo.s 			page 8
 
 
- 130 002a 0C       		.byte	(.L12-.L9)/2
- 131 002b 47       		.byte	(.L7-.L9)/2
- 132 002c 47       		.byte	(.L7-.L9)/2
- 133 002d 47       		.byte	(.L7-.L9)/2
- 134 002e 19       		.byte	(.L11-.L9)/2
- 135 002f 47       		.byte	(.L7-.L9)/2
- 136 0030 47       		.byte	(.L7-.L9)/2
- 137 0031 47       		.byte	(.L7-.L9)/2
- 138 0032 1D       		.byte	(.L10-.L9)/2
- 139 0033 47       		.byte	(.L7-.L9)/2
- 140 0034 47       		.byte	(.L7-.L9)/2
- 141 0035 47       		.byte	(.L7-.L9)/2
- 142 0036 21       		.byte	(.L8-.L9)/2
- 143              	.LVL3:
- 144 0037 00       		.p2align 1
- 145              	.L5:
- 267:Src/system_stm32l4xx.c ****   }
- 146              		.loc 1 267 5 is_stmt 1 view .LVU32
- 267:Src/system_stm32l4xx.c ****   }
- 147              		.loc 1 267 20 is_stmt 0 view .LVU33
- 148 0038 214B     		ldr	r3, .L19
- 149 003a 1B68     		ldr	r3, [r3]
- 267:Src/system_stm32l4xx.c ****   }
- 150              		.loc 1 267 14 view .LVU34
- 151 003c C3F30313 		ubfx	r3, r3, #4, #4
- 152              	.LVL4:
- 267:Src/system_stm32l4xx.c ****   }
- 153              		.loc 1 267 14 view .LVU35
- 154 0040 E8E7     		b	.L6
- 155              	.LVL5:
- 156              	.L12:
+ 129 003a 1B68     		ldr	r3, [r3]
+ 130 003c C3F30313 		ubfx	r3, r3, #4, #4
+ 131              	.LVL4:
+ 132 0040 E8E7     		b	.L6
+ 133              	.LVL5:
+ 134              	.L8:
  274:Src/system_stm32l4xx.c ****   {
  275:Src/system_stm32l4xx.c ****     case 0x00:  /* MSI used as system clock source */
  276:Src/system_stm32l4xx.c ****       SystemCoreClock = msirange;
- 157              		.loc 1 276 7 is_stmt 1 view .LVU36
- 158              		.loc 1 276 23 is_stmt 0 view .LVU37
- 159 0042 214B     		ldr	r3, .L19+8
- 160 0044 1960     		str	r1, [r3]
+ 135              		.loc 1 276 0
+ 136 0042 214B     		ldr	r3, .L19+8
+ 137 0044 1A60     		str	r2, [r3]
+ 138              	.LVL6:
+ 139              	.L13:
  277:Src/system_stm32l4xx.c ****       break;
- 161              		.loc 1 277 7 is_stmt 1 view .LVU38
- 162              	.LVL6:
- 163              	.L13:
  278:Src/system_stm32l4xx.c **** 
  279:Src/system_stm32l4xx.c ****     case 0x04:  /* HSI used as system clock source */
  280:Src/system_stm32l4xx.c ****       SystemCoreClock = HSI_VALUE;
@@ -478,9 +451,6 @@ ARM GAS  /tmp/ccjP4bVW.s 			page 1
  290:Src/system_stm32l4xx.c ****          */
  291:Src/system_stm32l4xx.c ****       pllsource = (RCC->PLLCFGR & RCC_PLLCFGR_PLLSRC);
  292:Src/system_stm32l4xx.c ****       pllm = ((RCC->PLLCFGR & RCC_PLLCFGR_PLLM) >> 4U) + 1U ;
-ARM GAS  /tmp/ccjP4bVW.s 			page 9
-
-
  293:Src/system_stm32l4xx.c **** 
  294:Src/system_stm32l4xx.c ****       switch (pllsource)
  295:Src/system_stm32l4xx.c ****       {
@@ -508,287 +478,237 @@ ARM GAS  /tmp/ccjP4bVW.s 			page 1
  317:Src/system_stm32l4xx.c ****   /* Compute HCLK clock frequency --------------------------------------------*/
  318:Src/system_stm32l4xx.c ****   /* Get HCLK prescaler */
  319:Src/system_stm32l4xx.c ****   tmp = AHBPrescTable[((RCC->CFGR & RCC_CFGR_HPRE) >> 4U)];
- 164              		.loc 1 319 3 view .LVU39
- 165              		.loc 1 319 28 is_stmt 0 view .LVU40
- 166 0046 1E4B     		ldr	r3, .L19
- 167 0048 9B68     		ldr	r3, [r3, #8]
- 168              		.loc 1 319 52 view .LVU41
- 169 004a C3F30313 		ubfx	r3, r3, #4, #4
- 170              		.loc 1 319 22 view .LVU42
- 171 004e 1F4A     		ldr	r2, .L19+12
- 172 0050 D15C     		ldrb	r1, [r2, r3]	@ zero_extendqisi2
- 173              	.LVL7:
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\ccOmQ3Eo.s 			page 9
+
+
+ 140              		.loc 1 319 0
+ 141 0046 1E4B     		ldr	r3, .L19
+ 142 0048 9B68     		ldr	r3, [r3, #8]
+ 143 004a C3F30313 		ubfx	r3, r3, #4, #4
+ 144 004e 1F4A     		ldr	r2, .L19+12
+ 145 0050 D15C     		ldrb	r1, [r2, r3]	@ zero_extendqisi2
+ 146              	.LVL7:
  320:Src/system_stm32l4xx.c ****   /* HCLK clock frequency */
  321:Src/system_stm32l4xx.c ****   SystemCoreClock >>= tmp;
- 174              		.loc 1 321 3 is_stmt 1 view .LVU43
- 175              		.loc 1 321 19 is_stmt 0 view .LVU44
- 176 0052 1D4A     		ldr	r2, .L19+8
- 177 0054 1368     		ldr	r3, [r2]
- 178 0056 CB40     		lsrs	r3, r3, r1
- 179 0058 1360     		str	r3, [r2]
- 322:Src/system_stm32l4xx.c **** }
- 180              		.loc 1 322 1 view .LVU45
- 181 005a 7047     		bx	lr
- 182              	.LVL8:
- 183              	.L11:
+ 147              		.loc 1 321 0
+ 148 0052 1D4A     		ldr	r2, .L19+8
+ 149 0054 1368     		ldr	r3, [r2]
+ 150 0056 CB40     		lsrs	r3, r3, r1
+ 151 0058 1360     		str	r3, [r2]
+ 152 005a 7047     		bx	lr
+ 153              	.LVL8:
+ 154              	.L10:
  280:Src/system_stm32l4xx.c ****       break;
- 184              		.loc 1 280 7 is_stmt 1 view .LVU46
- 280:Src/system_stm32l4xx.c ****       break;
- 185              		.loc 1 280 23 is_stmt 0 view .LVU47
- 186 005c 1A4B     		ldr	r3, .L19+8
- 187 005e 1C4A     		ldr	r2, .L19+16
- 188 0060 1A60     		str	r2, [r3]
-ARM GAS  /tmp/ccjP4bVW.s 			page 10
-
-
+ 155              		.loc 1 280 0
+ 156 005c 1C4A     		ldr	r2, .L19+16
+ 157              	.LVL9:
+ 158 005e 1A4B     		ldr	r3, .L19+8
+ 159 0060 1A60     		str	r2, [r3]
  281:Src/system_stm32l4xx.c **** 
- 189              		.loc 1 281 7 is_stmt 1 view .LVU48
- 190 0062 F0E7     		b	.L13
- 191              	.L10:
+ 160              		.loc 1 281 0
+ 161 0062 F0E7     		b	.L13
+ 162              	.LVL10:
+ 163              	.L11:
  284:Src/system_stm32l4xx.c ****       break;
- 192              		.loc 1 284 7 view .LVU49
- 284:Src/system_stm32l4xx.c ****       break;
- 193              		.loc 1 284 23 is_stmt 0 view .LVU50
- 194 0064 184B     		ldr	r3, .L19+8
- 195 0066 1B4A     		ldr	r2, .L19+20
- 196 0068 1A60     		str	r2, [r3]
+ 164              		.loc 1 284 0
+ 165 0064 1B4A     		ldr	r2, .L19+20
+ 166              	.LVL11:
+ 167 0066 184B     		ldr	r3, .L19+8
+ 168 0068 1A60     		str	r2, [r3]
  285:Src/system_stm32l4xx.c **** 
- 197              		.loc 1 285 7 is_stmt 1 view .LVU51
- 198 006a ECE7     		b	.L13
- 199              	.L8:
+ 169              		.loc 1 285 0
+ 170 006a ECE7     		b	.L13
+ 171              	.LVL12:
+ 172              	.L12:
  291:Src/system_stm32l4xx.c ****       pllm = ((RCC->PLLCFGR & RCC_PLLCFGR_PLLM) >> 4U) + 1U ;
- 200              		.loc 1 291 7 view .LVU52
- 291:Src/system_stm32l4xx.c ****       pllm = ((RCC->PLLCFGR & RCC_PLLCFGR_PLLM) >> 4U) + 1U ;
- 201              		.loc 1 291 23 is_stmt 0 view .LVU53
- 202 006c 144B     		ldr	r3, .L19
- 203 006e DA68     		ldr	r2, [r3, #12]
- 291:Src/system_stm32l4xx.c ****       pllm = ((RCC->PLLCFGR & RCC_PLLCFGR_PLLM) >> 4U) + 1U ;
- 204              		.loc 1 291 17 view .LVU54
- 205 0070 02F00302 		and	r2, r2, #3
- 206              	.LVL9:
+ 173              		.loc 1 291 0
+ 174 006c 144B     		ldr	r3, .L19
+ 175 006e D968     		ldr	r1, [r3, #12]
+ 176 0070 01F00301 		and	r1, r1, #3
+ 177              	.LVL13:
  292:Src/system_stm32l4xx.c **** 
- 207              		.loc 1 292 7 is_stmt 1 view .LVU55
- 292:Src/system_stm32l4xx.c **** 
- 208              		.loc 1 292 19 is_stmt 0 view .LVU56
- 209 0074 DB68     		ldr	r3, [r3, #12]
- 292:Src/system_stm32l4xx.c **** 
- 210              		.loc 1 292 49 view .LVU57
- 211 0076 C3F30213 		ubfx	r3, r3, #4, #3
- 292:Src/system_stm32l4xx.c **** 
- 212              		.loc 1 292 12 view .LVU58
- 213 007a 0133     		adds	r3, r3, #1
- 214              	.LVL10:
+ 178              		.loc 1 292 0
+ 179 0074 DB68     		ldr	r3, [r3, #12]
+ 180 0076 C3F30213 		ubfx	r3, r3, #4, #3
+ 181 007a 0133     		adds	r3, r3, #1
+ 182              	.LVL14:
  294:Src/system_stm32l4xx.c ****       {
- 215              		.loc 1 294 7 is_stmt 1 view .LVU59
- 216 007c 022A     		cmp	r2, #2
- 217 007e 04D0     		beq	.L14
- 218 0080 032A     		cmp	r2, #3
- 219 0082 15D0     		beq	.L15
+ 183              		.loc 1 294 0
+ 184 007c 0229     		cmp	r1, #2
+ 185 007e 04D0     		beq	.L15
+ 186 0080 0329     		cmp	r1, #3
+ 187 0082 15D0     		beq	.L16
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\ccOmQ3Eo.s 			page 10
+
+
  305:Src/system_stm32l4xx.c ****           break;
- 220              		.loc 1 305 11 view .LVU60
- 305:Src/system_stm32l4xx.c ****           break;
- 221              		.loc 1 305 18 is_stmt 0 view .LVU61
- 222 0084 B1FBF3F3 		udiv	r3, r1, r3
- 223              	.LVL11:
+ 188              		.loc 1 305 0
+ 189 0084 B2FBF3F2 		udiv	r2, r2, r3
+ 190              	.LVL15:
  306:Src/system_stm32l4xx.c ****       }
- 224              		.loc 1 306 11 is_stmt 1 view .LVU62
- 225 0088 02E0     		b	.L17
- 226              	.LVL12:
- 227              	.L14:
+ 191              		.loc 1 306 0
+ 192 0088 02E0     		b	.L17
+ 193              	.LVL16:
+ 194              	.L15:
  297:Src/system_stm32l4xx.c ****           break;
- 228              		.loc 1 297 11 view .LVU63
- 297:Src/system_stm32l4xx.c ****           break;
-ARM GAS  /tmp/ccjP4bVW.s 			page 11
-
-
- 229              		.loc 1 297 18 is_stmt 0 view .LVU64
- 230 008a 114A     		ldr	r2, .L19+16
- 231              	.LVL13:
- 297:Src/system_stm32l4xx.c ****           break;
- 232              		.loc 1 297 18 view .LVU65
- 233 008c B2FBF3F3 		udiv	r3, r2, r3
- 234              	.LVL14:
- 298:Src/system_stm32l4xx.c **** 
- 235              		.loc 1 298 11 is_stmt 1 view .LVU66
- 236              	.L17:
+ 195              		.loc 1 297 0
+ 196 008a 114A     		ldr	r2, .L19+16
+ 197              	.LVL17:
+ 198 008c B2FBF3F2 		udiv	r2, r2, r3
+ 199              	.LVL18:
+ 200              	.L17:
  308:Src/system_stm32l4xx.c ****       pllr = (((RCC->PLLCFGR & RCC_PLLCFGR_PLLR) >> 25U) + 1U) * 2U;
- 237              		.loc 1 308 7 view .LVU67
- 308:Src/system_stm32l4xx.c ****       pllr = (((RCC->PLLCFGR & RCC_PLLCFGR_PLLR) >> 25U) + 1U) * 2U;
- 238              		.loc 1 308 30 is_stmt 0 view .LVU68
- 239 0090 0B49     		ldr	r1, .L19
- 240              	.LVL15:
- 308:Src/system_stm32l4xx.c ****       pllr = (((RCC->PLLCFGR & RCC_PLLCFGR_PLLR) >> 25U) + 1U) * 2U;
- 241              		.loc 1 308 30 view .LVU69
- 242 0092 CA68     		ldr	r2, [r1, #12]
- 308:Src/system_stm32l4xx.c ****       pllr = (((RCC->PLLCFGR & RCC_PLLCFGR_PLLR) >> 25U) + 1U) * 2U;
- 243              		.loc 1 308 60 view .LVU70
- 244 0094 C2F30622 		ubfx	r2, r2, #8, #7
- 308:Src/system_stm32l4xx.c ****       pllr = (((RCC->PLLCFGR & RCC_PLLCFGR_PLLR) >> 25U) + 1U) * 2U;
- 245              		.loc 1 308 14 view .LVU71
- 246 0098 03FB02F3 		mul	r3, r3, r2
- 247              	.LVL16:
+ 201              		.loc 1 308 0
+ 202 0090 0B49     		ldr	r1, .L19
+ 203              	.LVL19:
+ 204 0092 CB68     		ldr	r3, [r1, #12]
+ 205              	.LVL20:
+ 206 0094 C3F30623 		ubfx	r3, r3, #8, #7
+ 207 0098 03FB02F3 		mul	r3, r3, r2
+ 208              	.LVL21:
  309:Src/system_stm32l4xx.c ****       SystemCoreClock = pllvco/pllr;
- 248              		.loc 1 309 7 is_stmt 1 view .LVU72
- 309:Src/system_stm32l4xx.c ****       SystemCoreClock = pllvco/pllr;
- 249              		.loc 1 309 20 is_stmt 0 view .LVU73
- 250 009c CA68     		ldr	r2, [r1, #12]
- 309:Src/system_stm32l4xx.c ****       SystemCoreClock = pllvco/pllr;
- 251              		.loc 1 309 50 view .LVU74
- 252 009e C2F34162 		ubfx	r2, r2, #25, #2
- 309:Src/system_stm32l4xx.c ****       SystemCoreClock = pllvco/pllr;
- 253              		.loc 1 309 64 view .LVU75
- 254 00a2 0132     		adds	r2, r2, #1
- 309:Src/system_stm32l4xx.c ****       SystemCoreClock = pllvco/pllr;
- 255              		.loc 1 309 12 view .LVU76
- 256 00a4 5200     		lsls	r2, r2, #1
- 257              	.LVL17:
+ 209              		.loc 1 309 0
+ 210 009c CA68     		ldr	r2, [r1, #12]
+ 211 009e C2F34162 		ubfx	r2, r2, #25, #2
+ 212 00a2 0132     		adds	r2, r2, #1
+ 213 00a4 5200     		lsls	r2, r2, #1
+ 214              	.LVL22:
  310:Src/system_stm32l4xx.c ****       break;
- 258              		.loc 1 310 7 is_stmt 1 view .LVU77
- 310:Src/system_stm32l4xx.c ****       break;
- 259              		.loc 1 310 31 is_stmt 0 view .LVU78
- 260 00a6 B3FBF2F3 		udiv	r3, r3, r2
- 261              	.LVL18:
- 310:Src/system_stm32l4xx.c ****       break;
- 262              		.loc 1 310 23 view .LVU79
- 263 00aa 074A     		ldr	r2, .L19+8
- 264              	.LVL19:
- 310:Src/system_stm32l4xx.c ****       break;
- 265              		.loc 1 310 23 view .LVU80
- 266 00ac 1360     		str	r3, [r2]
+ 215              		.loc 1 310 0
+ 216 00a6 B3FBF2F3 		udiv	r3, r3, r2
+ 217              	.LVL23:
+ 218 00aa 074A     		ldr	r2, .L19+8
+ 219              	.LVL24:
+ 220 00ac 1360     		str	r3, [r2]
  311:Src/system_stm32l4xx.c **** 
- 267              		.loc 1 311 7 is_stmt 1 view .LVU81
- 268 00ae CAE7     		b	.L13
-ARM GAS  /tmp/ccjP4bVW.s 			page 12
-
-
- 269              	.LVL20:
- 270              	.L15:
+ 221              		.loc 1 311 0
+ 222 00ae CAE7     		b	.L13
+ 223              	.LVL25:
+ 224              	.L16:
  301:Src/system_stm32l4xx.c ****           break;
- 271              		.loc 1 301 11 view .LVU82
- 301:Src/system_stm32l4xx.c ****           break;
- 272              		.loc 1 301 18 is_stmt 0 view .LVU83
- 273 00b0 084A     		ldr	r2, .L19+20
- 274              	.LVL21:
- 301:Src/system_stm32l4xx.c ****           break;
- 275              		.loc 1 301 18 view .LVU84
- 276 00b2 B2FBF3F3 		udiv	r3, r2, r3
- 277              	.LVL22:
+ 225              		.loc 1 301 0
+ 226 00b0 084A     		ldr	r2, .L19+20
+ 227              	.LVL26:
+ 228 00b2 B2FBF3F2 		udiv	r2, r2, r3
+ 229              	.LVL27:
  302:Src/system_stm32l4xx.c **** 
- 278              		.loc 1 302 11 is_stmt 1 view .LVU85
- 279 00b6 EBE7     		b	.L17
- 280              	.LVL23:
- 281              	.L7:
+ 230              		.loc 1 302 0
+ 231 00b6 EBE7     		b	.L17
+ 232              	.LVL28:
+ 233              	.L7:
  314:Src/system_stm32l4xx.c ****       break;
- 282              		.loc 1 314 7 view .LVU86
- 314:Src/system_stm32l4xx.c ****       break;
- 283              		.loc 1 314 23 is_stmt 0 view .LVU87
- 284 00b8 034B     		ldr	r3, .L19+8
- 285 00ba 1960     		str	r1, [r3]
+ 234              		.loc 1 314 0
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\ccOmQ3Eo.s 			page 11
+
+
+ 235 00b8 034B     		ldr	r3, .L19+8
+ 236 00ba 1A60     		str	r2, [r3]
  315:Src/system_stm32l4xx.c ****   }
- 286              		.loc 1 315 7 is_stmt 1 view .LVU88
- 287 00bc C3E7     		b	.L13
- 288              	.L20:
- 289 00be 00BF     		.align	2
- 290              	.L19:
- 291 00c0 00100240 		.word	1073876992
- 292 00c4 00000000 		.word	.LANCHOR0
- 293 00c8 00000000 		.word	.LANCHOR1
- 294 00cc 00000000 		.word	.LANCHOR2
- 295 00d0 0024F400 		.word	16000000
- 296 00d4 00127A00 		.word	8000000
- 297              		.cfi_endproc
- 298              	.LFE131:
- 300              		.global	MSIRangeTable
- 301              		.global	APBPrescTable
- 302              		.global	AHBPrescTable
- 303              		.global	SystemCoreClock
- 304              		.section	.data.SystemCoreClock,"aw"
- 305              		.align	2
- 306              		.set	.LANCHOR1,. + 0
- 309              	SystemCoreClock:
- 310 0000 00093D00 		.word	4000000
- 311              		.section	.rodata.AHBPrescTable,"a"
- 312              		.align	2
- 313              		.set	.LANCHOR2,. + 0
- 316              	AHBPrescTable:
- 317 0000 00       		.byte	0
- 318 0001 00       		.byte	0
- 319 0002 00       		.byte	0
- 320 0003 00       		.byte	0
- 321 0004 00       		.byte	0
- 322 0005 00       		.byte	0
- 323 0006 00       		.byte	0
-ARM GAS  /tmp/ccjP4bVW.s 			page 13
+ 237              		.loc 1 315 0
+ 238 00bc C3E7     		b	.L13
+ 239              	.L20:
+ 240 00be 00BF     		.align	2
+ 241              	.L19:
+ 242 00c0 00100240 		.word	1073876992
+ 243 00c4 00000000 		.word	.LANCHOR0
+ 244 00c8 00000000 		.word	.LANCHOR1
+ 245 00cc 00000000 		.word	.LANCHOR2
+ 246 00d0 0024F400 		.word	16000000
+ 247 00d4 00127A00 		.word	8000000
+ 248              		.cfi_endproc
+ 249              	.LFE131:
+ 251              		.global	MSIRangeTable
+ 252              		.global	APBPrescTable
+ 253              		.global	AHBPrescTable
+ 254              		.global	SystemCoreClock
+ 255              		.section	.data.SystemCoreClock,"aw",%progbits
+ 256              		.align	2
+ 257              		.set	.LANCHOR1,. + 0
+ 260              	SystemCoreClock:
+ 261 0000 00093D00 		.word	4000000
+ 262              		.section	.rodata.AHBPrescTable,"a",%progbits
+ 263              		.align	2
+ 264              		.set	.LANCHOR2,. + 0
+ 267              	AHBPrescTable:
+ 268 0000 00       		.byte	0
+ 269 0001 00       		.byte	0
+ 270 0002 00       		.byte	0
+ 271 0003 00       		.byte	0
+ 272 0004 00       		.byte	0
+ 273 0005 00       		.byte	0
+ 274 0006 00       		.byte	0
+ 275 0007 00       		.byte	0
+ 276 0008 01       		.byte	1
+ 277 0009 02       		.byte	2
+ 278 000a 03       		.byte	3
+ 279 000b 04       		.byte	4
+ 280 000c 06       		.byte	6
+ 281 000d 07       		.byte	7
+ 282 000e 08       		.byte	8
+ 283 000f 09       		.byte	9
+ 284              		.section	.rodata.APBPrescTable,"a",%progbits
+ 285              		.align	2
+ 288              	APBPrescTable:
+ 289 0000 00       		.byte	0
+ 290 0001 00       		.byte	0
+ 291 0002 00       		.byte	0
+ 292 0003 00       		.byte	0
+ 293 0004 01       		.byte	1
+ 294 0005 02       		.byte	2
+ 295 0006 03       		.byte	3
+ 296 0007 04       		.byte	4
+ 297              		.section	.rodata.MSIRangeTable,"a",%progbits
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\ccOmQ3Eo.s 			page 12
 
 
- 324 0007 00       		.byte	0
- 325 0008 01       		.byte	1
- 326 0009 02       		.byte	2
- 327 000a 03       		.byte	3
- 328 000b 04       		.byte	4
- 329 000c 06       		.byte	6
- 330 000d 07       		.byte	7
- 331 000e 08       		.byte	8
- 332 000f 09       		.byte	9
- 333              		.section	.rodata.APBPrescTable,"a"
- 334              		.align	2
- 337              	APBPrescTable:
- 338 0000 00       		.byte	0
- 339 0001 00       		.byte	0
- 340 0002 00       		.byte	0
- 341 0003 00       		.byte	0
- 342 0004 01       		.byte	1
- 343 0005 02       		.byte	2
- 344 0006 03       		.byte	3
- 345 0007 04       		.byte	4
- 346              		.section	.rodata.MSIRangeTable,"a"
- 347              		.align	2
- 348              		.set	.LANCHOR0,. + 0
- 351              	MSIRangeTable:
- 352 0000 A0860100 		.word	100000
- 353 0004 400D0300 		.word	200000
- 354 0008 801A0600 		.word	400000
- 355 000c 00350C00 		.word	800000
- 356 0010 40420F00 		.word	1000000
- 357 0014 80841E00 		.word	2000000
- 358 0018 00093D00 		.word	4000000
- 359 001c 00127A00 		.word	8000000
- 360 0020 0024F400 		.word	16000000
- 361 0024 00366E01 		.word	24000000
- 362 0028 0048E801 		.word	32000000
- 363 002c 006CDC02 		.word	48000000
- 364              		.text
- 365              	.Letext0:
- 366              		.file 2 "/usr/arm-none-eabi/include/machine/_default_types.h"
- 367              		.file 3 "/usr/arm-none-eabi/include/sys/_stdint.h"
- 368              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
- 369              		.file 5 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/system_stm32l4xx.h"
- 370              		.file 6 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l476xx.h"
- 371              		.file 7 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h"
- 372              		.file 8 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h"
- 373              		.file 9 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash.h"
- 374              		.file 10 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h"
-ARM GAS  /tmp/ccjP4bVW.s 			page 14
+ 298              		.align	2
+ 299              		.set	.LANCHOR0,. + 0
+ 302              	MSIRangeTable:
+ 303 0000 A0860100 		.word	100000
+ 304 0004 400D0300 		.word	200000
+ 305 0008 801A0600 		.word	400000
+ 306 000c 00350C00 		.word	800000
+ 307 0010 40420F00 		.word	1000000
+ 308 0014 80841E00 		.word	2000000
+ 309 0018 00093D00 		.word	4000000
+ 310 001c 00127A00 		.word	8000000
+ 311 0020 0024F400 		.word	16000000
+ 312 0024 00366E01 		.word	24000000
+ 313 0028 0048E801 		.word	32000000
+ 314 002c 006CDC02 		.word	48000000
+ 315              		.text
+ 316              	.Letext0:
+ 317              		.file 2 "c:\\program files (x86)\\gnu tools arm embedded\\6.2 2016q4\\arm-none-eabi\\include\\mach
+ 318              		.file 3 "c:\\program files (x86)\\gnu tools arm embedded\\6.2 2016q4\\arm-none-eabi\\include\\sys\
+ 319              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
+ 320              		.file 5 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/system_stm32l4xx.h"
+ 321              		.file 6 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l476xx.h"
+ 322              		.file 7 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h"
+ 323              		.file 8 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h"
+ 324              		.file 9 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash.h"
+ 325              		.file 10 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h"
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\ccOmQ3Eo.s 			page 13
 
 
 DEFINED SYMBOLS
-                            *ABS*:0000000000000000 system_stm32l4xx.c
-     /tmp/ccjP4bVW.s:18     .text.SystemInit:0000000000000000 $t
-     /tmp/ccjP4bVW.s:26     .text.SystemInit:0000000000000000 SystemInit
-     /tmp/ccjP4bVW.s:77     .text.SystemInit:0000000000000040 $d
-     /tmp/ccjP4bVW.s:83     .text.SystemCoreClockUpdate:0000000000000000 $t
-     /tmp/ccjP4bVW.s:90     .text.SystemCoreClockUpdate:0000000000000000 SystemCoreClockUpdate
-     /tmp/ccjP4bVW.s:130    .text.SystemCoreClockUpdate:000000000000002a $d
-     /tmp/ccjP4bVW.s:291    .text.SystemCoreClockUpdate:00000000000000c0 $d
-     /tmp/ccjP4bVW.s:351    .rodata.MSIRangeTable:0000000000000000 MSIRangeTable
-     /tmp/ccjP4bVW.s:337    .rodata.APBPrescTable:0000000000000000 APBPrescTable
-     /tmp/ccjP4bVW.s:316    .rodata.AHBPrescTable:0000000000000000 AHBPrescTable
-     /tmp/ccjP4bVW.s:309    .data.SystemCoreClock:0000000000000000 SystemCoreClock
-     /tmp/ccjP4bVW.s:305    .data.SystemCoreClock:0000000000000000 $d
-     /tmp/ccjP4bVW.s:312    .rodata.AHBPrescTable:0000000000000000 $d
-     /tmp/ccjP4bVW.s:334    .rodata.APBPrescTable:0000000000000000 $d
-     /tmp/ccjP4bVW.s:347    .rodata.MSIRangeTable:0000000000000000 $d
-     /tmp/ccjP4bVW.s:144    .text.SystemCoreClockUpdate:0000000000000037 $d
-     /tmp/ccjP4bVW.s:144    .text.SystemCoreClockUpdate:0000000000000038 $t
+                            *ABS*:00000000 system_stm32l4xx.c
+C:\Users\hirot\AppData\Local\Temp\ccOmQ3Eo.s:18     .text.SystemInit:00000000 $t
+C:\Users\hirot\AppData\Local\Temp\ccOmQ3Eo.s:25     .text.SystemInit:00000000 SystemInit
+C:\Users\hirot\AppData\Local\Temp\ccOmQ3Eo.s:67     .text.SystemInit:00000040 $d
+C:\Users\hirot\AppData\Local\Temp\ccOmQ3Eo.s:73     .text.SystemCoreClockUpdate:00000000 $t
+C:\Users\hirot\AppData\Local\Temp\ccOmQ3Eo.s:80     .text.SystemCoreClockUpdate:00000000 SystemCoreClockUpdate
+C:\Users\hirot\AppData\Local\Temp\ccOmQ3Eo.s:111    .text.SystemCoreClockUpdate:0000002a $d
+C:\Users\hirot\AppData\Local\Temp\ccOmQ3Eo.s:242    .text.SystemCoreClockUpdate:000000c0 $d
+C:\Users\hirot\AppData\Local\Temp\ccOmQ3Eo.s:302    .rodata.MSIRangeTable:00000000 MSIRangeTable
+C:\Users\hirot\AppData\Local\Temp\ccOmQ3Eo.s:288    .rodata.APBPrescTable:00000000 APBPrescTable
+C:\Users\hirot\AppData\Local\Temp\ccOmQ3Eo.s:267    .rodata.AHBPrescTable:00000000 AHBPrescTable
+C:\Users\hirot\AppData\Local\Temp\ccOmQ3Eo.s:260    .data.SystemCoreClock:00000000 SystemCoreClock
+C:\Users\hirot\AppData\Local\Temp\ccOmQ3Eo.s:256    .data.SystemCoreClock:00000000 $d
+C:\Users\hirot\AppData\Local\Temp\ccOmQ3Eo.s:263    .rodata.AHBPrescTable:00000000 $d
+C:\Users\hirot\AppData\Local\Temp\ccOmQ3Eo.s:285    .rodata.APBPrescTable:00000000 $d
+C:\Users\hirot\AppData\Local\Temp\ccOmQ3Eo.s:298    .rodata.MSIRangeTable:00000000 $d
+                     .debug_frame:00000010 $d
+C:\Users\hirot\AppData\Local\Temp\ccOmQ3Eo.s:125    .text.SystemCoreClockUpdate:00000037 $d
+C:\Users\hirot\AppData\Local\Temp\ccOmQ3Eo.s:125    .text.SystemCoreClockUpdate:00000038 $t
 
 NO UNDEFINED SYMBOLS

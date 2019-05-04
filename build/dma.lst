@@ -1,4 +1,4 @@
-ARM GAS  /tmp/cchpKRib.s 			page 1
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\ccDUfiRM.s 			page 1
 
 
    1              		.cpu cortex-m4
@@ -20,14 +20,13 @@ ARM GAS  /tmp/cchpKRib.s 			page 1
   17              		.section	.text.MX_DMA_Init,"ax",%progbits
   18              		.align	1
   19              		.global	MX_DMA_Init
-  20              		.arch armv7e-m
-  21              		.syntax unified
-  22              		.thumb
-  23              		.thumb_func
-  24              		.fpu fpv4-sp-d16
-  26              	MX_DMA_Init:
-  27              	.LFB130:
-  28              		.file 1 "Src/dma.c"
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  23              		.fpu fpv4-sp-d16
+  25              	MX_DMA_Init:
+  26              	.LFB130:
+  27              		.file 1 "Src/dma.c"
    1:Src/dma.c     **** /**
    2:Src/dma.c     ****   ******************************************************************************
    3:Src/dma.c     ****   * File Name          : dma.c
@@ -58,10 +57,10 @@ ARM GAS  /tmp/cchpKRib.s 			page 1
   28:Src/dma.c     **** /*----------------------------------------------------------------------------*/
   29:Src/dma.c     **** 
   30:Src/dma.c     **** /* USER CODE BEGIN 1 */
-ARM GAS  /tmp/cchpKRib.s 			page 2
-
-
   31:Src/dma.c     **** 
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\ccDUfiRM.s 			page 2
+
+
   32:Src/dma.c     **** /* USER CODE END 1 */
   33:Src/dma.c     **** 
   34:Src/dma.c     **** /** 
@@ -69,98 +68,95 @@ ARM GAS  /tmp/cchpKRib.s 			page 1
   36:Src/dma.c     ****   */
   37:Src/dma.c     **** void MX_DMA_Init(void) 
   38:Src/dma.c     **** {
-  29              		.loc 1 38 1 view -0
-  30              		.cfi_startproc
-  31              		@ args = 0, pretend = 0, frame = 8
-  32              		@ frame_needed = 0, uses_anonymous_args = 0
-  33 0000 00B5     		push	{lr}
-  34              	.LCFI0:
-  35              		.cfi_def_cfa_offset 4
-  36              		.cfi_offset 14, -4
-  37 0002 83B0     		sub	sp, sp, #12
-  38              	.LCFI1:
-  39              		.cfi_def_cfa_offset 16
+  28              		.loc 1 38 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 8
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32 0000 00B5     		push	{lr}
+  33              	.LCFI0:
+  34              		.cfi_def_cfa_offset 4
+  35              		.cfi_offset 14, -4
+  36 0002 83B0     		sub	sp, sp, #12
+  37              	.LCFI1:
+  38              		.cfi_def_cfa_offset 16
+  39              	.LBB2:
   39:Src/dma.c     ****   /* DMA controller clock enable */
   40:Src/dma.c     ****   __HAL_RCC_DMA1_CLK_ENABLE();
-  40              		.loc 1 40 3 view .LVU1
-  41              	.LBB2:
-  42              		.loc 1 40 3 view .LVU2
-  43              		.loc 1 40 3 view .LVU3
-  44 0004 0E4B     		ldr	r3, .L3
-  45 0006 9A6C     		ldr	r2, [r3, #72]
-  46 0008 42F00102 		orr	r2, r2, #1
-  47 000c 9A64     		str	r2, [r3, #72]
-  48              		.loc 1 40 3 view .LVU4
-  49 000e 9B6C     		ldr	r3, [r3, #72]
-  50 0010 03F00103 		and	r3, r3, #1
-  51 0014 0193     		str	r3, [sp, #4]
-  52              		.loc 1 40 3 view .LVU5
-  53 0016 019B     		ldr	r3, [sp, #4]
-  54              	.LBE2:
+  40              		.loc 1 40 0
+  41 0004 0E4B     		ldr	r3, .L3
+  42 0006 9A6C     		ldr	r2, [r3, #72]
+  43 0008 42F00102 		orr	r2, r2, #1
+  44 000c 9A64     		str	r2, [r3, #72]
+  45 000e 9B6C     		ldr	r3, [r3, #72]
+  46 0010 03F00103 		and	r3, r3, #1
+  47 0014 0193     		str	r3, [sp, #4]
+  48 0016 019B     		ldr	r3, [sp, #4]
+  49              	.LBE2:
   41:Src/dma.c     **** 
   42:Src/dma.c     ****   /* DMA interrupt init */
   43:Src/dma.c     ****   /* DMA1_Channel6_IRQn interrupt configuration */
   44:Src/dma.c     ****   HAL_NVIC_SetPriority(DMA1_Channel6_IRQn, 0, 0);
-  55              		.loc 1 44 3 view .LVU6
-  56 0018 0022     		movs	r2, #0
-  57 001a 1146     		mov	r1, r2
-  58 001c 1020     		movs	r0, #16
-  59 001e FFF7FEFF 		bl	HAL_NVIC_SetPriority
-  60              	.LVL0:
+  50              		.loc 1 44 0
+  51 0018 0022     		movs	r2, #0
+  52 001a 1146     		mov	r1, r2
+  53 001c 1020     		movs	r0, #16
+  54 001e FFF7FEFF 		bl	HAL_NVIC_SetPriority
+  55              	.LVL0:
   45:Src/dma.c     ****   HAL_NVIC_EnableIRQ(DMA1_Channel6_IRQn);
-  61              		.loc 1 45 3 view .LVU7
-  62 0022 1020     		movs	r0, #16
-  63 0024 FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
-  64              	.LVL1:
+  56              		.loc 1 45 0
+  57 0022 1020     		movs	r0, #16
+  58 0024 FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
+  59              	.LVL1:
   46:Src/dma.c     ****   /* DMA1_Channel7_IRQn interrupt configuration */
   47:Src/dma.c     ****   HAL_NVIC_SetPriority(DMA1_Channel7_IRQn, 0, 0);
-  65              		.loc 1 47 3 view .LVU8
-  66 0028 0022     		movs	r2, #0
-  67 002a 1146     		mov	r1, r2
-  68 002c 1120     		movs	r0, #17
-ARM GAS  /tmp/cchpKRib.s 			page 3
-
-
-  69 002e FFF7FEFF 		bl	HAL_NVIC_SetPriority
-  70              	.LVL2:
+  60              		.loc 1 47 0
+  61 0028 0022     		movs	r2, #0
+  62 002a 1146     		mov	r1, r2
+  63 002c 1120     		movs	r0, #17
+  64 002e FFF7FEFF 		bl	HAL_NVIC_SetPriority
+  65              	.LVL2:
   48:Src/dma.c     ****   HAL_NVIC_EnableIRQ(DMA1_Channel7_IRQn);
-  71              		.loc 1 48 3 view .LVU9
-  72 0032 1120     		movs	r0, #17
-  73 0034 FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
-  74              	.LVL3:
+  66              		.loc 1 48 0
+  67 0032 1120     		movs	r0, #17
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\ccDUfiRM.s 			page 3
+
+
+  68 0034 FFF7FEFF 		bl	HAL_NVIC_EnableIRQ
+  69              	.LVL3:
   49:Src/dma.c     **** 
   50:Src/dma.c     **** }
-  75              		.loc 1 50 1 is_stmt 0 view .LVU10
-  76 0038 03B0     		add	sp, sp, #12
-  77              	.LCFI2:
-  78              		.cfi_def_cfa_offset 4
-  79              		@ sp needed
-  80 003a 5DF804FB 		ldr	pc, [sp], #4
-  81              	.L4:
-  82 003e 00BF     		.align	2
-  83              	.L3:
-  84 0040 00100240 		.word	1073876992
-  85              		.cfi_endproc
-  86              	.LFE130:
-  88              		.text
-  89              	.Letext0:
-  90              		.file 2 "/usr/arm-none-eabi/include/machine/_default_types.h"
-  91              		.file 3 "/usr/arm-none-eabi/include/sys/_stdint.h"
-  92              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
-  93              		.file 5 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/system_stm32l4xx.h"
-  94              		.file 6 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l476xx.h"
-  95              		.file 7 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h"
-  96              		.file 8 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash.h"
-  97              		.file 9 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h"
-  98              		.file 10 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_cortex.h"
-ARM GAS  /tmp/cchpKRib.s 			page 4
+  70              		.loc 1 50 0
+  71 0038 03B0     		add	sp, sp, #12
+  72              	.LCFI2:
+  73              		.cfi_def_cfa_offset 4
+  74              		@ sp needed
+  75 003a 5DF804FB 		ldr	pc, [sp], #4
+  76              	.L4:
+  77 003e 00BF     		.align	2
+  78              	.L3:
+  79 0040 00100240 		.word	1073876992
+  80              		.cfi_endproc
+  81              	.LFE130:
+  83              		.text
+  84              	.Letext0:
+  85              		.file 2 "c:\\program files (x86)\\gnu tools arm embedded\\6.2 2016q4\\arm-none-eabi\\include\\mach
+  86              		.file 3 "c:\\program files (x86)\\gnu tools arm embedded\\6.2 2016q4\\arm-none-eabi\\include\\sys\
+  87              		.file 4 "Drivers/CMSIS/Include/core_cm4.h"
+  88              		.file 5 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/system_stm32l4xx.h"
+  89              		.file 6 "Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l476xx.h"
+  90              		.file 7 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h"
+  91              		.file 8 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash.h"
+  92              		.file 9 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h"
+  93              		.file 10 "Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_cortex.h"
+ARM GAS  C:\Users\hirot\AppData\Local\Temp\ccDUfiRM.s 			page 4
 
 
 DEFINED SYMBOLS
-                            *ABS*:0000000000000000 dma.c
-     /tmp/cchpKRib.s:18     .text.MX_DMA_Init:0000000000000000 $t
-     /tmp/cchpKRib.s:26     .text.MX_DMA_Init:0000000000000000 MX_DMA_Init
-     /tmp/cchpKRib.s:84     .text.MX_DMA_Init:0000000000000040 $d
+                            *ABS*:00000000 dma.c
+C:\Users\hirot\AppData\Local\Temp\ccDUfiRM.s:18     .text.MX_DMA_Init:00000000 $t
+C:\Users\hirot\AppData\Local\Temp\ccDUfiRM.s:25     .text.MX_DMA_Init:00000000 MX_DMA_Init
+C:\Users\hirot\AppData\Local\Temp\ccDUfiRM.s:79     .text.MX_DMA_Init:00000040 $d
+                     .debug_frame:00000010 $d
 
 UNDEFINED SYMBOLS
 HAL_NVIC_SetPriority
