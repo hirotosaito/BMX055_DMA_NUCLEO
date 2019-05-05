@@ -78,10 +78,9 @@ typedef struct {
   uint8_t zLSB;
   uint8_t zMSB;  
 
-} bmxAccl;
-
-bmxAccl Accl_temp = {0,0,0,0,0,0};
-bmxAccl Accl = {0,0,0,0,0,0};
+} bmx;
+bmx Accl_temp = {0,0,0,0,0,0};
+bmx Accl = {0,0,0,0,0,0};
 
 
 /* USER CODE END PV */
