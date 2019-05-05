@@ -154,6 +154,7 @@ int main(void) {
       xAccl = xAccl*0.0098;
 
       isxready = false;
+      Show_float("xAccl = ",xAccl);
     }
 
     if(isyready == true){
@@ -166,6 +167,8 @@ int main(void) {
 
       
       isyready = false;
+      Show_float("yAccl = ",yAccl);
+
     }
 
     if(iszready == true){
@@ -177,6 +180,8 @@ int main(void) {
       zAccl = zAccl*0.0098;
       
       iszready = false;
+      Show_float("zAccl = ",zAccl);
+
     }
 
 //     HAL_I2C_Mem_Read_DMA(&hi2c1, Addr_Accl << 1, 0x02, 1, &Accl_temp, 6);
@@ -185,9 +190,7 @@ int main(void) {
       sprintf(k, "xready\n");
       HAL_UART_Transmit(&huart2, (uint8_t *)(&k[0]), strlen(&k[0]), 100);
     }
-*/  Show_float("xAccl = ",xAccl);
-    Show_float("yAccl = ",yAccl);
-    Show_float("zAccl = ",zAccl);
+*/  
 
     HAL_Delay(1000);
 
