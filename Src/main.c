@@ -135,7 +135,7 @@ int main(void) {
   /* USER CODE BEGIN 2 */
   BMX_Init();
   // first time to read sensor value
-  HAL_I2C_Mem_Read_DMA(&hi2c1, Addr_Accl << 1, 0x00, 1,(&Accl_temp), 6);
+  HAL_I2C_Mem_Read_DMA(&hi2c1, Addr_Accl << 1, 0x02, 1,(&Accl_temp), 6);
   /* USER CODE END 2 */
 
   /* Infinite loop */
