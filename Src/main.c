@@ -43,6 +43,10 @@
 #define true 1
 #define false 0
 #define Addr_Accl 0x19
+#define Addr_Gyro 0x69
+#define AcclReading 0
+#define GyroReading 1
+
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -54,20 +58,16 @@
 
 /* USER CODE BEGIN PV */
 char k[I2C_BUF_SIZE];
-uint8_t isxready = false;
-uint8_t isyready = false;
-uint8_t iszready = false;
 
 float xAccl = 0.00;
 float yAccl = 0.00;
 float zAccl = 0.00;
-float f = 3.14;
 
-float xGyro;
-float yGyro;
-float zGyro;
+float xGyro = 0.00;
+float yGyro = 0.00;
+float zGyro = 0.00;
 
-int isI2CRunning;
+int I2cState = AcclReading;
 
 typedef struct {
   /* data */
@@ -82,6 +82,8 @@ typedef struct {
 bmx Accl_temp = {0,0,0,0,0,0};
 bmx Accl = {0,0,0,0,0,0};
 
+bmx Gyro_temp = {0,0,0,0,0,0};
+bmx Gyro = {0,0,0,0,0,0};
 
 /* USER CODE END PV */
 
@@ -149,6 +151,10 @@ int main(void) {
       Show_float("yAccl = ",yAccl);
       Show_float("zAccl = ",zAccl);
 
+      Show_float("xGyro = ",xGyro);
+      Show_float("yGyro = ",yGyro);
+      Show_float("zGyro = ",zGyro);
+
       HAL_Delay(1000);
 
     }
@@ -213,7 +219,8 @@ void SystemClock_Config(void) {
 
 /** BMX Init*/
 void BMX_Init(void){
-// init x axis 
+
+//Accl initialization
 
 //select PMU band width resisiter and set to 7.81 Hz
 uint16_t Mem_PMU_BW = 0x10;
@@ -233,9 +240,31 @@ uint8_t p_LPW = 0x00;
 HAL_I2C_Mem_Write(&hi2c1,Addr_Accl<<1,Mem_PMU_LPW,1,&p_LPW,1,100);
 HAL_Delay(100);
 
+//Gyro initialization
+// Range
+uint16_t Mem_G_Range= 0x0F;
+uint8_t G_Range = 0x04;
+HAL_I2C_Mem_Write(&hi2c1,Addr_Gyro<<1,Mem_G_Range,1,&G_Range,1,100);
+HAL_Delay(100);
+
+// Band width
+uint16_t Mem_G_BW= 0x10;
+uint8_t G_BW = 0x07;
+HAL_I2C_Mem_Write(&hi2c1,Addr_Gyro<<1,Mem_G_BW,1,&G_BW,1,100);
+HAL_Delay(100);
+
+// Mode_select
+uint16_t Mem_G_Mode= 0x11;
+uint8_t G_Mode = 0x00;
+HAL_I2C_Mem_Write(&hi2c1,Addr_Gyro<<1,Mem_G_Mode,1,&G_Mode,1,100);
+HAL_Delay(100);
 }
 
 void HAL_I2C_MemRxCpltCallback(I2C_HandleTypeDef *hi2c1) {
+
+  // Accl Reading
+if(I2cState == AcclReading){
+
   if((Accl_temp.xLSB && 0b00000001 == 0b00000001)) {
       
       Accl.xLSB = Accl_temp.xLSB;
@@ -262,7 +291,43 @@ void HAL_I2C_MemRxCpltCallback(I2C_HandleTypeDef *hi2c1) {
       zAccl = zAccl*0.0098;
   }
 
+  HAL_I2C_Mem_Read_DMA(hi2c1, Addr_Gyro << 1, 0x02, 1, &Gyro_temp, 6);
+  I2cState = GyroReading;
+}
+
+  // Gyro Reading
+if(I2cState == GyroReading){
+  
+    if((Gyro_temp.xLSB && 0b00000001 == 0b00000001)) {
+      
+      Gyro.xLSB = Gyro_temp.xLSB;
+      Gyro.xMSB = Gyro_temp.xMSB;     
+      xGyro = Gyro.xMSB*256 + Gyro.xLSB;
+      if(xGyro>32767) xGyro -= 65536;
+      xGyro = xGyro*0.0038;
+  }
+  if((Gyro_temp.yLSB && 0b00000001 == 0b00000001)){
+      
+      Gyro.yLSB = Gyro_temp.yLSB;
+      Gyro.yMSB = Gyro_temp.yMSB;
+      yGyro = Gyro.yMSB*256 + Gyro.yLSB;
+      if(yGyro>32767) yGyro -= 65536; 
+      yGyro = yGyro*0.0038;
+  }
+
+  if((Gyro_temp.zLSB && 0b00000001 == 0b00000001)){
+      
+      Gyro.zLSB = Gyro_temp.zLSB;
+      Gyro.zMSB = Gyro_temp.zMSB;
+      zGyro = Gyro.zMSB*256 + Gyro.zLSB;
+      if(zGyro>32767) zGyro -= 65536; 
+      zGyro = zGyro*0.0038;
+  }
+
   HAL_I2C_Mem_Read_DMA(hi2c1, Addr_Accl << 1, 0x02, 1, &Accl_temp, 6); //関数定義でhi2cのポインタを引数として渡しているため、HAL_I2C_Mem_Read_DMAの引数は&hi2c1ではなくhi2c1
+  I2cState = AcclReading;
+}
+
 }
 
 void Show_float(char *str, float value){
