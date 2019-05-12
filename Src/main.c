@@ -144,60 +144,18 @@ int main(void) {
     sprintf(k, "kaisuu : %d\n", i++);
     HAL_UART_Transmit(&huart2, (uint8_t *)(&k[0]), strlen(&k[0]), 100);
 
-    //move the value from temp to buffer
-    if(isxready == true){
-      Accl.xLSB = Accl_temp.xLSB;
-      Accl.xMSB = Accl_temp.xMSB;     
-      
-      xAccl = ((Accl.xMSB*256) + (Accl.xLSB & 0xF0))/16;
-      if(xAccl>2047) xAccl -= 4096;
-      xAccl = xAccl*0.0098;
-
-      isxready = false;
+    //show balues
       Show_float("xAccl = ",xAccl);
-    }
-
-    if(isyready == true){
-      Accl.yLSB = Accl_temp.yLSB;
-      Accl.yMSB = Accl_temp.yMSB;
-      
-      yAccl = ((Accl.yMSB*256) + (Accl.yLSB & 0xF0))/16;
-      if(yAccl>2047) yAccl -= 4096; 
-      yAccl = yAccl*0.0098;
-
-      
-      isyready = false;
       Show_float("yAccl = ",yAccl);
-
-    }
-
-    if(iszready == true){
-      Accl.zLSB = Accl_temp.zLSB;
-      Accl.zMSB = Accl_temp.zMSB;
-
-      zAccl = ((Accl.zMSB*256) + (Accl.zLSB & 0xF0))/16;
-      if(zAccl>2047) zAccl -= 4096; 
-      zAccl = zAccl*0.0098;
-      
-      iszready = false;
       Show_float("zAccl = ",zAccl);
 
-    }
+      HAL_Delay(1000);
 
-//     HAL_I2C_Mem_Read_DMA(&hi2c1, Addr_Accl << 1, 0x02, 1, &Accl_temp, 6);
-/*
-    if (isxready == true) {
-      sprintf(k, "xready\n");
-      HAL_UART_Transmit(&huart2, (uint8_t *)(&k[0]), strlen(&k[0]), 100);
     }
-*/  
-
-    HAL_Delay(1000);
 
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
-}
 
 
 
@@ -278,9 +236,32 @@ HAL_Delay(100);
 }
 
 void HAL_I2C_MemRxCpltCallback(I2C_HandleTypeDef *hi2c1) {
-  if((Accl_temp.xLSB && 0b00000001 == 0b00000001)) isxready = true;
-  if((Accl_temp.yLSB && 0b00000001 == 0b00000001)) isyready = true;
-  if((Accl_temp.zLSB && 0b00000001 == 0b00000001)) iszready = true;
+  if((Accl_temp.xLSB && 0b00000001 == 0b00000001)) {
+      
+      Accl.xLSB = Accl_temp.xLSB;
+      Accl.xMSB = Accl_temp.xMSB;     
+      xAccl = ((Accl.xMSB*256) + (Accl.xLSB & 0xF0))/16;
+      if(xAccl>2047) xAccl -= 4096;
+      xAccl = xAccl*0.0098;
+  }
+  if((Accl_temp.yLSB && 0b00000001 == 0b00000001)){
+      
+      Accl.yLSB = Accl_temp.yLSB;
+      Accl.yMSB = Accl_temp.yMSB;
+      yAccl = ((Accl.yMSB*256) + (Accl.yLSB & 0xF0))/16;
+      if(yAccl>2047) yAccl -= 4096; 
+      yAccl = yAccl*0.0098;
+  }
+
+  if((Accl_temp.zLSB && 0b00000001 == 0b00000001)){
+      
+      Accl.zLSB = Accl_temp.zLSB;
+      Accl.zMSB = Accl_temp.zMSB;
+      zAccl = ((Accl.zMSB*256) + (Accl.zLSB & 0xF0))/16;
+      if(zAccl>2047) zAccl -= 4096; 
+      zAccl = zAccl*0.0098;
+  }
+
   HAL_I2C_Mem_Read_DMA(hi2c1, Addr_Accl << 1, 0x02, 1, &Accl_temp, 6); //関数定義でhi2cのポインタを引数として渡しているため、HAL_I2C_Mem_Read_DMAの引数は&hi2c1ではなくhi2c1
 }
 
